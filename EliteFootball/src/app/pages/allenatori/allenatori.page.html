@@ -1,0 +1,29 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>allenatori</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">allenatori</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>-->
+
+<ion-header><ion-toolbar><ion-title>Migliori Allenatori</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-list *ngIf="allenatori.length > 0">
+    <ion-item *ngFor="let a of allenatori">
+      <ion-label>
+        <h2>{{ a.nome }} {{ a.cognome }}</h2>
+        <p>{{ a.descrizione }}</p>
+        <strong>Voto: {{ a.voto }}</strong>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="allenatori.length == 0">
+    Nessun giocatore trovato per questo ruolo.
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>citazioni</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">citazioni</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+-->
+
+<ion-header><ion-toolbar><ion-title>Citazioni</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let c of citazioni">
+      <ion-label>
+        <p>{{ c.testo }}</p>
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img [src]="'assets/img/cruijff.jpeg' + c.foto" />
+        <img [src]="'assets/img/pasolini.jpeg' + c.foto" />
+        <img [src]="'assets/img/messi.jpeg' + c.foto" />
+      </ion-thumbnail>                               <!--per IMMAGINI                            -->
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ giocatore.nome }} {{ giocatore.cognome }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p><strong>Età:</strong> {{ giocatore.eta }}</p>
+  <p><strong>Voto:</strong> {{ giocatore.voto }}</p>
+  <p><strong>Descrizione:</strong> {{ giocatore.descrizione }}</p>
+
+  <div *ngIf="giocatore.ruoli?.length > 0">
+    <strong>Ruoli:</strong>
+    <ul>
+      <li *ngFor="let ruolo of giocatore.ruoli">
+        {{ ruolo.nome }} ({{ ruolo.codice }})
+      </li>
+    </ul>
+  </div>
+</ion-content>

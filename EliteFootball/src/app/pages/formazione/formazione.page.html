@@ -1,0 +1,76 @@
+<!--<ion-content class="ion-padding">
+  <div class="campo">
+    <div class="ruolo r-PC" (click)="apriSelezione('PC')" >
+      {{ formazione['PC']?.cognome || 'PC' }}
+      <ion-icon *ngIf="formazione['PC']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'PC')"></ion-icon>
+    </div>
+    <div class="ruolo r-AD" (click)="apriSelezione('AD')">
+      {{ formazione['AD']?.cognome || 'AD' }}
+      <ion-icon *ngIf="formazione['AD']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'AD')"></ion-icon>
+    </div>
+    <div class="ruolo r-AS" (click)="apriSelezione('AS')" >
+      {{ formazione['AS']?.cognome || 'AS' }}
+      <ion-icon *ngIf="formazione['AS']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'AS')"></ion-icon>
+    </div>
+
+    <div class="ruolo r-COC" (click)="apriSelezione('COC')">
+      {{ formazione['COC']?.cognome || 'COC' }}
+      <ion-icon *ngIf="formazione['COC']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'COC')"></ion-icon>
+    </div>
+    <div class="ruolo r-CC" (click)="apriSelezione('CC')" >
+      {{ formazione['CC']?.cognome || 'CC' }}
+      <ion-icon *ngIf="formazione['CC']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'CC')"></ion-icon>
+    </div>
+    <div class="ruolo r-CDC" (click)="apriSelezione('CDC')" >
+      {{ formazione['CDC']?.cognome || 'CDC' }}
+      <ion-icon *ngIf="formazione['CDC']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'CDC')"></ion-icon>
+    </div>
+
+    <div class="ruolo r-TD" (click)="apriSelezione('TD')">
+      {{ formazione['TD']?.cognome || 'TD' }}
+      <ion-icon *ngIf="formazione['TD']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'TD')"></ion-icon>
+    </div>
+    <div class="ruolo r-DC1" (click)="apriSelezione('CD')" >
+      {{ formazione['CD']?.cognome || 'CD' }}
+      <ion-icon *ngIf="formazione['CD']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'CD')"></ion-icon>
+    </div>
+    <div class="ruolo r-DC2" (click)="apriSelezione('CS')">
+      {{ formazione['CS']?.cognome || 'CS' }}
+      <ion-icon *ngIf="formazione['CS']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'CS')"></ion-icon>
+    </div>
+    <div class="ruolo r-TS" (click)="apriSelezione('TS')" >
+      {{ formazione['TS']?.cognome || 'TS' }}
+      <ion-icon *ngIf="formazione['TS']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'TS')"></ion-icon>
+    </div>
+
+    <div class="ruolo r-POR" (click)="apriSelezione('POR')" >
+      {{ formazione['POR']?.cognome || 'POR' }}
+      <ion-icon *ngIf="formazione['POR']" name="close-circle-outline" (click)="rimuoviDiretto($event, 'POR')"></ion-icon>
+    </div>
+
+  </div>
+</ion-content>
+
+-->
+
+
+
+<ion-content class="ion-padding">
+  <h2 style="text-align: center;">Modulo: {{ modulo }}</h2>
+  <div class="campo" [ngClass]="classeModulo">
+
+    <div 
+      class="ruolo"
+      *ngFor="let ruolo of ruoli"
+      [ngClass]="'r-' + ruolo"
+      (click)="apriSelezione(ruolo)"
+    >
+      {{ formazione[ruolo]?.cognome || ruolo }}
+      <ion-icon
+        *ngIf="formazione[ruolo]"
+        name="close-circle-outline"
+        (click)="rimuoviDiretto($event, ruolo)">
+      </ion-icon>
+    </div>
+  </div>
+</ion-content>
