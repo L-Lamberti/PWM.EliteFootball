@@ -1,0 +1,51 @@
+# 👉 Dipendenze Node.js
+node_modules/
+
+# 👉 Output di build (Ionic)
+www/
+dist/
+build/
+
+# 👉 Ionic Capacitor
+android/
+ios/
+capacitor.config.json
+capacitor.config.ts
+
+# 👉 Ionic Cordova
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+cordova/platforms
+cordova/plugins
+
+# 👉 File di configurazione e ambiente
+.env
+.env.*.local
+
+# 👉 IDE & Editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# 👉 Log e cache
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+tmp/
+temp/
+*.tmp
+
+# 👉 OS specifici
+.DS_Store
+Thumbs.db
+
+# 👉 Copertura test
+coverage/
