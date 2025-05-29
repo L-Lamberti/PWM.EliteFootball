@@ -18,11 +18,11 @@ export class ApiService {
   }
   
   getTopAllenatori() {
-    return this.http.get<any[]>(`${this.apiUrl}/allenatori/top`);
+    return this.http.get<any[]>(`${this.apiUrl}/api/allenatori/top`);
   }
 
   getCitazioni() {
-    return this.http.get<any[]>(`${this.apiUrl}/citazioni`);
+    return this.http.get<any[]>(`${this.apiUrl}/api/citazioni`);
   }
   getGiocatoreById(id: number) {
   return this.http.get<any>(`${this.apiUrl}/api/giocatori/${id}`);

@@ -1,39 +1,16 @@
-<!--<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>giocatori</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">giocatori</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
--->
 
 <ion-header><ion-toolbar><ion-title>Top 10 {{ ruoloEsteso }}</ion-title></ion-toolbar></ion-header>
 <ion-content class="ion-padding">
   <ion-list  *ngIf="giocatori.length > 0">
-    <ion-item *ngFor="let g of giocatori" [routerLink]="['/giocatori', g.id]">
-  <ion-label>
-    <h2>{{ g.nome }} {{ g.cognome }}</h2>
-    <br>
-    <p><strong>Ruoli:</strong> {{ g.ruoli.join(', ') }}</p>
-    <ion-item *ngFor="let g of giocatori" [routerLink]="['/giocatori', g.id]">
-  <ion-label>
-    <h2>{{ g.nome }} {{ g.cognome }}</h2>
-    <p><strong>Ruoli:</strong> {{ g.ruoli.join(', ') }}</p>
-    <strong>Voto: {{ g.voto }}</strong>
-  </ion-label>
-</ion-item>
-
-    <!--<p>{{ g.descrizione }}</p>-->
-    <strong>Voto: {{ g.voto }}</strong>
-  </ion-label>
-</ion-item>
-
+    <ion-list *ngIf="giocatori.length > 0">
+      <ion-item *ngFor="let g of giocatori" [routerLink]="['/giocatori', g.id]">
+        <ion-label>
+          <h2>{{ g.nome }} {{ g.cognome }}</h2>
+          <p><strong>Ruoli:</strong> {{ g.ruoli.join(', ') }}</p>
+          <p><strong>Voto:</strong> {{ g.voto }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>    
   </ion-list>
   <div *ngIf="giocatori.length === 0">
     Nessun giocatore trovato per questo ruolo.

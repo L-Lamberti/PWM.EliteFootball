@@ -12,7 +12,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SelezioneGiocatoreComponent implements OnInit {
   @Input() ruolo!: string;
+   @Input() giocatoriSelezionati: number[] = [];
   giocatori: any[] = [];
+  listaGiocatori: any[] = []; // popolata da un servizio o mock
 
   constructor(private api: ApiService, private modalCtrl: ModalController) {}
 
@@ -29,5 +31,10 @@ export class SelezioneGiocatoreComponent implements OnInit {
   annulla() {
     this.modalCtrl.dismiss();
   }
+
+
+  get giocatoriDisponibili() {
+    return this.giocatori.filter(g => !this.giocatoriSelezionati.includes(g.id));
+}
 }
 
