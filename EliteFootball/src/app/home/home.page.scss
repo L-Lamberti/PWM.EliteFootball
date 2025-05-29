@@ -1,27 +1,117 @@
-#container {
-  text-align: center;
+:host {
+  --ion-background-color: var(--prestige-gray);
+  --ion-text-color: var(--prestige-navy);
+  height: 100vh;
+  display: block;
+}
 
-  position: absolute;
+.custom-menu {
+  --ion-background-color: var(--prestige-navy);
+  --ion-text-color: var(--prestige-gold);
+}
+
+ion-menu {
+  --width: 260px;
+}
+
+ion-menu ion-header,
+ion-menu ion-toolbar {
+  --background: var(--prestige-navy);
+  --color: var(--prestige-gold);
+}
+
+ion-menu ion-title {
+  color: var(--prestige-gold);
+  font-weight: bold;
+}
+
+ion-menu ion-content {
+  --background: var(--prestige-navy);
+}
+
+ion-menu ion-list,
+ion-menu ion-item {
+  --background: var(--prestige-navy);
+  --color: var(--prestige-gold);
+  font-weight: 500;
+}
+
+.main-header {
+  --background: var(--prestige-white);
+  --color: var(--prestige-navy);
+  border-bottom: 2px solid var(--prestige-gold);
+}
+
+ion-title {
+  color: var(--prestige-navy);
+  font-weight: bold;
+}
+
+.header-btn {
+  --color: var(--prestige-navy);
+  font-weight: 500;
+  background: transparent;
+  margin-left: 6px;
+}
+
+.main-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-body {
+  flex: 1;
+  background: var(--prestige-gray);
+  color: var(--prestige-navy);
+}
+
+h2 {
+  color: var(--prestige-navy);
+  font-weight: bold;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+ion-button {
+  font-weight: 600;
+  margin-bottom: 10px;
+
+  &.button-primary {
+    --background: var(--prestige-navy);
+    --color: var(--prestige-gold);
+  }
+  &.button-secondary {
+    --background: var(--prestige-gold);
+    --color: var(--prestige-navy);
+  }
+  &.button-tertiary {
+    --background: var(--prestige-red);
+    --color: var(--prestige-white);
+  }
+  &.button-warning {
+    --background: var(--prestige-white);
+    --color: var(--prestige-navy);
+    border: 1.5px solid var(--prestige-navy);
+  }
+}
+
+.main-footer {
+  position: relative;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  --background: var(--prestige-navy);
+  --color: var(--prestige-gold);
+  text-align: center;
+  font-size: 1em;
+  height: 56px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.footer-content {
+  display: block;
+  width: 100%;
+  color: var(--prestige-gold);
+  text-align: center;
+  padding: 12px 0;
 }

@@ -1,33 +1,43 @@
-
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  standalone : true,
+  standalone: true,
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [ IonicModule , CommonModule]
+  imports: [IonicModule, CommonModule]
 })
-
- export class HomePage {
-  
-
+export class HomePage {
   constructor(private router: Router) {}
-  
 
-  vaiAGiocatori(ruolo: string) {
-    this.router.navigate(['/giocatori'], { queryParams: { ruolo } });
+  vaiAllaHome() {
+    this.router.navigate(['/home']);
+  }
+
+  vaiATopGiocatori() {
+    this.router.navigate(['/giocatori'], { queryParams: { ruolo: 'PC' } });
+  }
+
+  vaiAAllenatori() {
+    this.router.navigate(['/allenatori']);
+  }
+
+  vaiACitazioni() {
+    this.router.navigate(['/citazioni']);
+  }
+
+  vaiAlLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  vaiAllaRegistrazione() {
+    this.router.navigate(['/register']);
   }
 
   openFormazione(modulo: string) {
-    // Per ora puoi mostrare un alert
-    //alert(`Hai selezionato la formazione ${formazione}`);
     this.router.navigate(['/formazione'], { queryParams: { modulo } });
-    
   }
 }
-
