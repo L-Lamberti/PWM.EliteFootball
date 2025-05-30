@@ -1,16 +1,44 @@
+<ion-header [translucent]="true" class="main-header">
+  <ion-toolbar color="light">
+    <ion-title>Elite Football</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="header-btn" (click)="vaiAlLogin()">Login</ion-button>
+      <ion-button class="header-btn" (click)="vaiAllaRegistrazione()">Registrati</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<ion-header><ion-toolbar><ion-title>Migliori Allenatori</ion-title></ion-toolbar></ion-header>
-<ion-content class="ion-padding">
-  <ion-list *ngIf="allenatori.length > 0">
-    <ion-item *ngFor="let a of allenatori">
-      <ion-label>
-        <h2>{{ a.nome }} {{ a.cognome }}</h2>
-        <p>{{ a.descrizione }}</p>
-        <strong>Voto: {{ a.voto }}</strong>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  <div *ngIf="allenatori.length == 0">
-    Nessun allenatore trovato per questo ruolo.
+<div class="page-layout">
+  <div class="sidebar-fixed">
+    <ion-list>
+      <ion-item button routerLink="/home">🏠 Home</ion-item>
+      <ion-item button routerLink="/giocatori">⚽ Calciatori</ion-item>
+      <ion-item button routerLink="/allenatori">🧠 Allenatori</ion-item>
+      <ion-item button routerLink="/citazioni">🗣️ Citazioni</ion-item>
+    </ion-list>
   </div>
-</ion-content>
+  <div class="main-content-fixed">
+    <ion-content [fullscreen]="true" class="ion-padding main-body">
+      <h2>Allenatori</h2>
+      <ion-list *ngIf="allenatori.length > 0">
+        <ion-item *ngFor="let a of allenatori"  class="allenatore-item">
+          <ion-label>
+            <h3>{{a.nome}} {{a.cognome}}</h3>
+            <p *ngIf="a.squadra">Squadra: {{a.squadra}}</p>
+            <p *ngIf="a.trofei">Trofei: {{a.trofei}}</p>
+            <p *ngIf="a.descrizione">{{a.descrizione}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <div *ngIf="allenatori.length === 0" class="empty-message">
+        Nessun allenatore trovato.
+      </div>
+    </ion-content>
+  </div>
+</div>
+
+<ion-footer class="main-footer">
+  <ion-toolbar>
+    <span class="footer-content">© 2025 Elite Football - Tutti i diritti riservati</span>
+  </ion-toolbar>
+</ion-footer>

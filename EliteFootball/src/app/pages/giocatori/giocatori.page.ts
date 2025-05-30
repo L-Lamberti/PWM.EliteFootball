@@ -1,10 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router,RouterLink } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar , IonList , IonItem , IonLabel} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar , IonList , IonItem , IonLabel, IonFooter, IonButtons, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 
 
 @Component({
@@ -12,48 +11,65 @@ import { IonContent, IonHeader, IonTitle, IonToolbar , IonList , IonItem , IonLa
   templateUrl: './giocatori.page.html',
   styleUrls: ['./giocatori.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule ,  IonList , IonItem , IonLabel , RouterLink]
+  imports: [IonCol, IonRow, IonGrid, IonButton, IonButtons, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule ,  IonList , IonItem , IonLabel , RouterLink]
 
 })
 export class GiocatoriPage implements OnInit {
-  ruolo: string = '';           // codice per la query (es: 'PC')
+  ruoli = [
+    { codice: 'PC', nome: 'Punta Centrale' },
+    { codice: 'AD', nome: 'Ala Destra' },
+    { codice: 'AS', nome: 'Ala Sinistra' },
+    { codice: 'CC', nome: 'Centrocampista Centrale' },
+    { codice: 'CDC', nome: 'Centrocampista Difensivo' },
+    { codice: 'COC', nome: 'Centrocampista Offensivo' },
+    { codice: 'CD', nome: 'Centrale Destro' },
+    { codice: 'CS', nome: 'Centrale Sinistro' },
+    { codice: 'TD', nome: 'Terzino Destro' },
+    { codice: 'TS', nome: 'Terzino Sinistro' },
+    { codice: 'POR', nome: 'Portiere' },
+    { codice: 'ES', nome: 'Esterno Sinistro' },
+    { codice: 'ED', nome: 'Esterno Destro' },
+    { codice: 'SP', nome: 'Seconda Punta' }
+  ];
+  ruoloSelezionato: string = '';           // codice per la query (es: 'PC')
   ruoloEsteso: string = '';     // nome da visualizzare (es: 'Punta Centrale')
-
   giocatori: any[] = [];
   
 
-  constructor(private route: ActivatedRoute, private api: ApiService) {}
+  constructor(private route: ActivatedRoute, private api: ApiService,private router: Router) {}
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+  ngOnInit() {}
 
-     this.ruolo = (params['ruolo'] || '').trim();
-       console.log('Ruolo ricevuto:', this.ruolo);
-
-      const nomiRuoli: Record<string, string> = {
-      PC: 'Punta Centrale',
-      AD: 'Ala Destra',
-      AS: 'Ala Sinistra',
-      CC: 'Centrocampista Centrale',
-      CDC: 'Centrocampista Difensivo',
-      COC: 'Centrocampista Offensivo',
-      CD: 'Centrale Destro',
-      CS: 'Centrale Sinistro',
-      TD: 'Terzino Destro',
-      TS: 'Terzino Sinistro',
-      POR: 'Portiere',
-      ES: 'Esterno Sinistro',
-      ED: 'Esterno Destro',
-      SP: 'Seconda Punta'
-    };
-
-    this.ruoloEsteso = nomiRuoli[this.ruolo] || this.ruolo;
-
-      this.api.getTopGiocatori(this.ruolo).subscribe(res => {
+      selezionaRuolo(ruolo: any) {
+      this.ruoloSelezionato = ruolo.codice;
+      this.ruoloEsteso =  ruolo.nome;
+      this.api.getTopGiocatori(this.ruoloSelezionato).subscribe(res => {
         console.log('Giocatori ricevuti:', res);
         this.giocatori = res;
       });
-    });
   }
-  
+
+    vaiAllaHome() {
+    this.router.navigate(['/home']);
+  }
+
+  vaiATopGiocatori() {
+    this.router.navigate(['/giocatori']);
+  }
+
+  vaiAAllenatori() {
+    this.router.navigate(['/allenatori']);
+  }
+
+  vaiACitazioni() {
+    this.router.navigate(['/citazioni']);
+  }
+   vaiAlLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  vaiAllaRegistrazione() {
+    this.router.navigate(['/register']);
+  }
 }
+
