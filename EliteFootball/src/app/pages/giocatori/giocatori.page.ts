@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router,RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar , IonList , IonItem , IonLabel, IonFooter, IonButtons, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { LayoutComponent } from "../../layout/layout.component";
 
 
 @Component({
@@ -11,7 +12,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar , IonList , IonItem , IonLa
   templateUrl: './giocatori.page.html',
   styleUrls: ['./giocatori.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonButton, IonButtons, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule ,  IonList , IonItem , IonLabel , RouterLink]
+  imports: [IonCol, IonRow, IonGrid, IonButton, IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel, LayoutComponent]
 
 })
 export class GiocatoriPage implements OnInit {
@@ -36,7 +37,7 @@ export class GiocatoriPage implements OnInit {
   giocatori: any[] = [];
   
 
-  constructor(private route: ActivatedRoute, private api: ApiService,private router: Router) {}
+  constructor(private route: ActivatedRoute, private api: ApiService) {}
 
   ngOnInit() {}
 
@@ -47,29 +48,6 @@ export class GiocatoriPage implements OnInit {
         console.log('Giocatori ricevuti:', res);
         this.giocatori = res;
       });
-  }
-
-    vaiAllaHome() {
-    this.router.navigate(['/home']);
-  }
-
-  vaiATopGiocatori() {
-    this.router.navigate(['/giocatori']);
-  }
-
-  vaiAAllenatori() {
-    this.router.navigate(['/allenatori']);
-  }
-
-  vaiACitazioni() {
-    this.router.navigate(['/citazioni']);
-  }
-   vaiAlLogin() {
-    this.router.navigate(['/login']);
-  }
-
-  vaiAllaRegistrazione() {
-    this.router.navigate(['/register']);
   }
 }
 

@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonFooter, IonButtons, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { LayoutComponent } from "../../layout/layout.component";
 
 @Component({
   selector: 'app-citazioni',
   templateUrl: './citazioni.page.html',
   styleUrls: ['./citazioni.page.scss'],
   standalone: true,
-   imports: [IonButton, IonButtons, IonFooter, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonItem, IonLabel, RouterLink]
+   imports: [ IonContent , CommonModule, FormsModule, IonList, IonItem, IonLabel, LayoutComponent]
 })
 export class CitazioniPage implements OnInit {
   citazioni: any[] = [];
 
-  constructor(private api: ApiService,private router: Router) {}
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
     this.api.getCitazioni().subscribe({
@@ -26,27 +26,5 @@ export class CitazioniPage implements OnInit {
         console.error('Errore caricando citazioni', err);
       }
     });
-  }
-  vaiAllaHome() {
-    this.router.navigate(['/home']);
-  }
-
-  vaiATopGiocatori() {
-    this.router.navigate(['/giocatori'], { queryParams: { ruolo: 'PC' } });
-  }
-
-  vaiAAllenatori() {
-    this.router.navigate(['/allenatori']);
-  }
-
-  vaiACitazioni() {
-    this.router.navigate(['/citazioni']);
-  }
-   vaiAlLogin() {
-    this.router.navigate(['/login']);
-  }
-
-  vaiAllaRegistrazione() {
-    this.router.navigate(['/register']);
   }
 }

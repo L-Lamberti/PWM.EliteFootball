@@ -1,23 +1,4 @@
-<ion-header [translucent]="true" class="main-header">
-  <ion-toolbar color="light">
-    <ion-title>Elite Football</ion-title>
-    <ion-buttons slot="end">
-      <ion-button class="header-btn" (click)="vaiAlLogin()">Login</ion-button>
-      <ion-button class="header-btn" (click)="vaiAllaRegistrazione()">Registrati</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<div class="page-layout">
-  <div class="sidebar-fixed">
-    <ion-list>
-      <ion-item button routerLink="/home">🏠 Home</ion-item>
-      <ion-item button routerLink="/giocatori">⚽ Calciatori</ion-item>
-      <ion-item button routerLink="/allenatori">🧠 Allenatori</ion-item>
-      <ion-item button routerLink="/citazioni">🗣️ Citazioni</ion-item>
-    </ion-list>
-  </div>
-  <div class="main-content-fixed">
+<app-layout>
     <ion-content [fullscreen]="true" class="ion-padding main-body">
       <h2>Scegli un ruolo</h2>
       <ion-grid>
@@ -44,16 +25,9 @@
           </ion-label>
         </ion-item>
       </ion-list>
-      <div *ngIf="giocatori.length === 0" class="empty-message">
+      <div *ngIf="giocatori.length === 0" >
         Nessun giocatore trovato.
       </div>
       </div>
     </ion-content>
-  </div>
-</div>
-
-<ion-footer class="main-footer">
-  <ion-toolbar>
-    <span class="footer-content">© 2025 Elite Football - Tutti i diritti riservati</span>
-  </ion-toolbar>
-</ion-footer>
+ </app-layout> 

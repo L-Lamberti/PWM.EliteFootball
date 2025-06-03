@@ -5,10 +5,11 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+    
   },
   {
     path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage)
+    loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage)
   },
   {
     path: 'giocatori',
@@ -25,9 +26,5 @@ export const routes: Routes = [
   {
     path: 'giocatori/:id',
     loadComponent: () => import('./pages/giocatori-dettaglio/giocatori-dettaglio.page').then( m => m.GiocatoriDettaglioPage)
-  },
-  {
-    path: 'formazione',
-    loadComponent: () => import('./pages/formazione/formazione.page').then( m => m.FormazionePage)
   },
 ];

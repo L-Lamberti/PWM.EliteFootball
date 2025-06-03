@@ -1,21 +1,23 @@
+import { Component, OnInit , Input, Output, EventEmitter  } from '@angular/core';
 import { ModalController, IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocatore/selezione-giocatore.component';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { LayoutComponent } from 'src/app/layout/layout.component';
+
 
 @Component({
   selector: 'app-formazione',
-  templateUrl: './formazione.page.html',
-  styleUrls: ['./formazione.page.scss'],
+  templateUrl: './formazione.component.html',
+  styleUrls: ['./formazione.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule,LayoutComponent],
 })
 
-export class FormazionePage implements OnInit {
-
+export class FormazioneComponent implements OnInit {
+  @Input() modulo: string = '';
+  @Output() close = new EventEmitter<void>();
   formazione: Record<string, any> = {};
-  modulo: string = '';
   ruoli: string[] = [];
   ruoliIndicizzati: string[] = [];
 
@@ -23,9 +25,9 @@ export class FormazionePage implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.modulo = params['modulo'] || '4-3-3';
-      this.ruoli = this.generaModuli(this.modulo);
-      this.ruoliIndicizzati = this.aggiungiIndiceRuoli(this.ruoli);
+      // Usa direttamente l'input modulo
+  this.ruoli = this.generaModuli(this.modulo);
+  this.ruoliIndicizzati = this.aggiungiIndiceRuoli(this.ruoli);
     });
   }
 
@@ -88,5 +90,9 @@ export class FormazionePage implements OnInit {
       g && g.id === nuovoGiocatore.id
     );
   }
+  chiudi() {
+    this.close.emit();
+  }
 }
+
 

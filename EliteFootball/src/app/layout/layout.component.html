@@ -1,4 +1,3 @@
-
 <ion-app>
   <ion-header [translucent]="true" class="main-header">
     <ion-toolbar color="light">
@@ -20,27 +19,7 @@
       </ion-list>
     </div>
     <div class="main-content-fixed" >
-      <ion-content [fullscreen]="true" class="ion-padding main-body">
-        <h2>Scegli una formazione</h2>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="6">
-              <ion-button expand="block" color="primary" class="button-primary" (click)="openFormazione('4-3-3')">4-3-3</ion-button>
-            </ion-col>
-            <ion-col size="6">
-              <ion-button expand="block" color="secondary" class="button-secondary" (click)="openFormazione('4-4-2')">4-4-2</ion-button>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="6">
-              <ion-button expand="block" color="tertiary" class="button-tertiary" (click)="openFormazione('3-5-2')">3-5-2</ion-button>
-            </ion-col>
-            <ion-col size="6">
-              <ion-button expand="block" color="warning" class="button-warning" (click)="openFormazione('3-4-1-2')">3-4-1-2</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-content>
+       <ng-content></ng-content>
     </div>
   </div>
 

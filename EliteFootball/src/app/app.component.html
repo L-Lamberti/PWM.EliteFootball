@@ -1,39 +1,4 @@
-<ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Elite Football</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-
-      <ion-list>
-        <ion-item button routerLink="/home">🏠 Home</ion-item>
-        <ion-item button [routerLink]="['/giocatori']" [queryParams]="{ ruolo: 'PC' }">⚽ Top Giocatori PC</ion-item>
-        <ion-item button routerLink="/allenatori">🧠 Allenatori</ion-item>
-        <ion-item button routerLink="/citazioni">🗣️ Citazioni</ion-item>
-        
-      </ion-list>
-
-      <!--
-        <ion-item routerLink="/home">🏠 Home</ion-item>
-        <ion-item button [routerLink ]="['/giocatori']" [queryParams] = "{ ruolo: 'PC' }">⚽ Top Giocatori</ion-item>
-        <ion-item routerLink="/allenatori">🧠 Allenatori</ion-item>
-        <ion-item routerLink="/citazioni">🗣️ Citazioni</ion-item>
-        <ion-item routerLink="/login">🔐 Login</ion-item>
-        <ion-item routerLink="/register">📝 Registrati</ion-item>
-      -->
-      <!--
-      <ion-list>
-        <a ion-item routerLink="/home">🏠 Home</a>
-        <a ion-item [routerLink]="['/giocatori']" [queryParams]="{ ruolo: 'PC' }">⚽ Top Giocatori</a>
-        <a ion-item routerLink="/allenatori">🧠 Allenatori</a>
-        <a ion-item routerLink="/citazioni">🗣️ Citazioni</a>
-        <a ion-item routerLink="/login">🔐 Login</a>
-        <a ion-item routerLink="/register">📝 Registrati</a>
-      </ion-list>-->
-      
-    </ion-content>
-
-  <ion-router-outlet id="main-content"></ion-router-outlet>
-
+ <ion-app>
+  <ion-router-outlet ></ion-router-outlet>
 </ion-app>
+

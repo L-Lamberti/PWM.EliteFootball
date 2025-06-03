@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   standalone: true,
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss'],
   imports: [IonicModule, CommonModule]
 })
-export class HomePage {
+export class LayoutComponent {
   constructor(private router: Router) {}
 
   vaiAllaHome() {

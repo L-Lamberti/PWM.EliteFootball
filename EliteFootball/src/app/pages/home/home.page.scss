@@ -1,0 +1,49 @@
+
+/* MAIN CONTENT */
+.main-body {
+  flex: 1;
+  background: transparent;
+  color: var(--prestige-navy);
+  padding-bottom: 32px;
+}
+h2 {
+  color: var(--prestige-navy);
+  font-weight: bold;
+  margin-bottom: 28px;
+  margin-top: 0;
+  font-size: 2em;
+  letter-spacing: 0.02em;
+}
+/* BUTTONS */
+ion-button {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+  &.button-primary {
+    --background: var(--prestige-navy);
+    --color: var(--prestige-gold);
+  }
+  &.button-secondary {
+    --background: var(--prestige-gold);
+    --color: var(--prestige-navy);
+    border: 1.5px solid var(--prestige-navy);
+  }
+  &.button-tertiary {
+    --background: var(--prestige-red);
+    --color: var(--prestige-white);
+  }
+  &.button-warning {
+    --background: var(--prestige-white);
+    --color: var(--prestige-navy);
+    border: 1.5px solid var(--prestige-navy);
+  }
+}
+ion-button:hover, ion-button:focus {
+  filter: brightness(0.95);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+

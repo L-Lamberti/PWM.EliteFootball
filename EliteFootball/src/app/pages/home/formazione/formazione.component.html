@@ -1,13 +1,9 @@
-
+<app-layout>
 <ion-content class="ion-padding">
-  <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home.page.html"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Dettaglio Giocatore</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-button fill="clear" class="bottone-indietro"(click)="chiudi()" >
+     <span style="margin-left:8px;">Cambia Formazione</span>
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
   <h2 style="text-align: center;">Modulo: {{ modulo }}</h2>
   <div class="campo" [ngClass]="classeModulo">
 
@@ -24,6 +20,6 @@
         (click)="rimuoviDiretto($event, ruoloIndicizzato)">
       </ion-icon>
     </div>
-
   </div>
 </ion-content>
+</app-layout>

@@ -1,0 +1,35 @@
+
+<app-layout>
+  
+<ion-content [fullscreen]="true" class="ion-padding main-body">
+        <h2>Scegli una formazione</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="block" color="primary" class="button-primary" (click)="openFormazione('4-3-3')">4-3-3</ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="block" color="secondary" class="button-secondary" (click)="openFormazione('4-4-2')">4-4-2</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="block" color="tertiary" class="button-tertiary" (click)="openFormazione('3-5-2')">3-5-2</ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="block" color="warning" class="button-warning" (click)="openFormazione('3-4-1-2')">3-4-1-2</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+
+
+      <app-formazione
+    *ngIf="mostraFormazione"
+    [modulo]="moduloSelezionato ?? ''"
+    (close)="chiudiFormazione()"
+    style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:2000; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
+  </app-formazione>
+      
+
+</app-layout>
