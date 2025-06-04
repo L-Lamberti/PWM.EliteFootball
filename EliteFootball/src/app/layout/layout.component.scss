@@ -21,11 +21,15 @@ body, ion-app {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-ion-title {
-  color: var(--prestige-gold);
-  font-weight: bold;
-  letter-spacing: 0.03em;
-  font-size: 1.5em;
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 60px;
+  width: auto;
+  margin: 0;
+  z-index: 1;
 }
 
 .header-btn {
