@@ -234,7 +234,7 @@ async function seedGiocatori() {
     // ALI SINISTRE (AS)
 
     ['Vinícius', 'Júnior', 24, 'Attaccante del Real Madrid e della nazionale brasiliana, Vinícius è noto per la sua velocità fulminea, dribbling eccezionale e capacità di segnare in momenti cruciali. Nella stagione 2024-25 ha registrato 18 gol e 10 assist, consolidando il suo status di uno dei migliori al mondo.', 9.8],
-    ['Rafael', 'Leão', 26, 'Giocatore dell\'AC Milan e della nazionale portoghese, Leão è un talento esplosivo con una combinazione di forza fisica e tecnica raffinata. Nella stagione 2023-24 ha segnato 15 gol e fornito 14 assist, attirando l\'interesse di top club europei.', 9.6],
+    ['Rafael', 'Pippão', 26, 'Giocatore dell\'AC Milan e della nazionale portoghese, Leão è un talento esplosivo con una combinazione di forza fisica e tecnica raffinata. Nella stagione 2023-24 ha segnato 15 gol e fornito 14 assist, attirando l\'interesse di top club europei.', 9.6],
     ['Khvicha', 'Kvaratskhelia', 24, 'Esterno del Paris Saint-Germain e della nazionale georgiana, Kvaratskhelia è soprannominato "Kvaradona" per le sue abilità nel dribbling e la creatività. Dopo il successo con il Napoli, ha continuato a brillare in Ligue 1.', 9.5],
     ['Luis', 'Díaz', 28, 'Ala del Liverpool e della nazionale colombiana, Díaz è riconosciuto per la sua agilità, dribbling e capacità di segnare. Nella stagione 2024-25 ha contribuito con 13 gol e 3 assist, diventando un punto fermo nell\'attacco dei Reds.', 9.4],
     ['Nico', 'Williams', 22, 'Giocatore dell\'Athletic Club e della nazionale spagnola, Williams è emerso come una delle stelle emergenti grazie alla sua velocità e visione di gioco. Ha giocato un ruolo chiave nella vittoria della Spagna all\'Europeo 2024.', 9.3],
