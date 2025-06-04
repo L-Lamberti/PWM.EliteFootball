@@ -3,6 +3,7 @@ import { ModalController, IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocatore/selezione-giocatore.component';
 import { ActivatedRoute } from '@angular/router';
+import { LayoutComponent } from "../../../layout/layout.component";
 
 
 
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './formazione.component.html',
   styleUrls: ['./formazione.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, LayoutComponent],
 })
 
 export class FormazioneComponent implements OnInit {

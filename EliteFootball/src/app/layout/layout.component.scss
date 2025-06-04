@@ -1,7 +1,3 @@
-:host {
-  --ion-background-color: #fff;
-  --ion-text-color: #111;
-}
 
 /* Sfondo e testo coerenti */
 body, ion-app {
@@ -115,16 +111,20 @@ ion-title {
 }
 
 /* MAIN CONTENT */
+
 .main-content-fixed {
   flex: 1;
   min-width: 0;
-  background: #fff;
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: 32px 32px 0 32px;
   border-radius: 0 18px 0 0;
   box-shadow: 0 0 0 transparent;
+  background-image: url('/assets/img/stadio.jpg'); // <-- percorso corretto
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* FOOTER */

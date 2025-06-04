@@ -1,10 +1,19 @@
-
+ion-content {
+  --background: transparent !important;
+  background: transparent !important;
+  padding: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
+  color: #111;
+}
 .main-body {
   flex: 1;
   background: transparent;
   color: var(--prestige-navy);
-  padding-bottom: 32px;
+  padding: 0 ;
+  box-sizing: border-box;
 }
+
 
 h2 {
   color: var(--prestige-navy);

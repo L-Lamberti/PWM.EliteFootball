@@ -1,5 +1,6 @@
 
- <ion-content [fullscreen]="true" class="ion-padding main-body">
+ <ion-content [fullscreen]="true" >
+  <div class="main-body">
       <h2>Allenatori</h2>
       <ion-list *ngIf="allenatori.length > 0">
         <ion-item *ngFor="let a of allenatori"  class="allenatore-item">
@@ -13,6 +14,7 @@
       </ion-list>
       <div *ngIf="allenatori.length === 0">
         Nessun allenatore trovato.
+      </div>
       </div>
     </ion-content>
    
