@@ -12,16 +12,18 @@ body, ion-app {
 .main-header {
   --background: var(--prestige-gold);
   --color: var(--prestige-gold);
-  border-bottom: 2px solid var(--prestige-gold);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.main-header ion-toolbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .logo {
   height: 48px;
   width: auto;
@@ -58,8 +60,11 @@ ion-title {
 .page-layout {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 56px - 56px); // header e footer
-  min-height: 0;
+  margin-top: 56px;    // altezza header
+  margin-bottom: 15px; // altezza footer
+  height: calc(100vh - 56px - 15px);
+  background: var(--prestige-gold);
+  overflow: hidden;
   background: var(--prestige-gold);
 }
 
@@ -67,17 +72,18 @@ ion-title {
 .sidebar-fixed {
   width: 240px;
   min-width: 180px;
+  z-index: 100;
   background: var(--prestige-gold);
   color: var(--prestige-navy);
   --background: var(--prestige-gold);
   --color: var(--prestige-navy);
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.10);
-  height: 100%;
-  z-index: 1000;
+  height: calc(100vh - 56px - 15px); // altezza totale meno header e footer
   position: relative;
-  padding-top: 0;
+  top: 0;
+  left: 0;
+  
 }
 .sidebar-fixed ion-list {
   margin: 0;
@@ -103,7 +109,7 @@ ion-title {
 }
 .sidebar-fixed ion-item:hover,
 .sidebar-fixed ion-item:focus {
-  background: #fff;
+  background: #0e5f03;
   color: var(--prestige-gold);
   --color: var(--prestige-gold);
   box-shadow: none;
@@ -129,34 +135,32 @@ ion-title {
 
 /* FOOTER */
 .main-footer {
-  position: relative;
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  --background: var(--prestige-gold);
-  --color: var(--prestige-navy);
-  background: var(--prestige-gold);
-  color: var(--prestige-navy);
-  text-align: center;
-  font-size: 1.08em;
-  height: 56px;
-  border-top: 2px solid var(--prestige-navy);
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  z-index: 100;
+  height: 15px;
+  min-height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .footer-content {
-  display: block;
   width: 100%;
+  height: 100%;
+  font-size: 15px;
   color: var(--prestige-gold);
   text-align: center;
-  padding: 12px 0;
-  font-weight: 600;
   letter-spacing: 0.02em;
+  margin: 0px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE 
 @media (max-width: 900px) {
   .main-content-fixed {
     padding: 18px 6vw 0 6vw;
@@ -201,7 +205,7 @@ ion-title {
     padding: 12px 2vw 0 2vw;
     border-radius: 0;
   }
-}
+}*/
 
 /* Scrollbar sidebar */
 .sidebar-fixed ::-webkit-scrollbar {
