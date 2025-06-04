@@ -72,7 +72,7 @@ export class FormazioneComponent implements OnInit {
         alert('Questo giocatore è già stato selezionato.');
         return;
       }
-      this.formazione[ruolo] = data;
+      this.formazione[ruoloIndicizzato] = data;
     }
   }
 
