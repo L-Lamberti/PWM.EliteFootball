@@ -3,7 +3,6 @@
   --ion-text-color: #111;
 }
 
-
 /* Sfondo e testo coerenti */
 body, ion-app {
   background: #fff !important;
@@ -21,17 +20,12 @@ body, ion-app {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 60px;
-  width: auto;
-  margin: 0;
-  z-index: 1;
+ion-title {
+  color: var(--prestige-gold);
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  font-size: 1.5em;
 }
-
 .header-btn {
   --color: var(--prestige-navy);
   font-weight: 600;
@@ -70,34 +64,30 @@ body, ion-app {
   height: 100%;
   z-index: 1000;
   position: relative;
-  padding-top: 0; // Rimuovi padding-top per un blocco unico
+  padding-top: 0;
 }
-
 .sidebar-fixed ion-list {
   margin: 0;
   padding: 0;
   border-radius: 0;
   background: transparent;
 }
-
 .sidebar-fixed ion-item {
   background: transparent;
   color: var(--prestige-navy);
   --background: transparent;
   --color: var(--prestige-navy);
-  border-radius: 0; // Nessun bordo arrotondato tra le voci
-  margin: 0;        // Nessun margine tra le voci
+  border-radius: 0;
+  margin: 0;
   font-size: 1.08em;
   font-weight: 600;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s;
   box-shadow: none;
-  border-bottom: 1px solid rgba(30,30,30,0.07); // Separatore sottile tra le voci
+  border-bottom: 1px solid rgba(30,30,30,0.07);
 }
-
 .sidebar-fixed ion-item:last-child {
-  border-bottom: none; // Nessun bordo sull'ultima voce
+  border-bottom: none;
 }
-
 .sidebar-fixed ion-item:hover,
 .sidebar-fixed ion-item:focus {
   background: #fff;
@@ -139,7 +129,6 @@ body, ion-app {
   align-items: center;
   justify-content: center;
 }
-
 .footer-content {
   display: block;
   width: 100%;
@@ -172,7 +161,7 @@ body, ion-app {
     width: 100vw;
     min-width: 0;
     height: auto;
-    padding: 0 0 0 0;
+    padding: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     justify-content: space-around;
     align-items: center;
@@ -197,7 +186,7 @@ body, ion-app {
   }
 }
 
-/* Extra: migliora scrollbar sidebar */
+/* Scrollbar sidebar */
 .sidebar-fixed ::-webkit-scrollbar {
   width: 8px;
   background: var(--prestige-navy);
