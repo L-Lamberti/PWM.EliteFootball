@@ -3,14 +3,14 @@ import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
-import { LayoutComponent } from "../../layout/layout.component";
+
 
 @Component({
   selector: 'app-citazioni',
   templateUrl: './citazioni.page.html',
   styleUrls: ['./citazioni.page.scss'],
   standalone: true,
-   imports: [ IonContent , CommonModule, FormsModule, IonList, IonItem, IonLabel, LayoutComponent]
+   imports: [ IonContent , CommonModule, FormsModule, IonList, IonItem, IonLabel]
 })
 export class CitazioniPage implements OnInit {
   citazioni: any[] = [];

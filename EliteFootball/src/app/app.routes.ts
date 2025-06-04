@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
-  {
+   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-    
-  },
+    component: LayoutComponent,
+    children: [
   {
     path: 'home',
     loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage)
@@ -27,4 +26,6 @@ export const routes: Routes = [
     path: 'giocatori/:id',
     loadComponent: () => import('./pages/giocatori-dettaglio/giocatori-dettaglio.page').then( m => m.GiocatoriDettaglioPage)
   },
+    ]
+  }
 ];

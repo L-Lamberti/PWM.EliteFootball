@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { LayoutComponent } from "../../layout/layout.component";
 import { FormazioneComponent } from './formazione/formazione.component';
 
 @Component({
@@ -10,7 +8,7 @@ import { FormazioneComponent } from './formazione/formazione.component';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonicModule, CommonModule, LayoutComponent, FormazioneComponent]
+  imports: [IonicModule, CommonModule, FormazioneComponent]
 })
 export class HomePage {
 mostraFormazione = false;

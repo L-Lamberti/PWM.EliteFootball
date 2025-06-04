@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { RouterOutlet } from '@angular/router'; 
 
 @Component({
   standalone: true,
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
-  imports: [IonicModule, CommonModule]
+  imports: [IonicModule, CommonModule, RouterOutlet]
 })
 export class LayoutComponent {
   constructor(private router: Router) {}

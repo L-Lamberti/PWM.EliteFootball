@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
-import { LayoutComponent } from "../../layout/layout.component";
+
 
 
 @Component({
@@ -12,7 +12,7 @@ import { LayoutComponent } from "../../layout/layout.component";
   templateUrl: './giocatori.page.html',
   styleUrls: ['./giocatori.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonButton, IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel, LayoutComponent]
+  imports: [IonCol, IonRow, IonGrid, IonButton, IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel]
 
 })
 export class GiocatoriPage implements OnInit {
