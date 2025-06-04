@@ -1,5 +1,6 @@
 
-    <ion-content [fullscreen]="true" class="ion-padding main-body">
+    <ion-content [fullscreen]="true">
+      <div class="main-body">
       <h2>Scegli un ruolo</h2>
       <ion-grid>
         <ion-row>
@@ -27,6 +28,7 @@
       </ion-list>
       <div *ngIf="giocatori.length === 0" >
         Nessun giocatore trovato.
+      </div>
       </div>
       </div>
     </ion-content>
