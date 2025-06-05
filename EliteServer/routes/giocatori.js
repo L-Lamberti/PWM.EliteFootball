@@ -65,7 +65,16 @@ router.get('/:id/ruoli', (req, res) => {
     res.json(rows);
   });
 });
-
+router.get('/', (req, res) => {
+  const query = `SELECT * FROM giocatori ORDER BY voto DESC`;
+  db.all(query, [], (err, rows) => {
+    if (err) {
+      console.error('Errore:', err.message);
+      return res.status(500).json({ error: 'Errore nel database' });
+    }
+    res.json(rows);
+  });
+});
 
 module.exports = router;
 

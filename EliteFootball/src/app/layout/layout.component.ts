@@ -41,4 +41,7 @@ export class LayoutComponent {
   openFormazione(modulo: string) {
     this.router.navigate(['/formazione'], { queryParams: { modulo } });
   }
+  vaiAlTorneo() {
+  this.router.navigate(['/torneo']);
+}
 }

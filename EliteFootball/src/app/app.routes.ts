@@ -30,6 +30,11 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
   },
+  {
+    path: 'torneo',
+    loadComponent: () => import('./pages/torneo/torneo.page').then( m => m.TorneoPage)
+  },
     ]
-  }
+  },
+  
 ];

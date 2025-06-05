@@ -1,19 +1,19 @@
+.torneo-setup, .torneo-selezione, .torneo-bracket, .torneo-finale 
+{ padding: 32px; text-align: center; } 
 ion-content {
-  --background: url('/assets/img/allenatore2.webp') center center/cover no-repeat !important;
+  --background: url('/assets/img/vincitore.jpg') center center/cover no-repeat !important;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   color: #111111;
 }
-.main-body {
-  flex: 1;
-  background: transparent;
-  color: var(--prestige-navy);
-  padding: 5px ;
-  box-sizing: border-box;
+ion-card { margin: 16px auto; max-width: 400px; }
+ion-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
-
 h2 {
   font-family: 'Barlow Semi Condensed', serif;
   color: #af0000;
@@ -28,5 +28,3 @@ h2 {
     0px 2px 0 #e43f15,
     2px 2px 0 #e43f15;
 }
-.allenatore-item 
-{ background: #e0e7ff; color: #b80000; }

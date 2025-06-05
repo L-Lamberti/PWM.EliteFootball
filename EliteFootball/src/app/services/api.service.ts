@@ -27,7 +27,9 @@ export class ApiService {
   getGiocatoreById(id: number) {
   return this.http.get<any>(`${this.apiUrl}/api/giocatori/${id}`);
   }
-
+  getAllGiocatori() {
+  return this.http.get<any[]>(`${this.apiUrl}/api/giocatori`);
+}
 }
 
 

@@ -1,10 +1,9 @@
 ion-content {
-  --background: transparent !important;
-  background: transparent !important;
-  padding: 0 !important;
+  --background: url('/assets/img/palloneoro.jpg') center center/cover no-repeat !important;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  color: #111;
+  color: #111111;
 }
 .main-body {
   flex: 1;
@@ -14,14 +13,19 @@ ion-content {
   box-sizing: border-box;
 }
 
-
 h2 {
-  color: var(--prestige-navy);
-  font-weight: bold;
-  margin-bottom: 28px;
-  margin-top: 0;
-  font-size: 2em;
+  font-family: 'Barlow Semi Condensed', serif;
+  color: #af0000;
+  font-weight: 200;
+  font-size: 2.8em;
   letter-spacing: 0.02em;
+  text-align: center;         // centrato
+  margin: 4px auto 4px auto;
+  text-shadow:
+    1px 2px 0 #e43f15,
+    1px 0px 0 #e43f15,
+    0px 2px 0 #e43f15,
+    2px 2px 0 #e43f15;
 }
 .giocatore-item 
 { background: #f9f871; color: #b80000; }
