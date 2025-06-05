@@ -5,8 +5,6 @@ import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocat
 import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from "../../../layout/layout.component";
 
-
-
 @Component({
   selector: 'app-formazione',
   templateUrl: './formazione.component.html',

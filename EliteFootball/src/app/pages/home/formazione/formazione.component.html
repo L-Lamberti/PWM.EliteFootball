@@ -1,11 +1,10 @@
 <app-layout>
 <ion-content>
-<div class="titolo-formazione">
-  <h2>Modulo: {{ modulo }}</h2>
-  <ion-button fill="clear" class="bottone-indietro" (click)="chiudi()"> Cambia Modulo ↩ </ion-button>
-</div>
+  <div class="titolo-formazione">
+    <h2>Modulo: {{ modulo }}</h2>
+    <ion-button fill="clear" class="bottone-indietro" (click)="chiudi()"> Cambia Modulo ↩ </ion-button>
+  </div>
   <div class="campo" [ngClass]="classeModulo">
-
     <div 
       class="ruolo"
       *ngFor="let ruoloIndicizzato of ruoliIndicizzati"
