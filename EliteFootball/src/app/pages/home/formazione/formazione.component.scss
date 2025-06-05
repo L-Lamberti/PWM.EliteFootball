@@ -1,3 +1,18 @@
+ion-content,
+ion-content::part(scroll),
+ion-content .inner-scroll,
+ion-content .scroll-content {
+  --background: transparent !important;
+  background: transparent !important;
+}
+ion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 .titolo-formazione {
   position: relative;
   display: flex;
@@ -49,8 +64,8 @@
   position: relative;
   margin-top: 40px;
   margin-bottom: 50px;
-  margin-left: auto;
-  margin-right:8px;
+ margin-left: auto;
+  margin-right: auto;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(5, 1fr);
   background-image: url('/assets/img/campo.jpg');
