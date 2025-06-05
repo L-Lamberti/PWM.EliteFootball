@@ -1,5 +1,6 @@
 .torneo-setup, .torneo-selezione, .torneo-bracket, .torneo-finale 
 { padding: 32px; text-align: center; } 
+
 ion-content {
   --background: url('/assets/img/vincitore.jpg') center center/cover no-repeat !important;
   min-height: 100vh;
@@ -7,7 +8,13 @@ ion-content {
   box-sizing: border-box;
   color: #111111;
 }
-ion-card { margin: 16px auto; max-width: 400px; }
+ion-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  border: 2px solid #f9f871;
+  box-shadow: 0 4px 24px #0002;
+  backdrop-filter: blur(2px);
+}
 ion-card-content {
   display: flex;
   flex-direction: row;
@@ -27,4 +34,14 @@ h2 {
     1px 0px 0 #e43f15,
     0px 2px 0 #e43f15,
     2px 2px 0 #e43f15;
+}
+ion-button {
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px #0002;
+  font-size: 1.1em;
+}
+ion-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgb(192, 189, 7);
+  filter: brightness(1.1);
 }
