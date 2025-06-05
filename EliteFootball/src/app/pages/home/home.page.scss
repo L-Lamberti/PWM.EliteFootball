@@ -1,57 +1,75 @@
 ion-content {
-  --background: transparent !important;
-  background: transparent !important;
-  padding: 0 !important;
+  --background: url('/assets/img/spogliatoio.jpg') center center/cover no-repeat !important;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  color: #111;
+  color: #111111;
 }
 .main-body {
+  display: flex;
   flex: 1;
-  background: transparent;
   color: var(--prestige-navy);
   padding: 5px ;
   box-sizing: border-box;
+  flex-direction: column;
 }
 
 h2 {
-  color: var(--prestige-navy);
-  font-weight: bold;
-  margin-bottom: 28px;
-  margin-top: 0;
-  font-size: 2em;
+  font-family: 'Barlow Semi Condensed', serif;
+  color: #af0000;
+  font-weight: 200;
+  font-size: 2.8em;
   letter-spacing: 0.02em;
+  text-align: center;         // centrato
+  margin: 4px auto 4px auto;
+  text-shadow:
+    1px 2px 0 #e43f15,
+    1px 0px 0 #e43f15,
+    0px 2px 0 #e43f15,
+    2px 2px 0 #e43f15;
+}
+h3 {
+  font-family: 'Barlow Semi Condensed', serif;
+  color: #000000;
+  font-weight: 200;
+  font-size: 1.8em;
+  letter-spacing: 0.02em;
+  text-align: center;         // centrato
+  margin: 4px auto 18px auto;
+  text-shadow:
+    1px 2px 0 #e43f15,
+    1px 0px 0 #e43f15,
+    0px 2px 0 #e43f15,
+    2px 2px 0 #e43f15;
 }
 /* BUTTONS */
+.button-group{
+  display: flex;
+  grid-template-rows: repeat(2, 1fr); /* o più righe se hai più bottoni */
+  row-gap: 28px; /* distanza tra i bottoni */
+  justify-items: center;
+  margin: 32px 0;
+}
 ion-button {
+  display: block;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 700;
-  font-size: 1.1em;
-  margin-bottom: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-
-  &.button-primary {
-    --background: var(--prestige-navy);
-    --color: var(--prestige-gold);
-  }
-  &.button-secondary {
-    --background: var(--prestige-gold);
-    --color: var(--prestige-navy);
-    border: 1.5px solid var(--prestige-navy);
-  }
-  &.button-tertiary {
-    --background: var(--prestige-red);
-    --color: var(--prestige-white);
-  }
-  &.button-warning {
-    --background: var(--prestige-white);
-    --color: var(--prestige-navy);
-    border: 1.5px solid var(--prestige-navy);
-  }
+  font-size: 1.80em;
+  min-width: 220px;
+  min-height: 56px;
+  margin: 18px auto;
+  border-radius: 14px;
+  --background: #098a04;
+  --color: #da3309;
+  --border-style: solid;
+  --border-radius: 10px;
+  --border-color:  #000000;
+  letter-spacing: 0.04em;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
 }
 ion-button:hover, ion-button:focus {
-  filter: brightness(0.95);
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  --background: linear-gradient(90deg, #0e5f03 60%, #048500 100%);
+  --color: #ffe066;
+  transform: translateY(-2px) scale(1.04);
 }
 
