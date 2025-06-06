@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { FormazioneComponent } from './formazione/formazione.component';
+import { FormazioneComponent } from './formazione-component/formazione.component';
 
 @Component({
   standalone: true,
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-formazioni',
+  templateUrl: 'formazione.page.html',
+  styleUrls: ['formazione.page.scss'],
   imports: [IonicModule, CommonModule, FormazioneComponent]
 })
-export class HomePage {
+export class FormazionePage {
 mostraFormazione = false;
   moduloSelezionato: string | null = null;
 

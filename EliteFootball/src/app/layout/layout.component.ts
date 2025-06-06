@@ -14,12 +14,12 @@ import { RouterOutlet } from '@angular/router';
 export class LayoutComponent {
   constructor(private router: Router) {}
 
-  vaiAllaHome() {
-    this.router.navigate(['/home']);
+  vaiAllaFormazione() {
+    this.router.navigate(['/formazioni']);
   }
 
   vaiATopGiocatori() {
-    this.router.navigate(['/giocatori'], { queryParams: { ruolo: 'PC' } });
+    this.router.navigate(['/giocatori'] );
   }
 
   vaiAAllenatori() {
