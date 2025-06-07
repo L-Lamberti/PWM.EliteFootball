@@ -1,20 +1,62 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController, IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  templateUrl: 'login.page.html',
+  styleUrls: ['login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, FormsModule],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  email = '';
+  password = '';
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private alertCtrl: AlertController,
+    private apiService: ApiService
+  ) {}
 
-  ngOnInit() {
+  isEmailValid(email: string): boolean {
+    // Regex per email valida standard
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
   }
 
+  async onLogin() {
+    if (!this.isEmailValid(this.email)) {
+      const alert = await this.alertCtrl.create({
+        header: 'Errore',
+        message: 'Inserisci un indirizzo email valido.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
+
+    this.apiService.login(this.email, this.password).subscribe({
+      next: async (res) => {
+        // Salva il token se vuoi: localStorage.setItem('token', res.token);
+        const alert = await this.alertCtrl.create({
+          header: 'Successo',
+          message: 'Login effettuato!',
+          buttons: ['OK'],
+        });
+        await alert.present();
+        this.router.navigate(['/home']); // cambia '/home' con la tua pagina principale
+      },
+      error: async (err) => {
+        const alert = await this.alertCtrl.create({
+          header: 'Errore',
+          message: err.error?.message || 'Login fallito',
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
+    });
+  }
 }
