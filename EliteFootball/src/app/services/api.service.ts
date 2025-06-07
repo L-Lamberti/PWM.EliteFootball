@@ -24,19 +24,16 @@ export class ApiService {
   getCitazioni() {
     return this.http.get<any[]>(`${this.apiUrl}/api/citazioni`);
   }
-
   getGiocatoreById(id: number) {
   return this.http.get<any>(`${this.apiUrl}/api/giocatori/${id}`);
   }
-
   getAllGiocatori() {
   return this.http.get<any[]>(`${this.apiUrl}/api/giocatori`);
   }
-
+  
   register(email: string, password: string) {
   return this.http.post(`${this.apiUrl}/api/auth/register`, { email, password });
   }
-  
 }
 
 
