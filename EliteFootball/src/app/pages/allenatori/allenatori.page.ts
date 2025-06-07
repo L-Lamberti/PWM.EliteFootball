@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
-import { IonContent, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 
 
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './allenatori.page.html',
   styleUrls: ['./allenatori.page.scss'],
   standalone: true,
-  imports: [ IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel]
+  imports: [ CommonModule, FormsModule, IonList, IonItem, IonLabel]
 })
 export class AllenatoriPage implements OnInit {
   allenatori: any[] = [];

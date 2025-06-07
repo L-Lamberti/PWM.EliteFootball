@@ -1,20 +1,19 @@
+<div class="sfondo"></div>
+<div class="main-body">
+  <h2> Top 10 Allenatori</h2>
+  <ion-list *ngIf="allenatori.length > 0">
+    <ion-item *ngFor="let a of allenatori"  class="allenatore-item">
+      <ion-label>
+        <h3>{{a.nome}} {{a.cognome}}</h3>
+        <p *ngIf="a.eta" class="eta">età: {{a.eta}}</p>
+        <p *ngIf="a.descrizione" class="descrizione">{{a.descrizione}}</p>
+      </ion-label>
+      <img *ngIf="a.foto" [src]="'assets/allenatori/' + a.foto" [alt]="a.nome + ' ' + a.cognome" class="allenatore-foto" />
+    </ion-item>
+  </ion-list>
+  <div *ngIf="allenatori.length === 0">
+    Nessun allenatore trovato.
+  </div>
+</div>
 
- <ion-content [fullscreen]="true" >
-  <div class="main-body">
-      <h2>Allenatori</h2>
-      <ion-list *ngIf="allenatori.length > 0">
-        <ion-item *ngFor="let a of allenatori"  class="allenatore-item">
-          <ion-label>
-            <h3>{{a.nome}} {{a.cognome}}</h3>
-            <p *ngIf="a.squadra">Squadra: {{a.squadra}}</p>
-            <p *ngIf="a.trofei">Trofei: {{a.trofei}}</p>
-            <p *ngIf="a.descrizione">{{a.descrizione}}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-      <div *ngIf="allenatori.length === 0">
-        Nessun allenatore trovato.
-      </div>
-      </div>
-    </ion-content>
-   
+  

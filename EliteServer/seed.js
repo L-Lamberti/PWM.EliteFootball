@@ -653,13 +653,20 @@ async function seedGiocatoriRuoli() {
 async function seedAllenatori() {
   await runAsync(`DELETE FROM allenatori`);
   const allenatori = [
-    ['Pep', 'Guardiola', 53, 'Maestro del possesso palla', 9.7],
-    ['Carlo', 'Ancelotti', 65, 'Leader esperto e vincente', 9.6],
-    ['Jürgen', 'Klopp', 57, 'Motivatore e tattico aggressivo', 9.5]
+    ['Pep', 'Guardiola', 54, "Ha rivoluzionato il calcio moderno con il suo gioco di possesso, pressing organizzato e intelligenza tattica, vincendo in Spagna, Germania e Inghilterra, oltre a diverse Champions League.", 9.8, 'Pep_Guardiola.jpg'],
+    ['Luis', 'Enrique', 55, "Celebre per aver guidato una delle squadre più spettacolari del Barcellona moderno, vincendo il triplete nel 2015 con un attacco micidiale e un gioco veloce e offensivo.", 9.3, 'Luis_Enrique.jpg'],
+    ['Carlo', 'Ancelotti', 66, "Maestro della gestione umana e tattica, è l’unico ad aver vinto cinque Champions League da allenatore, segnando un’epoca in ognuno dei top club che ha allenato.", 9.5, 'Carlo_Ancelotti.jpg'],
+    ['Hansi', 'Flick', 60, "Con il Bayern Monaco ha dominato il calcio europeo nel 2020 vincendo sei titoli in una stagione, grazie a un gioco verticale, aggressivo e organizzato.", 8.7, 'Hansi_Flick.jpg'],
+    ['Simone', 'Inzaghi', 49, "Si è affermato come uno degli allenatori più preparati tatticamente in Italia, distinguendosi per la gestione delle coppe e la capacità di rendere le sue squadre molto equilibrate.", 8.6, 'Simone_Inzaghi.jpg'],
+    ['Mikel', 'Arteta', 43, "Conosciuto per aver trasformato un gruppo giovane in una squadra moderna e ben organizzata, ha mostrato una maturità tattica sorprendente già nei suoi primi anni da tecnico.", 8.8, 'Mikel_Arteta.jpg'],
+    ['Diego', 'Simeone', 54, "Emblema della grinta e dell’intensità, ha costruito un’Atletico Madrid capace di competere e vincere con solidità difensiva e spirito guerriero, anche contro avversari tecnicamente superiori.", 9.0, 'Diego_Simeone.jpg'],
+    ['Xabi', 'Alonso', 43, "Ex centrocampista sopraffino, si è rivelato un allenatore brillante, con idee moderne, gioco elegante e una visione chiara del campo, emergendo rapidamente tra i migliori d'Europa.", 8.5, 'Xabi_Alonso.jpg'],
+    ['Antonio', 'Conte', 55, "Famoso per l'intensità, la disciplina tattica e la capacità di costruire squadre vincenti fin dal primo anno, ha ottenuto successi importanti in Italia e Inghilterra.", 8.7, 'Antonio_Conte.jpg'],
+    ['Jürgen', 'Klopp', 57, "Icona del calcio emozionale e ad alta intensità, ha saputo unire pressing, contropiede e spirito di gruppo per vincere tutto con una squadra costruita con visione e pazienza.", 9.2, 'Jürgen_Klopp.jpg']
   ];
 
   for (const a of allenatori) {
-    await runAsync(`INSERT INTO allenatori (nome, cognome, eta, descrizione, voto) VALUES (?, ?, ?, ?, ?)`, a);
+    await runAsync(`INSERT INTO allenatori (nome, cognome, eta, descrizione, voto, foto) VALUES (?, ?, ?, ?, ?, ?)`, a);
   }
 
   console.log('✅ Allenatori inseriti.');

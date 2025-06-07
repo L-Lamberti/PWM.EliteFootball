@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 
 
 
@@ -12,8 +12,7 @@ import { IonContent, IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, I
   templateUrl: './giocatori.page.html',
   styleUrls: ['./giocatori.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonButton, IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel]
-
+  imports: [IonCol, IonRow, IonGrid, IonButton, CommonModule, FormsModule, IonList, IonItem, IonLabel]
 })
 export class GiocatoriPage implements OnInit {
   ruoli = [
