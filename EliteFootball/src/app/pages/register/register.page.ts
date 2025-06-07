@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +12,12 @@ import { ApiService } from 'src/app/services/api.service';
   imports: [IonicModule, FormsModule],
 })
 export class RegisterPage {
-  
+  nome = '';
   email = '';
   password = '';
   confirmPassword = '';
 
-  constructor(private router: Router, private alertCtrl: AlertController , private apiService : ApiService) {}
+  constructor(private router: Router, private alertCtrl: AlertController , private apiService: ApiService) {}
 
   isPasswordValid(password: string): boolean {
     // Min 8 caratteri, almeno un numero, un carattere speciale, una maiuscola
@@ -32,6 +32,18 @@ export class RegisterPage {
   }
 
   async onRegister() {
+
+
+    if (!this.isEmailValid(this.email)) {
+      const alert = await this.alertCtrl.create({
+        header: 'Errore',
+        message: 'Inserisci un indirizzo email valido.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
+    
     if (this.password !== this.confirmPassword) {
       const alert = await this.alertCtrl.create({
         header: 'Errore',
@@ -76,11 +88,12 @@ export class RegisterPage {
 }
     // Qui colleghi il backend, oppure simuli la registrazione
     // Esempio: mostra alert di successo e vai al login
-    /*const alert = await this.alertCtrl.create({
+    const alert = await this.alertCtrl.create({
       header: 'Successo',
       message: 'Registrazione completata!',
       buttons: ['OK'],
     });
     await alert.present();
     this.router.navigate(['/login']);
-  }*/
+  }
+}
