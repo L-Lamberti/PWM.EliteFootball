@@ -7,6 +7,10 @@
 <ion-content class="ion-padding">
   <form (ngSubmit)="onRegister()" #registerForm="ngForm">
     <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="nome" required></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
     </ion-item>

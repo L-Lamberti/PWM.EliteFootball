@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-register',
@@ -12,12 +12,12 @@ import { ApiService } from 'src/app/services/api.service';
   imports: [IonicModule, FormsModule],
 })
 export class RegisterPage {
-  
+  nome = '';
   email = '';
   password = '';
   confirmPassword = '';
 
-  constructor(private router: Router, private alertCtrl: AlertController , private apiService : ApiService) {}
+  constructor(private router: Router, private alertCtrl: AlertController) {}
 
   async onRegister() {
     if (this.password !== this.confirmPassword) {
@@ -30,35 +30,14 @@ export class RegisterPage {
       return;
     }
 
-
-    this.apiService.register(this.email, this.password).subscribe({
-      next: async (res) => {
-        const alert = await this.alertCtrl.create({
-          header: 'Successo',
-          message: 'Registrazione completata!',
-          buttons: ['OK'],
-        });
-        await alert.present();
-        this.router.navigate(['/login']);
-      },
-      error: async (err) => {
-        const alert = await this.alertCtrl.create({
-          header: 'Errore',
-          message: err.error?.message || 'Registrazione fallita',
-          buttons: ['OK'],
-        });
-        await alert.present();
-      }
-    });
-  }
-}
     // Qui colleghi il backend, oppure simuli la registrazione
     // Esempio: mostra alert di successo e vai al login
-    /*const alert = await this.alertCtrl.create({
+    const alert = await this.alertCtrl.create({
       header: 'Successo',
       message: 'Registrazione completata!',
       buttons: ['OK'],
     });
     await alert.present();
     this.router.navigate(['/login']);
-  }*/
+  }
+}
