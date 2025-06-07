@@ -1,22 +1,32 @@
-ion-content {
-  --background: url('/assets/img/allenatore2.webp') center center/cover no-repeat !important;
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-  color: #111111;
-}
-.main-body {
-  flex: 1;
-  background: transparent;
-  color: var(--prestige-navy);
-  padding: 5px ;
-  box-sizing: border-box;
+.sfondo{
+  z-index: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin-left: 240px;
+  margin-top: 56px;
+  height: calc(100vh - 56px - 15px);
+  background: url('/assets/img/allenatore2.webp') center center/cover no-repeat;
+  pointer-events: none;
 }
 
+.main-body {
+  z-index: 1;
+  flex: 1;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+  
+}
+
+ion-list {
+  --background: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
 h2 {
   font-family: 'Barlow Semi Condensed', serif;
-  color: #af0000;
+  color: #f3ef03;
   font-weight: 200;
   font-size: 2.8em;
   letter-spacing: 0.02em;
@@ -28,5 +38,49 @@ h2 {
     0px 2px 0 #e43f15,
     2px 2px 0 #e43f15;
 }
-.allenatore-item 
-{ background: #e0e7ff; color: #b80000; }
+
+ion-item.allenatore-item {
+  --background: rgba(3, 1, 24, 0.61) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #e78300;           // bordo arancione spesso
+  border-radius: 18px;                 // angoli arrotondati
+  box-shadow: 0 4px 16px #0003;        // ombra leggera
+  margin-bottom: 18px;                 // spazio tra gli item
+}
+  ion-item.allenatore-item h3 {
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  color: #e78300;
+  margin-bottom: 8px;
+}
+
+ion-item.allenatore-item p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+ion-item.allenatore-item p.eta {
+  color: #2401e9;
+  font-weight: 600;
+}
+
+ion-item.allenatore-item p.descrizione {
+  font-size: 1.6em;
+  color: #df9c0d;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+
+  .allenatore-foto {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}

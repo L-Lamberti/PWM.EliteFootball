@@ -1,27 +1,27 @@
 
-<ion-content [fullscreen]="true">
-    <div class="main-body">
-        <h2>Scegli la tua formazione</h2>
-        <h3>Divertiti creando la squadra dei tuoi sogni!</h3>
-        <div class="button-group">
-              <ion-button  (click)="openFormazione('4-3-3')">4-3-3</ion-button>
-              <ion-button  (click)="openFormazione('4-4-2')">4-4-2</ion-button>
-              <ion-button  (click)="openFormazione('3-5-2')">3-5-2</ion-button>
-              <ion-button  (click)="openFormazione('3-4-1-2')">3-4-1-2</ion-button>
-        </div>
-        <div> <!-- usare l @if-->
-              <h3>  
-                formazioni salvate: 
-              </h3>
-        </div>
+<div class="sfondo"></div>
+  <div class="main-body">
+      <h2>Scegli la tua formazione</h2>
+      <h3>Divertiti creando la squadra dei tuoi sogni!</h3>
+      <div class="button-group">
+            <ion-button  (click)="openFormazione('4-3-3')">4-3-3</ion-button>
+            <ion-button  (click)="openFormazione('4-4-2')">4-4-2</ion-button>
+            <ion-button  (click)="openFormazione('3-5-2')">3-5-2</ion-button>
+            <ion-button  (click)="openFormazione('3-4-1-2')">3-4-1-2</ion-button>
       </div>
-    </ion-content>
+      <div> <!-- usare l @if-->
+            <h3>  
+              formazioni salvate: 
+            </h3>
+      </div>
+  </div>
+  
 
 
-    <app-formazione
-    *ngIf="mostraFormazione"
-    [modulo]="moduloSelezionato ?? ''"
-    (close)="chiudiFormazione()"
-    style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:2000; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
-  </app-formazione>
-      
+  <app-formazione
+  *ngIf="mostraFormazione"
+  [modulo]="moduloSelezionato ?? ''"
+  (close)="chiudiFormazione()"
+  style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:2000; background:rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center;">
+</app-formazione>
+    

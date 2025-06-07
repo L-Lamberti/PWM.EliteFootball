@@ -25,7 +25,8 @@ db.serialize(() => {
     cognome TEXT,
     eta INTEGER,
     descrizione TEXT,
-    voto REAL
+    voto REAL,
+    foto TEXT
   )`);
 
   db.run(`CREATE TABLE IF NOT EXISTS ruoli (

@@ -1,17 +1,3 @@
-ion-content,
-ion-content::part(scroll),
-ion-content .inner-scroll,
-ion-content .scroll-content {
-  --background: transparent !important;
-  background: transparent !important;
-}
-ion-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
 
 .titolo-formazione {
   position: relative;
