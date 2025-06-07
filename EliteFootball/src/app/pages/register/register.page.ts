@@ -12,7 +12,7 @@ import { ApiService } from '../../services/api.service';
   imports: [IonicModule, FormsModule],
 })
 export class RegisterPage {
-  nome = '';
+  
   email = '';
   password = '';
   confirmPassword = '';
@@ -88,12 +88,11 @@ export class RegisterPage {
 }
     // Qui colleghi il backend, oppure simuli la registrazione
     // Esempio: mostra alert di successo e vai al login
-    const alert = await this.alertCtrl.create({
+    /*const alert = await this.alertCtrl.create({
       header: 'Successo',
       message: 'Registrazione completata!',
       buttons: ['OK'],
     });
     await alert.present();
     this.router.navigate(['/login']);
-  }
-}
+  }*/
