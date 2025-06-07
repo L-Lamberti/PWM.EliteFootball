@@ -55,6 +55,11 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
+  // Verifica email valida
+  if (!isEmailValid(email)) {
+    return res.status(400).json({ message: 'Inserisci un indirizzo email valido.' });
+  }
+
   db.get('SELECT * FROM utenti WHERE email = ?', [email], async (err, user) => {
     if (err || !user) return res.status(401).json({ message: 'Credenziali errate' });
 
