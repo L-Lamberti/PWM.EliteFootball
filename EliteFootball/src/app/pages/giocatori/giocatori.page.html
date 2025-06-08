@@ -19,11 +19,10 @@
         <ion-item *ngFor="let g of giocatori" class="giocatore-item">
           <ion-label>
             <h3>{{g.nome}} {{g.cognome}}</h3>
-            <p *ngIf="g.ruolo">Ruolo: {{g.ruolo}}</p>
-            <p *ngIf="g.squadra">Squadra: {{g.squadra}}</p>
-            <p *ngIf="g.voto">Voto: {{g.voto}}</p>
-            <p *ngIf="g.descrizione">{{g.descrizione}}</p>
+            <h4 *ngIf="g.voto">Voto: {{g.voto}}</h4>
+            <h5 *ngIf="g.descrizione">{{g.descrizione}}</h5>
           </ion-label>
+          <img *ngIf="g.foto" [src]="'assets/giocatori/' + g.foto" [alt]="g.nome + ' ' + g.cognome" class="foto" />
         </ion-item>
       </ion-list>
       <div *ngIf="giocatori.length === 0" >

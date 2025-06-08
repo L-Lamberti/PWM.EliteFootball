@@ -1,26 +1,40 @@
 <div class="sfondo"></div>
 <div class="main-body">
-  <h2>Pagina H2H </h2>
+  <h2>Gioca a H2H </h2>
   <div class="h2h-setup" *ngIf="!faseScelta">
-    <h2>Scegli la dimensione dell' H2H </h2>
+    <h3>Scegli la dimensione dell' H2H </h3>
     <ion-button *ngFor="let f of fasi" (click)="scegliFase(f)">
       {{f}} giocatori
     </ion-button>
   </div>
 
-  <div class="h2h-bracket" *ngIf="bracket.length && !vincitoreFinale">
+   <div class="h2h-bracket" *ngIf="bracket.length && !vincitoreFinale">
     <h2>Turno {{turno}}</h2>
     <ion-card *ngIf="bracket[currentSfidaIndex]">
-      <ion-card-content style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-        <ion-button expand="block" color="primary" style="width: 45%;"
-          (click)="scegliVincitore(bracket[currentSfidaIndex], bracket[currentSfidaIndex][0])">
-          {{bracket[currentSfidaIndex][0].nome}} {{bracket[currentSfidaIndex][0].cognome}}
-        </ion-button>
+      <ion-card-content>
+        <div class="h2h-giocatore">
+          <ion-button fill="clear" (click)="scegliVincitore(bracket[currentSfidaIndex], bracket[currentSfidaIndex][0])" class="h2h-foto-btn">
+            <img *ngIf="bracket[currentSfidaIndex][0].foto"
+                 [src]="'assets/giocatori/' + bracket[currentSfidaIndex][0].foto"
+                 [alt]="bracket[currentSfidaIndex][0].nome + ' ' + bracket[currentSfidaIndex][0].cognome"
+                 class="h2h-foto" />
+          </ion-button>
+          <div class="h2h-nome">
+            {{bracket[currentSfidaIndex][0].nome}} {{bracket[currentSfidaIndex][0].cognome}}
+          </div>
+        </div>
         <div style="width: 10%; text-align:center; font-weight: bold;">VS</div>
-        <ion-button expand="block" color="secondary" style="width: 45%;"
-          (click)="scegliVincitore(bracket[currentSfidaIndex], bracket[currentSfidaIndex][1])">
-          {{bracket[currentSfidaIndex][1].nome}} {{bracket[currentSfidaIndex][1].cognome}}
-        </ion-button>
+        <div class="h2h-giocatore">
+          <ion-button fill="clear" (click)="scegliVincitore(bracket[currentSfidaIndex], bracket[currentSfidaIndex][1])" class="h2h-foto-btn">
+            <img *ngIf="bracket[currentSfidaIndex][1].foto"
+                 [src]="'assets/giocatori/' + bracket[currentSfidaIndex][1].foto"
+                 [alt]="bracket[currentSfidaIndex][1].nome + ' ' + bracket[currentSfidaIndex][1].cognome"
+                 class="h2h-foto" />
+          </ion-button>
+          <div class="h2h-nome">
+            {{bracket[currentSfidaIndex][1].nome}} {{bracket[currentSfidaIndex][1].cognome}}
+          </div>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
@@ -28,10 +42,15 @@
   <div class="h2h-finale" *ngIf="vincitoreFinale">
     <h2>Vincitore!</h2>
     <ion-card color="success">
-      <ion-card-content style="font-size:1.5em;">
+    <ion-card-content style="display: flex; flex-direction: column; align-items: center;">
+      <img *ngIf="vincitoreFinale.foto"
+           [src]="'assets/giocatori/' + vincitoreFinale.foto"
+           [alt]="vincitoreFinale.nome + ' ' + vincitoreFinale.cognome"
+           class="h2h-foto" />
+      <div class="h2h-nome" style="margin-top: 16px;">
         🏆 {{vincitoreFinale.nome}} {{vincitoreFinale.cognome}}
-      </ion-card-content>
-    </ion-card>
-    <ion-button (click)="reseth2h()">Nuovo H2H</ion-button>
-  </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="reseth2h()">Nuovo H2H</ion-button>
 </div>
