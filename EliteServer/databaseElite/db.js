@@ -50,6 +50,16 @@ db.serialize(() => {
     FOREIGN KEY (ruolo_id) REFERENCES ruoli(id)
   )`);
 
+  db.run(`CREATE TABLE IF NOT EXISTS formazioni (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  nome TEXT,
+  modulo TEXT,
+  giocatori TEXT, -- JSON string con gli ID dei giocatori
+  data_creazione DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(user_id) REFERENCES utenti(id)
+  )`);
+
 });
 
 module.exports = db;

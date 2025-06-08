@@ -37,8 +37,39 @@ export class ApiService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password });
+  return this.http.post(`${this.apiUrl}/api/auth/login`, { email, password });
   }
+
+  saveFormazione(formazione: { nome: string, modulo: string, giocatori: any[] }) {
+  const token = localStorage.getItem('token');
+  return this.http.post(
+    `${this.apiUrl}/api/formazioni`,
+    formazione,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+  }
+  getFormazioni() {
+    const token = localStorage.getItem('token');
+    return this.http.get(
+      `${this.apiUrl}/api/formazioni`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+  }
+  updateFormazione(id: number, formazione: any) {
+    const token = localStorage.getItem('token');
+    return this.http.put(
+      `${this.apiUrl}/api/formazioni/${id}`,
+      formazione,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+  }
+  deleteFormazione(id: number) {
+    const token = localStorage.getItem('token');
+    return this.http.delete(
+      `${this.apiUrl}/api/formazioni/${id}`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+  } 
 
   getEventiLive() {
   return this.http.get('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=135&season=2024', {

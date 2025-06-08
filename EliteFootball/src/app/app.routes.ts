@@ -54,8 +54,6 @@ export const routes: Routes = [
     path: 'reclami',
     loadComponent: () => import('./pages/reclami/reclami.page').then( m => m.ReclamiPage)
   },
-    ]
-  },
   {
     path: 'login',
     loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
@@ -64,5 +62,8 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
   },
+    ]
+  },
+  
   
 ];
