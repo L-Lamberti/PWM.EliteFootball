@@ -59,4 +59,7 @@ export class LoginPage {
       }
     });
   }
+  vaiAllaRegistrazione() {
+    this.router.navigate(['/register']);
+  }
 }

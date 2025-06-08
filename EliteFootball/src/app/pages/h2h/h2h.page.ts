@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 //import { IonContent, IonList , IonItem , IonButton,IonCard, IonCardContent,IonIcon } from '@ionic/angular/standalone';
@@ -15,9 +14,9 @@ interface Giocatore {
 }
 
 @Component({
-  selector: 'app-torneo',
-  templateUrl: './torneo.page.html',
-  styleUrls: ['./torneo.page.scss'],
+  selector: 'app-h2h',
+  templateUrl: './h2h.page.html',
+  styleUrls: ['./h2h.page.scss'],
   standalone: true,
   imports: [
     IonicModule,
@@ -25,7 +24,7 @@ interface Giocatore {
     
   ]
 })
-export class TorneoPage implements OnInit {
+export class H2HPage implements OnInit {
   fasi = [4, 8, 16, 32, 64];
   faseScelta: number | null = null;
   giocatori: Giocatore[] = [];
@@ -61,7 +60,7 @@ export class TorneoPage implements OnInit {
   this.vincitoriTurno = [];
   this.vincitoreFinale = null;
   this.currentSfidaIndex = 0;
-  this.avviaTorneo(); // <--- Avvia subito il torneo!
+  this.avviah2h(); // <--- Avvia subito il torneo!
 }
   selezionaGiocatore(giocatore: Giocatore) {
     if (
@@ -76,7 +75,7 @@ export class TorneoPage implements OnInit {
     this.giocatoriSelezionati = this.giocatoriSelezionati.filter(g => g !== giocatore);
   }
 
-  avviaTorneo() {
+  avviah2h() {
   const shuffled = [...this.giocatoriSelezionati].sort(() => Math.random() - 0.5);
   this.bracket = [];
   for (let i = 0; i < shuffled.length; i += 2) {
@@ -111,7 +110,7 @@ scegliVincitore(sfida: Giocatore[], vincitore: Giocatore) {
   }
 }
 
-  resetTorneo() {
+  reseth2h() {
     this.faseScelta = null;
     this.giocatoriSelezionati = [];
     this.bracket = [];

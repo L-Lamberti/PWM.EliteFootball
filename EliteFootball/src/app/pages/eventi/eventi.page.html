@@ -1,0 +1,21 @@
+
+  <div class="main-body">
+    <h2>📅 Eventi Live Serie A</h2>
+    <ion-spinner *ngIf="caricamento"></ion-spinner>
+    <div *ngIf="errore">Errore nel caricamento degli eventi.</div>
+    <ion-list *ngIf="!caricamento && !errore && eventi.length > 0">
+      <ion-item *ngFor="let e of eventi">
+        <ion-label>
+          <h3>{{e.teams.home.name}} - {{e.teams.away.name}}</h3>
+          <p>{{e.fixture.date | date:'medium'}} ({{e.league.round}})</p>
+          <p>Stadio: {{e.fixture.venue.name}}</p>
+          <p *ngIf="e.goals.home !== null && e.goals.away !== null">
+            Risultato: {{e.goals.home}} - {{e.goals.away}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="!caricamento && !errore && eventi.length === 0">
+      Nessun evento trovato.
+    </div>
+  </div>

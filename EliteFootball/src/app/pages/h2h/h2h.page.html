@@ -1,14 +1,14 @@
 <div class="sfondo"></div>
 <div class="main-body">
-  <h2>Pagina Torneo</h2>
-  <div class="torneo-setup" *ngIf="!faseScelta">
-    <h2>Scegli la dimensione del torneo</h2>
+  <h2>Pagina H2H </h2>
+  <div class="h2h-setup" *ngIf="!faseScelta">
+    <h2>Scegli la dimensione dell' H2H </h2>
     <ion-button *ngFor="let f of fasi" (click)="scegliFase(f)">
       {{f}} giocatori
     </ion-button>
   </div>
 
-  <div class="torneo-bracket" *ngIf="bracket.length && !vincitoreFinale">
+  <div class="h2h-bracket" *ngIf="bracket.length && !vincitoreFinale">
     <h2>Turno {{turno}}</h2>
     <ion-card *ngIf="bracket[currentSfidaIndex]">
       <ion-card-content style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
@@ -25,13 +25,13 @@
     </ion-card>
   </div>
 
-  <div class="torneo-finale" *ngIf="vincitoreFinale">
+  <div class="h2h-finale" *ngIf="vincitoreFinale">
     <h2>Vincitore!</h2>
     <ion-card color="success">
       <ion-card-content style="font-size:1.5em;">
         🏆 {{vincitoreFinale.nome}} {{vincitoreFinale.cognome}}
       </ion-card-content>
     </ion-card>
-    <ion-button (click)="resetTorneo()">Nuovo torneo</ion-button>
+    <ion-button (click)="reseth2h()">Nuovo H2H</ion-button>
   </div>
 </div>
