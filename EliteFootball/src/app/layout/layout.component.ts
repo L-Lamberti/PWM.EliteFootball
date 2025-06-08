@@ -13,6 +13,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
   constructor(private router: Router) {}
+   vaiAllaHome() {
+    this.router.navigate(['/']);
+  }
 
   vaiAllaFormazione() {
     this.router.navigate(['/formazioni']);
@@ -41,7 +44,25 @@ export class LayoutComponent {
   openFormazione(modulo: string) {
     this.router.navigate(['/formazione'], { queryParams: { modulo } });
   }
+
   vaiAlTorneo() {
   this.router.navigate(['/torneo']);
+  }
+
+  vaiAEventi() {
+  this.router.navigate(['/eventi']);
+  }
+
+  vaiAQuiz() {
+  this.router.navigate(['/quiz']);
+  }
+
+  vaiASondaggi() {
+  this.router.navigate(['/sondaggi']);
+  }
+
+  vaiAReclami() {
+  this.router.navigate(['/reclami']);
 }
+
 }

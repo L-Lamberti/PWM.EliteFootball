@@ -1,0 +1,19 @@
+<div class="sfondo"></div>
+  <div class="main-body">
+    <h2>❓ Quiz Calcio</h2>
+    <div *ngIf="!completato">
+      <h3>{{domande[indice].testo}}</h3>
+      <ion-list>
+        <ion-item *ngFor="let r of domande[indice].risposte; let i = index"
+                  [color]="rispostaSelezionata === i ? 'primary' : ''"
+                  (click)="selezionaRisposta(i)">
+          {{r}}
+        </ion-item>
+      </ion-list>
+      <ion-button [disabled]="rispostaSelezionata === null" (click)="avanti()">Avanti</ion-button>
+    </div>
+    <div *ngIf="completato">
+      <h3>Quiz completato!</h3>
+      <p>Punteggio: {{punteggio}} / {{domande.length}}</p>
+    </div>
+  </div>

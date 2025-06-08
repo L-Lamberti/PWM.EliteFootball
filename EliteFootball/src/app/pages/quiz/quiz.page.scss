@@ -1,0 +1,32 @@
+.sfondo{
+  z-index: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin-left: 240px;
+  margin-top: 56px;
+  height: calc(100vh - 56px - 15px);
+  background: url('/assets/img/allenatore2.webp') center center/cover no-repeat;
+  pointer-events: none;
+}
+
+.main-body {
+  flex: 1;
+  background: transparent;
+  color: var(--prestige-navy);
+  padding: 5px ;
+  box-sizing: border-box;
+}
+h2 {
+  font-family: 'Barlow Semi Condensed', serif;
+  color: #af0000;
+  font-weight: 200;
+  font-size: 2.8em;
+  letter-spacing: 0.02em;
+  text-align: center;         // centrato
+  margin: 4px auto 4px auto;
+  text-shadow:
+    1px 2px 0 #e43f15,
+    1px 0px 0 #e43f15,
+    0px 2px 0 #e43f15,
+    2px 2px 0 #e43f15;
+}

@@ -39,6 +39,15 @@ export class ApiService {
   login(email: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { email, password });
   }
+
+  getEventiLive() {
+  return this.http.get('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=135&season=2024', {
+    headers: {
+      'X-RapidAPI-Key': 'LA_TUA_API_KEY',
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+    }
+  });
+}
 }
 
 
