@@ -11,6 +11,7 @@ interface Giocatore {
   eta: number;
   descrizione: string;
   voto: number;
+  foto: string;
 }
 
 @Component({

@@ -22,21 +22,20 @@
   color: #111111;
 }
 ion-card {
-  background: rgba(255,255,255,0.85);
-  border-radius: 18px;
-  border: 2px solid #f9f871;
-  box-shadow: 0 4px 24px #0002;
-  backdrop-filter: blur(2px);
+  box-shadow: none !important;
+  background: transparent !important;
 }
+
 ion-card-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 h2 {
   font-family: 'Barlow Semi Condensed', serif;
-  color: #af0000;
+  color: #d12b0e;
   font-weight: 200;
   font-size: 2.8em;
   letter-spacing: 0.02em;
@@ -48,13 +47,69 @@ h2 {
     0px 2px 0 #e43f15,
     2px 2px 0 #e43f15;
 }
+
+h3 {
+  font-family: 'Barlow Semi Condensed', serif;
+  color: #080000;
+  font-weight: 200;
+  font-size: 2.8em;
+  letter-spacing: 0.02em;
+  text-align: center;         // centrato
+  margin: 4px auto 4px auto;
+  text-shadow:
+    1px 2px 0 #e43f15,
+    1px 0px 0 #e43f15,
+    0px 2px 0 #e43f15,
+    2px 2px 0 #e43f15;
+}
+
+.h2h-giocatore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.h2h-foto-btn {
+  padding: 0;
+  margin: 0;
+  min-width: unset;
+  --background: transparent;
+  --box-shadow: none;
+}
+
+.h2h-foto {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 0px solid #e71a1a00;
+  background: #e7a457;
+}
+
+.h2h-nome {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  font-size: 1.5em;
+  background: #f9f871;
+  border-radius: 30px;
+  padding: 4px 16px;
+  box-shadow: 0 1px 6px rgb(0, 0, 0);
+  max-width: 100%;
+  word-break: break-word;
+}
+
 ion-button {
   transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 2px 8px #0002;
+
   font-size: 1.1em;
 }
-ion-button:hover {
+
+.h2h-foto-btn:hover .h2h-foto,
+.h2h-foto:focus, 
+.h2h-foto:active {
+  box-shadow: 0 0 300px 40px rgb(77, 185, 5);
   transform: scale(1.07);
-  box-shadow: 0 4px 16px rgb(192, 189, 7);
-  filter: brightness(1.1);
+  z-index: 2;
 }

@@ -1,23 +1,33 @@
 <app-layout>
-<div>
-  <div class="titolo-formazione">
-    <h2>Modulo: {{ modulo }}</h2>
-    <ion-button fill="clear" class="bottone-indietro" (click)="chiudi()"> Cambia Modulo ↩ </ion-button>
-  </div>
-  <div class="campo" [ngClass]="classeModulo">
-    <div 
-      class="ruolo"
-      *ngFor="let ruoloIndicizzato of ruoliIndicizzati"
-      [ngClass]="'r-' + ruoloIndicizzato"
-      (click)="apriSelezione(ruoloIndicizzato)"
-    >
-      {{ formazione[ruoloIndicizzato]?.cognome || ruoloIndicizzato.split('-')[0] }}
-      <ion-icon
-        *ngIf="formazione[ruoloIndicizzato]"
-        name="close-circle-outline"
-        (click)="rimuoviDiretto($event, ruoloIndicizzato)">
-      </ion-icon>
+  <div>
+    <div class="titolo-formazione">
+      <h2>Modulo: {{ modulo }}</h2>
+      <ion-button fill="clear" class="bottone-indietro" (click)="chiudi()"> Cambia Modulo ↩ </ion-button>
+    </div>
+    <div class="campo" [ngClass]="classeModulo">
+      <div 
+        class="ruolo"
+        *ngFor="let ruoloIndicizzato of ruoliIndicizzati"
+        [ngClass]="'r-' + ruoloIndicizzato"
+        (click)="apriSelezione(ruoloIndicizzato)"
+      >
+        <img 
+          *ngIf="formazione[ruoloIndicizzato]?.foto"
+          [src]="'assets/giocatori/' + formazione[ruoloIndicizzato].foto"
+          [alt]="formazione[ruoloIndicizzato]?.nome + ' ' + formazione[ruoloIndicizzato]?.cognome"
+          class="ruolo-foto"
+        />
+
+        <ion-icon
+          *ngIf="formazione[ruoloIndicizzato]"
+          name="close-circle-outline"
+          (click)="rimuoviDiretto($event, ruoloIndicizzato)">  
+        </ion-icon>
+      
+        <div class="ruolo-nome">
+        {{ formazione[ruoloIndicizzato]?.cognome || ruoloIndicizzato.split('-')[0] }}
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </app-layout>
