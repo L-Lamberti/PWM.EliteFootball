@@ -46,5 +46,11 @@ export class GiocatoriPage implements OnInit {
         this.giocatori = res;
       });
   }
+  ruoliRighe = [
+  this.ruoli.slice(0, 4),   // primi 4
+  this.ruoli.slice(4, 7),   // successivi 3
+  this.ruoli.slice(7, 11),  // successivi 4
+  this.ruoli.slice(11, 13)  // ultimi 2
+];
 }
 

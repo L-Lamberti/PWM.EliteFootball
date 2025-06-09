@@ -3,7 +3,8 @@
       <div class="main-body">
       <h2>Scegli un ruolo</h2>
       <ion-grid>
-        <ion-row>
+         <ng-container *ngFor="let ruoli of ruoliRighe; let i = index">
+        <ion-row [class.center-row]="i === 1 || i === 3">
           <ion-col size="6" size-md="4" size-lg="3" *ngFor="let ruolo of ruoli">
             <ion-button expand="block"
                         [color]="ruoloSelezionato === ruolo.codice ? 'primary' : 'secondary'"
@@ -12,6 +13,7 @@
             </ion-button>
           </ion-col>
         </ion-row>
+        </ng-container>
       </ion-grid>
       <div *ngIf="ruoloSelezionato">
       <h2>Top 10 {{ ruoloEsteso || 'Giocatori' }}</h2>

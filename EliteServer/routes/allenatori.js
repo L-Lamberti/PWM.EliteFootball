@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../databaseElite/db');
+const db = require('../db');
 const router = express.Router();
 
 // Rotta: Ottieni i migliori allenatori ordinati per voto

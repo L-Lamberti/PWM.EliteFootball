@@ -1,6 +1,6 @@
 
 const express = require('express');
-const db = require('../databaseElite/db');
+const db = require('../db');
 const router = express.Router();
 
 router.get('/top/:ruolo', (req, res) => {
@@ -65,16 +65,40 @@ router.get('/:id/ruoli', (req, res) => {
     res.json(rows);
   });
 });
+
 router.get('/', (req, res) => {
   const query = `SELECT * FROM giocatori ORDER BY voto DESC`;
-  db.all(query, [], (err, rows) => {
+  db.all(query, [], (err, giocatori) => { // <-- usa [] invece di [ruoloCodice]
     if (err) {
       console.error('Errore:', err.message);
       return res.status(500).json({ error: 'Errore nel database' });
     }
-    res.json(rows);
+
+    // Per ogni giocatore, prendi i suoi ruoli
+    const promises = giocatori.map(g => {
+      return new Promise((resolve, reject) => {
+        const ruoliQuery = `
+          SELECT r.codice
+          FROM ruoli r
+          JOIN giocatori_ruoli gr ON r.id = gr.ruolo_id
+          WHERE gr.giocatore_id = ?
+        `;
+        db.all(ruoliQuery, [g.id], (err, ruoli) => {
+          if (err) return reject(err);
+          g.ruoli = ruoli.map(r => r.codice);
+          resolve(g);
+        });
+      });
+    });
+
+
+    Promise.all(promises)
+      .then(giocatoriConRuoli => res.json(giocatoriConRuoli))
+      .catch(e => {
+        console.error(e.message);
+        res.status(500).json({ error: 'Errore durante l\'aggregazione dei ruoli' });
+      });
   });
 });
-
 module.exports = router;
 
