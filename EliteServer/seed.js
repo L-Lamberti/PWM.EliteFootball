@@ -90,7 +90,7 @@ async function seedGiocatori() {
     ['Riccardo', 'Calafiori', 23, 'Difensore italiano dell\'Arsenal, capace di giocare sia come centrale che come terzino sinistro. Apprezzato per la sua tecnica, visione di gioco e versatilità. Ha avuto un impatto positivo nella sua prima stagione in Premier League.', 8.5, 'Riccardo_Calafiori.jpg'],
     ['Álvaro', 'Carreras', 22, 'Terzino sinistro spagnolo del Benfica, con esperienza in vari club europei. Conosciuto per la sua abilità nel dribbling e nel supporto offensivo.', 7.5, 'Álvaro_Carreras.jpg'],
     ['Andrew', 'Robertson', 31, 'Esperto terzino sinistro scozzese del Liverpool, noto per la sua resistenza, precisione nei cross e contributo sia difensivo che offensivo. Pilastro della difesa del Liverpool.', 9.0, 'Andrew_Robertson.jpg'],
-    ['Miguel', 'Gutiérrez', 23, 'Terzino sinistro spagnolo del Girona, formato nel Real Madrid. Apprezzato per la sua tecnica, visione di gioco e capacità di spinta sulla fascia. Ha attirato l\'interesse di club importanti.', 8.0, 'Miguel_Gutierrez.jpg'],
+    ['Miguel', 'Gutiérrez', 23, 'Terzino sinistro spagnolo del Girona, formato nel Real Madrid. Apprezzato per la sua tecnica, visione di gioco e capacità di spinta sulla fascia. Ha attirato l\'interesse di club importanti.', 8.0, 'Miguel_Gutiérrez.jpg'],
     ['Ferdi', 'Kadıoğlu', 25, 'Giocatore turco-olandese del Brighton & Hove Albion, capace di ricoprire diversi ruoli tra cui terzino destro, sinistro e centrocampista. Versatile, tecnico e con buona visione di gioco.', 8.0, 'Ferdi_Kadıoğlu.jpg'],
     ['Jorrel', 'Hato', 19, 'Giovane difensore olandese dell\'Ajax, capace di giocare sia come centrale che come terzino sinistro. Nonostante la giovane età, ha già dimostrato maturità e solidità difensiva.', 7.5, 'Jorrel_Hato.jpg'],
 
@@ -162,7 +162,6 @@ async function seedGiocatori() {
     ['Khéphren', 'Thuram', 24, 'Centrocampista francese della Juventus, noto per la sua fisicità e abilità nel recupero palla. Ha mostrato una crescita costante in Serie A.', 8.0, 'Khéphren_Thuram.jpg'],
     ['Scott', 'McTominay', 28, 'Centrocampista scozzese del Napoli, apprezzato per la sua versatilità e contributo sia difensivo che offensivo. Ha giocato un ruolo chiave nella vittoria dello Scudetto del Napoli.', 8.5, 'Scott_McTominay.jpg'],
     ['Fabián', 'Ruiz', 29, 'Centrocampista spagnolo del Paris Saint-Germain, noto per la sua tecnica raffinata e capacità di segnare dalla distanza. Ha consolidato il suo ruolo nel centrocampo parigino.', 8.0, 'Fabián_Ruiz.jpg'],
-    ['Nico', 'González', 23, 'Centrocampista spagnolo del Manchester City, riconosciuto per la sua visione di gioco e abilità nel controllo palla. Considerato un prospetto interessante per il futuro.', 7.5, 'Nico_González.jpg'],
     ['Luka', 'Modric', 38, 'Centrocampista croato celebre per la sua visione di gioco, tecnica sopraffina e capacità di dettare i ritmi della partita. Pilastro del centrocampo madridista, ha vinto numerosi titoli tra cui cinque Champions League e il Pallone d\'Oro nel 2018. È considerato uno dei migliori registi della sua generazione.', 9.2, 'Luka_Modric.jpg'],
 
     // CENTROCAMPISTI OFFENSIVI CENTRALI (COC)
@@ -227,6 +226,7 @@ async function seedGiocatori() {
     ['Riccardo', 'Orsolini', 28, 'Ala italiana del Bologna, riconosciuto per il suo tiro potente e capacità di segnare gol dalla distanza. Punto fermo dell\'attacco del Bologna in Serie A.', 8.0, 'Riccardo_Orsolini.jpg'],
     ['Antony', 'Matheus dos Santos', 25, 'Conosciuto come Antony, ala brasiliana del Manchester United, noto per la sua velocità e abilità nel dribbling. Ha avuto un impatto significativo in Premier League.', 8.0, 'Antony_Matheus dos Santos.jpg'],
     ['Iñaki', 'Williams', 30, 'Attaccante spagnolo dell\'Athletic Bilbao, apprezzato per la sua velocità e resistenza. Detiene il record di presenze consecutive in La Liga, dimostrando affidabilità e costanza.', 8.0, 'Iñaki_Williams.jpg'],
+    ['Nico', 'Gonzalez', 27, 'Ala argentina della Juventus riconosciuto per la sua tecnica di tiro e abilità nel salro in elevazione.', 7.5, 'Nico_González.jpg'],
     ['Lionel', 'Messi', 36, 'Considerato da molti il più grande calciatore di tutti i tempi, Messi ha rivoluzionato il ruolo di attaccante grazie alla sua visione di gioco, dribbling fulmineo e straordinaria capacità realizzativa. Vincitore di numerosi Palloni d\'Oro, Champions League e titoli nazionali, ha lasciato un segno indelebile sia al Barcellona che con la nazionale argentina. La sua intelligenza calcistica e la sua capacità lo rendono una leggenda vivente.', 9.8, 'Lionel_Messi.jpg'],
 
 
@@ -236,7 +236,7 @@ async function seedGiocatori() {
     ['Rafael', 'Leão', 26, 'Giocatore dell\'AC Milan e della nazionale portoghese, Leao è un talento esplosivo con una combinazione di forza fisica e tecnica raffinata. Nella stagione 2023-24 ha segnato 15 gol e fornito 14 assist, attirando l\'interesse di top club europei.', 9.6, 'Rafael_Leão.jpg'],
     ['Khvicha', 'Kvaratskhelia', 24, 'Esterno del Paris Saint-Germain e della nazionale georgiana, Kvaratskhelia è soprannominato "Kvaradona" per le sue abilità nel dribbling e la creatività. Dopo il successo con il Napoli, ha continuato a brillare in Ligue 1.', 9.5, 'Khvicha_Kvaratskhelia.jpg'],
     ['Luis', 'Díaz', 28, 'Ala del Liverpool e della nazionale colombiana, Diaz è riconosciuto per la sua agilità, dribbling e capacità di segnare. Nella stagione 2024-25 ha contribuito con 13 gol e 3 assist, diventando un punto fermo nell\'attacco dei Reds.', 9.4, 'Luis_Díaz.jpg'],
-    ['Nico', 'Williams', 22, 'Giocatore dell\'Athletic Club e della nazionale spagnola, Williams è emerso come una delle stelle emergenti grazie alla sua velocità e visione di gioco. Ha giocato un ruolo chiave nella vittoria della Spagna all\'Europeo 2024.', 9.3, 'Nico_Williams.jpg'],
+    ['Nico', 'Williàms', 22, 'Giocatore dell\'Athletic Club e della nazionale spagnola, Williams è emerso come una delle stelle emergenti grazie alla sua velocità e visione di gioco. Ha giocato un ruolo chiave nella vittoria della Spagna all\'Europeo 2024.', 9.3, 'Nico_Williams.jpg'],
     ['Kaoru', 'Mitoma', 28, 'Ala del Brighton & Hove Albion e della nazionale giapponese, Mitoma è noto per il suo dribbling elegante e la capacità di creare occasioni. Nella stagione 2024-25 ha segnato 11 gol e fornito 3 assist, attirando l\'attenzione di club come il Bayern Monaco.', 8.9, 'Kaoru_Mitoma.jpg'],
     ['Bryan', 'Mbeumo', 25, 'Giocatore del Brentford e della nazionale camerunese, Mbeumo ha avuto una stagione eccezionale con 20 gol e 7 assist in Premier League, suscitando l\'interesse di club come il Manchester United.', 8.8, 'Bryan_Mbeumo.jpg'],
     ['Eberechi', 'Eze', 26, 'Ala del Crystal Palace e della nazionale inglese, Eze è apprezzato per la sua creatività e tecnica sopraffina. Nella stagione 2024-25 ha registrato 25 contributi totali tra gol e assist, diventando un obiettivo di mercato per il Bayern Monaco.', 8.7, 'Eberechi_Eze.jpg'],
@@ -259,7 +259,7 @@ async function seedGiocatori() {
     ['Heung-min', 'Son', 32, 'Attaccante sudcoreano del Tottenham Hotspur, apprezzato per la sua velocità, versatilità e capacità di segnare gol. Ha avuto una carriera di successo in Premier League.', 9.0, 'Heung-min_Son.jpg'],
     ['Antonio', 'Nusa', 20, 'Ala norvegese del RB Leipzig, noto per la sua velocità e abilità nel dribbling. Ha mostrato un grande potenziale nella Bundesliga.', 7.5, 'Antonio_Nusa.jpg'],
     ['Jadon', 'Sancho', 25, 'Ala inglese del Manchester United, riconosciuto per la sua tecnica e creatività. Ha esperienza sia in Premier League che in Bundesliga.', 8.0, 'Jadon_Sancho.jpg'],
-    ['Ferran', 'Torres', 24, 'Esterno offensivo spagnolo del Barcellona, apprezzato per la sua velocità e duttilità. Alterna ottime prestazioni a momenti meno brillanti, ma resta un jolly offensivo utile.', 7.5, 'Ferran_Torres.jpg'],
+    ['Ferran', 'Torrès', 24, 'Esterno offensivo spagnolo del Barcellona, apprezzato per la sua velocità e duttilità. Alterna ottime prestazioni a momenti meno brillanti, ma resta un jolly offensivo utile.', 7.5, 'Ferran_Torres.jpg'],
 
 
     // PUNTE CENTRALI (PC)
@@ -297,11 +297,11 @@ async function seedGiocatori() {
     ['Maksim', 'Glushenkov', 25, 'Attaccante del Lokomotiv Mosca e della nazionale russa, Glushenkov è apprezzato per la sua velocità, dribbling e capacità di creare occasioni. Ha continuato a essere una presenza costante nell\'attacco del Lokomotiv.', 8.8, 'Maksim_Glushenkov.jpg'],
     ['Sebastiano', 'Esposito', 22, 'Giocatore dell\'Empoli e della nazionale italiana, Esposito è noto per la sua tecnica, visione di gioco e capacità di finalizzazione. Ha mostrato segnali di crescita, diventando un elemento importante per l\'Empoli.', 8.7, 'Sebastiano_Esposito.jpg'],
     ['Róger', 'Guedes', 28, 'Attaccante dell\'Al-Rayyan e della nazionale brasiliana, Guedes si distingue per la sua forza fisica, tiro potente e abilità nel dribbling. Ha avuto un impatto significativo nella Qatar Stars League.', 8.6, 'Róger_Guedes.jpg'],
-    ['Rafa', 'Silva', 32, 'Giocatore del Benfica e della nazionale portoghese, Silva è apprezzato per la sua esperienza, intelligenza tattica e capacità di segnare gol importanti. Continua a essere un punto di riferimento nell\'attacco del Benfica.', 8.5, 'Rafa_Silva.jpg'],
+    ['Rafa', 'Sìlva', 32, 'Giocatore del Benfica e della nazionale portoghese, Sìlva è apprezzato per la sua esperienza, intelligenza tattica e capacità di segnare gol importanti. Continua a essere un punto di riferimento nell\'attacco del Benfica.', 8.5, 'Rafa_Silva.jpg'],
     ['Gabriel', 'Jesus', 28, 'Attaccante brasiliano dell\'Arsenal, riconosciuto per la sua agilità, tecnica e versatilità nel ruolo offensivo. Ha esperienza sia in Premier League che a livello internazionale.', 8.5, 'Gabriel_Jesus.jpg'],
     ['Loïs', 'Openda', 25, 'Attaccante belga dell\'RB Leipzig, noto per la sua velocità e capacità di dribbling. Ha mostrato un grande potenziale nella Bundesliga.', 8.0, 'Loïs_Openda.jpg'],
     ['Omar', 'Marmoush', 26, 'Attaccante egiziano del Manchester City, noto per la sua velocità e capacità di finalizzazione. Ha avuto un impatto significativo in Premier League dopo il trasferimento dall\'Eintracht Frankfurt.', 8.0, 'Omar_Marmoush.jpg'],
-    ['Marcus', 'Thuram', 27, 'Attaccante francese dell\'Inter, apprezzato per la sua versatilità nel giocare sia come centravanti che come ala. Ha contribuito significativamente al successo dell\'Inter in Serie A.', 8.5, 'Marcus_Thuram.jpg'],
+    ['Marcus', 'Thuràm', 27, 'Attaccante francese dell\'Inter, apprezzato per la sua versatilità nel giocare sia come centravanti che come ala. Ha contribuito significativamente al successo dell\'Inter in Serie A.', 8.5, 'Marcus_Thuram.jpg'],
     ['Randal', 'Kolo Muani', 26, 'Attaccante francese della Juventus, apprezzato per la sua versatilità e abilità nel creare occasioni da gol. Ha esperienza sia in Ligue 1 che in Serie A.', 8.0, 'Randal_Kolo Muani.jpg'],
     ['Kai', 'Havertz', 25, 'Attaccante tedesco dell\'Arsenal, noto per la sua versatilità tattica e intelligenza nel gioco. Può giocare come falso nueve o centrocampista offensivo, contribuendo in fase realizzativa e di manovra.', 8.0, 'Kai_Havertz.jpg'],
     ['Matheus', 'Cunha', 25, 'Attaccante brasiliano del Wolverhampton, capace di giocare sia come prima punta che seconda. Tecnico e dinamico, è cresciuto molto in Premier League.', 7.5, 'Matheus_Cunha.jpg'],
@@ -385,18 +385,18 @@ async function seedGiocatoriRuoli() {
   { cognome: 'Porro', ruoli: ['TD','ED'] },
   { cognome: 'Dumfries', ruoli: ['TD','ED'] },
   { cognome: 'James', ruoli: ['TD','ED'] },
-  { cognome: 'Timber', ruoli: ['TD'] },
+  { cognome: 'Timber', ruoli: ['TD','DC'] },
   { cognome: 'Boey', ruoli: ['TD'] },
   { cognome: 'Dalot', ruoli: ['TD'] },
-  { cognome: 'Livramento', ruoli: ['TD'] },
-  { cognome: 'Cordeiro dos Santos', ruoli: ['TD'] },
-  { cognome: 'Cancelo', ruoli: ['TD'] },
+  { cognome: 'Livramento', ruoli: ['TD','ED'] },
+  { cognome: 'Cordeiro dos Santos', ruoli: ['TD','ED'] },
+  { cognome: 'Cancelo', ruoli: ['TD','ED'] },
   { cognome: 'Carvajal', ruoli: ['TD'] },
   { cognome: 'Molina', ruoli: ['TD','ED'] },
   { cognome: 'White', ruoli: ['TD','DC'] },
   { cognome: 'Lewis', ruoli: ['TD'] },
   { cognome: 'Di Lorenzo', ruoli: ['TD'] },
-  { cognome: 'Laimer', ruoli: ['TD'] },
+  { cognome: 'Laimer', ruoli: ['TD','CC'] },
 
   // TERZINI SINISTRI (TS)
 
@@ -414,8 +414,8 @@ async function seedGiocatoriRuoli() {
   { cognome: 'Calafiori', ruoli: ['TS','DC'] },
   { cognome: 'Carreras', ruoli: ['TS','ES'] },
   { cognome: 'Robertson', ruoli: ['TS'] },
-  { cognome: 'Gutiérrez', ruoli: ['TS'] },
-  { cognome: 'Kadıoğlu', ruoli: ['TS'] },
+  { cognome: 'Gutiérrez', ruoli: ['TS','ES'] },
+  { cognome: 'Kadıoğlu', ruoli: ['TS','TD','ES'] },
   { cognome: 'Hato', ruoli: ['TS','DC'] },
 
   // DIFENSORI CENTRALI (DC)
@@ -448,14 +448,14 @@ async function seedGiocatoriRuoli() {
   { cognome: 'Hernández', ruoli: ['CDC'] },
   { cognome: 'Rice', ruoli: ['CDC'] },
   { cognome: 'Palhinha', ruoli: ['CDC'] },
-  { cognome: 'Guimarães', ruoli: ['CDC'] },
-  { cognome: 'Camavinga', ruoli: ['CDC'] },
+  { cognome: 'Guimarães', ruoli: ['CDC','CC'] },
+  { cognome: 'Camavinga', ruoli: ['CDC','CC'] },
   { cognome: 'Tchouaméni', ruoli: ['CDC'] },
   { cognome: 'Zubimendi', ruoli: ['CDC'] },
-  { cognome: 'Çalhanoğlu', ruoli: ['CDC'] },
-  { cognome: 'Neves', ruoli: ['CDC'] },
+  { cognome: 'Çalhanoğlu', ruoli: ['CDC','CC'] },
+  { cognome: 'Neves', ruoli: ['CDC','CC'] },
   { cognome: 'Gravenberch', ruoli: ['CDC'] },
-  { cognome: 'Kimmich', ruoli: ['CDC'] },
+  { cognome: 'Kimmich', ruoli: ['CDC','TD'] },
   { cognome: 'Hjulmand', ruoli: ['CDC'] },
   { cognome: 'Stiller', ruoli: ['CDC'] },
   { cognome: 'Casadó', ruoli: ['CDC'] },
@@ -468,23 +468,22 @@ async function seedGiocatoriRuoli() {
 
     // CENTROCAMPISTI DIFENSIVI CENTRALI (CC)
     
-    { cognome: 'Bellingham', ruoli: ['CC'] },
-    { cognome: 'Valverde', ruoli: ['CC'] },
+    { cognome: 'Bellingham', ruoli: ['CC','COC'] },
+    { cognome: 'Valverde', ruoli: ['CC','ED'] },
     { cognome: 'González', ruoli: ['CC'] },
     { cognome: 'Páez', ruoli: ['CC'] },
     { cognome: 'Mac Allister', ruoli: ['CC'] },
     { cognome: 'Barella', ruoli: ['CC'] },
-    { cognome: 'Fernández', ruoli: ['CC'] },
+    { cognome: 'Fernández', ruoli: ['CC','CDC'] },
     { cognome: 'Zaïre-Emery', ruoli: ['CC'] },
-    { cognome: 'Machado Ferreira', ruoli: ['CC'] }, // Vitinha
+    { cognome: 'Machado Ferreira', ruoli: ['CC','CDC'] }, // Vitinha
     { cognome: 'José dos Santos Lourenço da Silva', ruoli: ['CC'] }, // Éderson
     { cognome: 'Reijnders', ruoli: ['CC'] },
-    { cognome: 'Tonali', ruoli: ['CC'] },
-    { cognome: 'de Jong', ruoli: ['CC'] },
+    { cognome: 'Tonali', ruoli: ['CC','CDC'] },
+    { cognome: 'de Jong', ruoli: ['CC','CDC'] },
     { cognome: 'Thuram', ruoli: ['CC'] },
-    { cognome: 'McTominay', ruoli: ['CC'] },
+    { cognome: 'McTominay', ruoli: ['CC','COC'] },
     { cognome: 'Ruiz', ruoli: ['CC'] },
-    { cognome: 'González', ruoli: ['CC'] }, // Nico González
     { cognome: 'Modric', ruoli: ['CC', 'CDC'] },
 
 
@@ -494,18 +493,18 @@ async function seedGiocatoriRuoli() {
     { cognome: 'Wirtz', ruoli: ['COC'] },
     { cognome: 'Ødegaard', ruoli: ['COC'] },
     { cognome: 'Palmer', ruoli: ['COC'] },
-    { cognome: 'De Bruyne', ruoli: ['COC'] },
+    { cognome: 'De Bruyne', ruoli: ['COC','CC'] },
     { cognome: 'Fernandes', ruoli: ['COC'] },
     { cognome: 'Foden', ruoli: ['COC'] },
     { cognome: 'Olmo', ruoli: ['COC'] },
-    { cognome: 'Griezmann', ruoli: ['COC'] },
+    { cognome: 'Griezmann', ruoli: ['COC','SP'] },
     { cognome: 'Simons', ruoli: ['COC'] },
     { cognome: 'Paz', ruoli: ['COC'] },         
-    { cognome: 'Silva', ruoli: ['COC'] },       
-    { cognome: 'López', ruoli: ['COC'] },       
-    { cognome: 'Sancet', ruoli: ['COC'] },
+    { cognome: 'Silva', ruoli: ['COC','AD'] },       
+    { cognome: 'López', ruoli: ['COC','CC'] },       
+    { cognome: 'Sancet', ruoli: ['COC','CC'] },
     { cognome: 'Sudakov', ruoli: ['COC'] },
-    { cognome: 'De Ketelaere', ruoli: ['COC'] },
+    { cognome: 'De Ketelaere', ruoli: ['COC','AD'] },
 
 
     // ESTERNI DESTRI (ED)
@@ -515,7 +514,7 @@ async function seedGiocatoriRuoli() {
     { cognome: 'Kaboré', ruoli: ['ED'] },
     { cognome: 'Bellanova', ruoli: ['ED'] },
     { cognome: 'Tella', ruoli: ['ED'] },
-    { cognome: 'Llorente', ruoli: ['ED'] },
+    { cognome: 'Llorente', ruoli: ['ED','CC'] },
 
     // ESTERNI SINISTRI (ES)
  
@@ -529,14 +528,14 @@ async function seedGiocatoriRuoli() {
     { cognome: 'Saka', ruoli: ['AD'] },
     { cognome: 'Yamal', ruoli: ['AD'] },
     { cognome: 'Goes', ruoli: ['AD'] },
-    { cognome: 'Dembélé', ruoli: ['AD'] },
+    { cognome: 'Dembélé', ruoli: ['AD','AS'] },
     { cognome: 'Olise', ruoli: ['AD'] },
     { cognome: 'Kubo', ruoli: ['AD'] },
     { cognome: 'Sané', ruoli: ['AD'] },
     { cognome: 'Kulusevski', ruoli: ['AD'] },
-    { cognome: 'Pulisic', ruoli: ['AD'] },
-    { cognome: 'Güler', ruoli: ['AD'] },
-    { cognome: 'Adeyemi', ruoli: ['AD'] },
+    { cognome: 'Pulisic', ruoli: ['AD','AS'] },
+    { cognome: 'Güler', ruoli: ['AD','COC'] },
+    { cognome: 'Adeyemi', ruoli: ['AD','ED'] },
     { cognome: 'Moreira de Oliveira', ruoli: ['AD'] }, // Savinho
     { cognome: 'Nwaneri', ruoli: ['AD'] },
     { cognome: 'Kudus', ruoli: ['AD'] },
@@ -544,9 +543,10 @@ async function seedGiocatoriRuoli() {
     { cognome: 'Diallo', ruoli: ['AD'] },
     { cognome: 'Bakayoko', ruoli: ['AD'] },
     { cognome: 'Zhegrova', ruoli: ['AD'] },
-    { cognome: 'Ndoye', ruoli: ['AD'] },
-    { cognome: 'Henrique', ruoli: ['AD'] },
+    { cognome: 'Ndoye', ruoli: ['AD','AS'] },
+    { cognome: 'Henrique', ruoli: ['AD','ED'] },
     { cognome: 'Orsolini', ruoli: ['AD'] },
+    { cognome: 'Gonzalez', ruoli: ['AD','AS'] }, // Nico Gonzalez
     { cognome: 'Matheus dos Santos', ruoli: ['AD'] }, // Antony
     { cognome: 'Williams', ruoli: ['AD'] },
     { cognome: 'Messi', ruoli: ['AD','SP','COC'] },
@@ -554,11 +554,11 @@ async function seedGiocatoriRuoli() {
 
     // ALI SINISTRE (AS)
      
-    { cognome: 'Júnior', ruoli: ['AS'] },
+  { cognome: 'Júnior', ruoli: ['AS'] },
   { cognome: 'Leão', ruoli: ['AS'] },
   { cognome: 'Kvaratskhelia', ruoli: ['AS'] },
   { cognome: 'Díaz', ruoli: ['AS'] },
-  { cognome: 'Williams', ruoli: ['AS'] },
+  { cognome: 'Williàms', ruoli: ['AS'] },
   { cognome: 'Mitoma', ruoli: ['AS'] },
   { cognome: 'Mbeumo', ruoli: ['AS'] },
   { cognome: 'Eze', ruoli: ['AS'] },
@@ -568,12 +568,12 @@ async function seedGiocatoriRuoli() {
   { cognome: 'Doué', ruoli: ['AS'] },
   { cognome: 'Gakpo', ruoli: ['AS'] },
   { cognome: 'Martinelli', ruoli: ['AS'] },
-  { cognome: 'Yıldız', ruoli: ['AS'] },
+  { cognome: 'Yıldız', ruoli: ['AS','COC'] },
   { cognome: 'Coman', ruoli: ['AS'] },
   { cognome: 'Semenyo', ruoli: ['AS'] },
   { cognome: 'Doku', ruoli: ['AS'] },
   { cognome: 'Bynoe-Gittens', ruoli: ['AS'] },
-  { cognome: 'Rashford', ruoli: ['AS'] },
+  { cognome: 'Rashford', ruoli: ['AS','SP'] },
   { cognome: 'Gordon', ruoli: ['AS'] },
   { cognome: 'Baena', ruoli: ['AS'] },
   { cognome: 'Quenda', ruoli: ['AS'] },
@@ -581,7 +581,7 @@ async function seedGiocatoriRuoli() {
   { cognome: 'Son', ruoli: ['AS'] },
   { cognome: 'Nusa', ruoli: ['AS'] },
   { cognome: 'Sancho', ruoli: ['AS'] },
-  { cognome: 'Torres', ruoli: ['AS'] },
+  { cognome: 'Torrès', ruoli: ['AS','AD'] },
 
 
   // PUNTE CENTRALI (PC)
@@ -609,8 +609,8 @@ async function seedGiocatoriRuoli() {
 
     // SECONDE PUNTE (SP)
 
-    { cognome: 'Lookman', ruoli: ['SP'] },
-    { cognome: 'Álvarez', ruoli: ['SP'] },
+    { cognome: 'Lookman', ruoli: ['SP','AS'] },
+    { cognome: 'Álvarez', ruoli: ['SP','PC'] },
     { cognome: 'Gudmundsson', ruoli: ['SP'] },
     { cognome: 'Raspadori', ruoli: ['SP'] },
     { cognome: 'Hložek', ruoli: ['SP'] },
@@ -618,14 +618,14 @@ async function seedGiocatoriRuoli() {
     { cognome: 'Glushenkov', ruoli: ['SP'] },
     { cognome: 'Esposito', ruoli: ['SP'] },
     { cognome: 'Guedes', ruoli: ['SP'] },
-    { cognome: 'Silva', ruoli: ['SP'] },
+    { cognome: 'Sìlva', ruoli: ['SP'] },
     { cognome: 'Jesus', ruoli: ['SP'] },
     { cognome: 'Openda', ruoli: ['SP'] },
     { cognome: 'Marmoush', ruoli: ['SP'] },
-    { cognome: 'Thuram', ruoli: ['SP'] },
-    { cognome: 'Kolo Muani', ruoli: ['SP'] },
-    { cognome: 'Havertz', ruoli: ['SP'] },
-    { cognome: 'Cunha', ruoli: ['SP'] }
+    { cognome: 'Thuràm', ruoli: ['SP','PC'] },
+    { cognome: 'Kolo Muani', ruoli: ['SP','PC'] },
+    { cognome: 'Havertz', ruoli: ['SP','COC'] },
+    { cognome: 'Cunha', ruoli: ['SP','COC'] }
 
   
   ];
