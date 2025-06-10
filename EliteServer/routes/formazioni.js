@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../databaseElite/db');
+const db = require('../db');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 

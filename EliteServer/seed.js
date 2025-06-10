@@ -32,13 +32,8 @@ async function seedGiocatori() {
     ['Stanislav', 'Agkatsev', 25, 'Portiere emergente del FK Krasnodar, ha stupito per maturità e rendimento costante. Abile nel gioco con i piedi e nelle uscite basse. Candidato a un futuro in una big europea.', 8.7, 'Stanislav_Agkatsev.jpg'],
     ['Mark', 'Flekken', 30, 'Portiere del Brentford e della Nazionale olandese, si distingue per il grande numero di parate in Premier League. Gioca spesso sotto pressione ma risponde con prestazioni solide. Decisivo anche nei momenti più difficili.', 8.5, 'Mark_Flekken.jpg'],
     ['Robert', 'Sánchez', 26, 'Portiere del Chelsea, alterna buone prestazioni a errori di concentrazione. Ha un ottimo potenziale atletico e riflessi sopra la media. Se migliora in continuità, può diventare un top assoluto.', 8.0, 'Robert_Sánchez.jpg'],
-<<<<<<< HEAD
-    ['Peter', 'Gulácsi', 34, 'Veterano del RB Leipzig e leader della nazionale ungherese. Solido nelle uscite e bravo nel guidare la difesa. Nonostante l’età, rimane competitivo e affidabile.', 8.3, 'Peter_Gulácsi.jpg'],
-    ['Joao', 'Ricardo', 36, 'Portiere del Fortaleza, tra i migliori del campionato brasiliano. Grande leadership, esperienza e continuità di rendimento. Ancora decisivo anche a 36 anni.', 8.1, 'Joao_Ricardo.jpg'],
-=======
     ['Peter', 'Gulácsi', 34, 'Veterano del RB Leipzig e leader della nazionale ungherese. Solido nelle uscite e bravo nel guidare la difesa. Nonostante l’età, rimane competitivo e affidabile.', 8.3, 'Péter_Gulácsi.jpg'],
     ['João', 'Ricardo', 36, 'Portiere del Fortaleza, tra i migliori del campionato brasiliano. Grande leadership, esperienza e continuità di rendimento. Ancora decisivo anche a 36 anni.', 8.1, 'João_Ricardo.jpg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Alisson', 'Becker', 32, 'Portiere del Liverpool e della Nazionale brasiliana. Forte tra i pali, abile con i piedi, carismatico. Qualche infortunio ha limitato la sua stagione, ma resta tra i migliori.', 8.6, 'Alisson_Becker.jpg'],
     ['Diogo', 'Costa', 25, 'Portiere del Porto e della Nazionale portoghese, è in rapida ascesa. Specialista nei rigori e molto bravo nel gioco moderno con i piedi. Ha un grande futuro davanti a sé.', 8.4, 'Diogo_Costa.jpg'],
     ['David', 'Raya', 29, 'Portiere spagnolo dell’Arsenal, eccellente nel gioco con i piedi e nella lettura delle situazioni. Ha vinto il Golden Glove alla sua prima stagione da titolare in Premier League.', 8.5, 'David_Raya.jpg'],
@@ -54,10 +49,6 @@ async function seedGiocatori() {
     ['Bart', 'Verbruggen', 21, 'Portiere olandese del Brighton. Alto e agile, ha mostrato buona crescita e margini di sviluppo.', 7.5, 'Bart_Verbruggen.jpg'],
     ['Marc-Andre', 'Ter Stegen', 33, 'Veterano tedesco del Barcellona. Esperto, con ottima tecnica e riflessi, è ancora un riferimento tra i pali.', 8.5, 'Marc-Andre_Ter Stegen.jpg'],
     ['Mike', 'Maignan', 29, 'Portiere francese del Milan, completo e carismatico. Grande senso della posizione e riflessi fulminei.', 9.0, 'Mike_Maignan.jpg'],
-<<<<<<< HEAD
-    ['Michele', 'Di Gregorio', 27, 'Ottimo portiere italiano in ascesa, passato dal Monza alla Juventus. Reattivo, esplosivo e determinato.', 8.0, 'Michele_Di Gregorio.jpg'],
-=======
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Thibaut', 'Courtois', 32, 'Portiere belga riconosciuto per la sua straordinaria reattività, sicurezza nelle uscite e capacità di compiere parate decisive nei momenti chiave. Ha vinto numerosi titoli nazionali e internazionali risultando spesso determinante nelle finali.', 9.4, 'Thibaut_Courtois.jpg'],
     ['Jan', 'Oblak', 32, 'Portiere sloveno dell\'Atletico Madrid, considerato uno dei migliori nel suo ruolo per riflessi eccezionali, posizionamento impeccabile e leadership difensiva, capace di mantenere la porta inviolata anche contro i migliori attaccanti del mondo.', 9.2, 'Jan_Oblak.jpg'],
 
@@ -97,17 +88,10 @@ async function seedGiocatori() {
     ['Andrea', 'Cambiaso', 25, 'Terzino versatile della Juventus, capace di giocare su entrambe le fasce. Conosciuto per la sua resistenza, abilità difensive e contributo offensivo. Ha recentemente rinnovato il contratto fino al 2029.', 8.0, 'Andrea_Cambiaso.jpg'],
     ['Milos', 'Kerkez', 21, 'Terzino sinistro ungherese del Bournemouth, noto per la sua energia, velocità e capacità di supportare l\'attacco. Ha attirato l\'attenzione di club di alto livello grazie alle sue prestazioni in Premier League.', 8.0, 'Milos_Kerkez.jpg'],
     ['Riccardo', 'Calafiori', 23, 'Difensore italiano dell\'Arsenal, capace di giocare sia come centrale che come terzino sinistro. Apprezzato per la sua tecnica, visione di gioco e versatilità. Ha avuto un impatto positivo nella sua prima stagione in Premier League.', 8.5, 'Riccardo_Calafiori.jpg'],
-<<<<<<< HEAD
-    ['Álvaro', 'Carreras', 22, 'Terzino sinistro spagnolo del Benfica, con esperienza in vari club europei. Conosciuto per la sua abilità nel dribbling e nel supporto offensivo.', 7.5, 'Alvaro_Carreras.jpg'],
-    ['Andrew', 'Robertson', 31, 'Esperto terzino sinistro scozzese del Liverpool, noto per la sua resistenza, precisione nei cross e contributo sia difensivo che offensivo. Pilastro della difesa del Liverpool.', 9.0, 'Andrew_Robertson.jpg'],
-    ['Miguel', 'Gutiérrez', 23, 'Terzino sinistro spagnolo del Girona, formato nel Real Madrid. Apprezzato per la sua tecnica, visione di gioco e capacità di spinta sulla fascia. Ha attirato l\'interesse di club importanti.', 8.0, 'Miguel_Gutierrez.jpg'],
-    ['Ferdi', 'Kadıoğlu', 25, 'Giocatore turco-olandese del Brighton & Hove Albion, capace di ricoprire diversi ruoli tra cui terzino destro, sinistro e centrocampista. Versatile, tecnico e con buona visione di gioco.', 8.0, 'Ferdi_Kadioglu.jpg'],
-=======
     ['Álvaro', 'Carreras', 22, 'Terzino sinistro spagnolo del Benfica, con esperienza in vari club europei. Conosciuto per la sua abilità nel dribbling e nel supporto offensivo.', 7.5, 'Álvaro_Carreras.jpg'],
     ['Andrew', 'Robertson', 31, 'Esperto terzino sinistro scozzese del Liverpool, noto per la sua resistenza, precisione nei cross e contributo sia difensivo che offensivo. Pilastro della difesa del Liverpool.', 9.0, 'Andrew_Robertson.jpg'],
     ['Miguel', 'Gutiérrez', 23, 'Terzino sinistro spagnolo del Girona, formato nel Real Madrid. Apprezzato per la sua tecnica, visione di gioco e capacità di spinta sulla fascia. Ha attirato l\'interesse di club importanti.', 8.0, 'Miguel_Gutierrez.jpg'],
     ['Ferdi', 'Kadıoğlu', 25, 'Giocatore turco-olandese del Brighton & Hove Albion, capace di ricoprire diversi ruoli tra cui terzino destro, sinistro e centrocampista. Versatile, tecnico e con buona visione di gioco.', 8.0, 'Ferdi_Kadıoğlu.jpg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Jorrel', 'Hato', 19, 'Giovane difensore olandese dell\'Ajax, capace di giocare sia come centrale che come terzino sinistro. Nonostante la giovane età, ha già dimostrato maturità e solidità difensiva.', 7.5, 'Jorrel_Hato.jpg'],
 
 
@@ -123,19 +107,11 @@ async function seedGiocatori() {
     ['Kim', 'Min-jae', 28, 'Difensore del Bayern Monaco e della nazionale sudcoreana, Kim è riconosciuto per la sua forza fisica, velocità e abilità nei duelli difensivi. Ha avuto un impatto immediato nella difesa del Bayern dopo il suo trasferimento.', 8.8, 'Kim_Min-jae.jpg'],
     ['Leny', 'Yoro', 19, 'Giovane talento del Lille e della nazionale francese, Yoro si distingue per la sua maturità, capacità nei duelli e abilità nel gioco aereo. Considerato uno dei migliori giovani difensori in Europa, è seguito da diversi top club.', 8.7, 'Leny_Yoro.jpg'],
     ['Cristian', 'Romero', 27, 'Difensore del Tottenham Hotspur e della nazionale argentina, Romero è noto per la sua aggressività, capacità nei contrasti e leadership. È stato nominato Giocatore della Stagione della UEFA Europa League 2024-2025, contribuendo al successo europeo degli Spurs.', 8.6, 'Cristian_Romero.jpg'],
-<<<<<<< HEAD
-    ['Pau', 'Cubarsí', 18, 'Giovane difensore spagnolo del Barcellona, noto per la sua maturità tattica e abilità nell\'impostazione del gioco. Ha esordito in prima squadra a 17 anni, impressionando per le sue prestazioni solide.', 8.0, 'Pau_Cubarsi.jpg'],
-    ['Ibrahima', 'Konaté', 26, 'Difensore centrale francese del Liverpool, apprezzato per la sua velocità, forza fisica e capacità di lettura del gioco. Ha contribuito significativamente alla solidità difensiva della squadra.', 8.5, 'Ibrahima_Konate.jpg'],
-    ['Micky', 'van de Ven', 24, 'Difensore olandese del Tottenham Hotspur, noto per la sua velocità e versatilità. Può giocare sia come centrale che come terzino sinistro, offrendo opzioni tattiche all\'allenatore.', 8.0, 'Micky_van de Ven.jpg'],
-    ['Gleison', 'Bremer', 28, 'Difensore brasiliano della Juventus, riconosciuto per la sua forza fisica e abilità nei duelli aerei. È un pilastro della difesa bianconera.', 8.5, 'Gleison_Bremer.jpg'],
-    ['Piero', 'Hincapié', 23, 'Difensore ecuadoriano del Bayer Leverkusen, apprezzato per la sua aggressività e capacità di anticipare gli avversari. Ha mostrato una crescita costante nel campionato tedesco.', 8.0, 'Piero_Hincapie.jpg'],
-=======
     ['Pau', 'Cubarsí', 18, 'Giovane difensore spagnolo del Barcellona, noto per la sua maturità tattica e abilità nell\'impostazione del gioco. Ha esordito in prima squadra a 17 anni, impressionando per le sue prestazioni solide.', 8.0, 'Pau_Cubarsí.jpg'],
     ['Ibrahima', 'Konaté', 26, 'Difensore centrale francese del Liverpool, apprezzato per la sua velocità, forza fisica e capacità di lettura del gioco. Ha contribuito significativamente alla solidità difensiva della squadra.', 8.5, 'Ibrahima_Konaté.jpg'],
     ['Micky', 'van de Ven', 24, 'Difensore olandese del Tottenham Hotspur, noto per la sua velocità e versatilità. Può giocare sia come centrale che come terzino sinistro, offrendo opzioni tattiche all\'allenatore.', 8.0, 'Micky_van de Ven.jpg'],
     ['Gleison', 'Bremer', 28, 'Difensore brasiliano della Juventus, riconosciuto per la sua forza fisica e abilità nei duelli aerei. È un pilastro della difesa bianconera.', 8.5, 'Gleison_Bremer.jpg'],
     ['Piero', 'Hincapié', 23, 'Difensore ecuadoriano del Bayer Leverkusen, apprezzato per la sua aggressività e capacità di anticipare gli avversari. Ha mostrato una crescita costante nel campionato tedesco.', 8.0, 'Piero_Hincapié.jpg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Alessandro', 'Buongiorno', 26, 'Difensore italiano del Torino, noto per la sua solidità difensiva e leadership in campo. È considerato uno dei prospetti più interessanti del calcio italiano.', 8.0, 'Alessandro_Buongiorno.jpg'],
     ['Dean', 'Huijsen', 20, 'Giovane difensore olandese della Juventus, dotato di ottima tecnica e visione di gioco. Ha impressionato per la sua maturità nonostante la giovane età.', 7.5, 'Dean_Huijsen.jpg'],
     ['Sven', 'Botman', 25, 'Difensore olandese del Newcastle United, conosciuto per la sua imponente presenza fisica e abilità nel gioco aereo. Ha contribuito alla solidità difensiva della squadra inglese.', 8.5, 'Sven_Botman.jpg'],
@@ -143,11 +119,7 @@ async function seedGiocatori() {
     ['Pau', 'Torres', 28, 'Difensore spagnolo del Villarreal, apprezzato per la sua eleganza e abilità nell\'impostare il gioco dalla difesa. Ha attirato l\'attenzione di molti top club europei.', 8.5, 'Pau_Torres.jpg'],
     ['Matthijs', 'de Ligt', 25, 'Difensore olandese del Bayern Monaco, noto per la sua forza fisica e leadership. Ha maturato esperienza in diversi top club europei.', 8.5, 'Matthijs_de Ligt.jpg'],
     ['Nico', 'Schlotterbeck', 26, 'Difensore tedesco del Borussia Dortmund, riconosciuto per la sua aggressività e capacità di intercettazione. È un elemento chiave nella difesa della sua squadra.', 8.0, 'Nico_Schlotterbeck.jpg'],
-<<<<<<< HEAD
-    ['Antonio', 'Rüdiger', 32, 'Difensore tedesco del Real Madrid, noto per la sua velocità, forza e determinazione. Ha esperienza ai massimi livelli europei.', 8.5, 'Antonio_Rudiger.jpg'],
-=======
     ['Antonio', 'Rüdiger', 32, 'Difensore tedesco del Real Madrid, noto per la sua velocità, forza e determinazione. Ha esperienza ai massimi livelli europei.', 8.5, 'Antonio_Rüdiger.jpg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     
     // CENTROCAMPISTI DIFENSIVI CENTRALI (CDC)
 
@@ -162,11 +134,7 @@ async function seedGiocatori() {
     ['João', 'Neves', 20, 'Centrocampista del Paris Saint-Germain e della nazionale portoghese, Neves è un giovane talento emergente noto per la sua tecnica, visione di gioco e maturità tattica. Ha mostrato grande potenziale nel suo ruolo.', 8.6, 'João_Neves.jpg'],
     ['Ryan', 'Gravenberch', 23, 'Giocatore del Liverpool e della nazionale olandese, Gravenberch ha impressionato per la sua capacità di combinare forza fisica, tecnica e intelligenza tattica. Ha avuto un ruolo chiave nel centrocampo dei Reds.', 8.5, 'Ryan_Gravenberch.jpg'],
     ['Joshua', 'Kimmich', 30, 'Centrocampista tedesco del Bayern Monaco, noto per la sua versatilità e intelligenza tattica. Capace di giocare sia come mediano che come terzino destro, è apprezzato per la sua precisione nei passaggi e la leadership in campo. Ha recentemente esteso il suo contratto fino al 2029.', 9.0, 'Joshua_Kimmich.jpg'],
-<<<<<<< HEAD
-    ['Morten', 'Hjulmand', 25, 'Centrocampista danese dello Sporting CP, riconosciuto per la sua abilità nel recupero palla e nella distribuzione del gioco. Ha contribuito significativamente al successo dello Sporting nella Primeira Liga.', 8.0, 'Morten_Hjulmand.jpg'],
-=======
     ['Morten', 'Hjulmand', 25, 'Centrocampista danese dello Sporting CP, riconosciuto per la sua abilità nel recupero palla e nella distribuzione del gioco. Ha contribuito significativamente al successo dello Sporting nella Primeira Liga.', 8.0, 'Morten_Hjulmand-jpg.jpg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Angelo', 'Stiller', 24, 'Centrocampista tedesco dell\'Hoffenheim, noto per la sua visione di gioco e capacità di dettare i tempi a centrocampo. Ha mostrato una crescita costante nella Bundesliga.', 7.5, 'Angelo_Stiller.jpg'],
     ['Marc', 'Casadó', 21, 'Giovane talento spagnolo del Barcellona, apprezzato per la sua versatilità e intelligenza tattica. Può giocare sia come mediano che come terzino destro, mostrando maturità oltre la sua età.', 7.5, 'Marc_Casadó.jpg'],
     ['Aleksandar', 'Pavlović', 21, 'Centrocampista tedesco del Bayern Monaco, noto per la sua tecnica e visione di gioco. Ha recentemente firmato un contratto professionistico fino al 2027 e ha impressionato nelle sue apparizioni in prima squadra.', 8.0, 'Aleksandar_Pavlović.jpg'],
@@ -254,11 +222,7 @@ async function seedGiocatori() {
     ['Amad', 'Diallo', 22, 'Ala ivoriana del Manchester United, apprezzato per la sua tecnica e velocità. Ha mostrato lampi di talento sia in Premier League che durante i periodi in prestito.', 7.5, 'Amad_Diallo.jpg'],
     ['Johan', 'Bakayoko', 22, 'Ala belga del PSV Eindhoven, noto per la sua rapidità e capacità di creare occasioni da gol. Ha attirato l\'attenzione per le sue prestazioni nell\'Eredivisie.', 7.5, 'Johan_Bakayoko.jpg'],
     ['Edon', 'Zhegrova', 26, 'Ala kosovara del Lille, riconosciuto per la sua creatività e abilità nel dribbling. Ha contribuito alle prestazioni del Lille in Ligue 1.', 7.5, 'Edon_Zhegrova.jpg'],
-<<<<<<< HEAD
-    ['Dan', 'Ndoye', 24, 'Ala svizzera del Bologna, apprezzato per la sua versatilità e capacità di adattarsi a diversi ruoli offensivi. Ha mostrato progressi significativi in Serie A.', 7.5, 'Dan_Ndoye.jpg'],
-=======
     ['Dan', 'Ndoye', 24, 'Ala svizzera del Bologna, apprezzato per la sua versatilità e capacità di adattarsi a diversi ruoli offensivi. Ha mostrato progressi significativi in Serie A.', 7.5, 'Dan_Ndoye.jpeg'],
->>>>>>> b46ab26f6077f6b92a18b47ba3ccab8da8f35e6d
     ['Luis', 'Henrique', 24, 'Ala brasiliana del Botafogo, noto per la sua velocità e abilità nel dribbling. Ha esperienza sia nel campionato brasiliano che in Europa.', 7.0, 'Luis_Henrique.jpg'],
     ['Riccardo', 'Orsolini', 28, 'Ala italiana del Bologna, riconosciuto per il suo tiro potente e capacità di segnare gol dalla distanza. Punto fermo dell\'attacco del Bologna in Serie A.', 8.0, 'Riccardo_Orsolini.jpg'],
     ['Antony', 'Matheus dos Santos', 25, 'Conosciuto come Antony, ala brasiliana del Manchester United, noto per la sua velocità e abilità nel dribbling. Ha avuto un impatto significativo in Premier League.', 8.0, 'Antony_Matheus dos Santos.jpg'],
