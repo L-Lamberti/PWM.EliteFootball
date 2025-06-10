@@ -12,6 +12,8 @@
 
 .main-body {
   flex: 1;
+  position:relative;
+  z-index: 1;
   background: transparent;
   color: var(--prestige-navy);
   padding: 5px ;
@@ -32,5 +34,14 @@ h2 {
     0px 2px 0 #e43f15,
     2px 2px 0 #e43f15;
 }
-.giocatore-item 
-{ background: #f9f871; color: #b80000; }
+.giocatore-item, h3 { color: #dd9a0a; font-size: 2.2em; font-weight: bold; color: #dd9a0a; text-align: center; margin-bottom: 8px;  }
+
+.giocatore-item, h4 { color: #b80000; }
+
+.giocatore-item, h5 { color: #04bbe9; font-style: italic; font-size: 1.1em; margin-top: 8px; padding-right: 20px;}
+
+
+
+.foto{
+  width: 300px; height: 300px; object-fit: cover; border-radius: 40px; margin-right: 16px;  background: #c5acac; // Sfondo bianco
+}
