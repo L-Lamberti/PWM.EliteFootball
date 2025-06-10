@@ -1,4 +1,4 @@
-const db = require('./databaseElite/db');
+const db = require('./db');
 
 db.all('SELECT id, nome, cognome, ruolo FROM giocatori', [], (err, rows) => {
   if (err) {

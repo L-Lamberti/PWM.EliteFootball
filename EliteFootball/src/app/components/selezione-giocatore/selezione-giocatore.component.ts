@@ -19,8 +19,8 @@ export class SelezioneGiocatoreComponent implements OnInit {
   constructor(private api: ApiService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
-    this.api.getTopGiocatori(this.ruolo).subscribe(res => {
-      this.giocatori = res;
+    this.api.getAllGiocatori().subscribe(res => {
+    this.giocatori = res.filter(g => g.ruoli && g.ruoli.includes(this.ruolo));
     });
   }
 
