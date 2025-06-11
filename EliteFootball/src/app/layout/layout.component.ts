@@ -63,6 +63,6 @@ export class LayoutComponent {
 
   vaiAReclami() {
   this.router.navigate(['/reclami']);
-}
+  }
 
 }

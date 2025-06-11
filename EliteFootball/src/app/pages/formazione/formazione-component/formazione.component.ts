@@ -1,34 +1,67 @@
 import { Component, OnInit , Input, Output, EventEmitter  } from '@angular/core';
-import { ModalController, IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
+import { ModalController, IonicModule, AlertController } from '@ionic/angular';
+import { CommonModule} from '@angular/common';
 import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocatore/selezione-giocatore.component';
 import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from "../../../layout/layout.component";
+import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
+import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
+
 
 @Component({
   selector: 'app-formazione',
   templateUrl: './formazione.component.html',
   styleUrls: ['./formazione.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, LayoutComponent],
+  imports: [CommonModule, IonicModule, LayoutComponent, FormsModule],
 })
 
 export class FormazioneComponent implements OnInit {
   @Input() modulo: string = '';
+  @Input() formazioneIniziale: any = null;
   @Output() close = new EventEmitter<void>();
   formazione: Record<string, any> = {};
   ruoli: string[] = [];
   ruoliIndicizzati: string[] = [];
+  nomeFormazione: string = '';
+  idFormazione: number | null = null;
 
-  constructor(private modalCtrl: ModalController, private route: ActivatedRoute) {}
+constructor(
+    private modalCtrl: ModalController,
+    private route: ActivatedRoute,
+    private apiService: ApiService, // <-- AGGIUNGI QUESTO
+    private alertCtrl: AlertController // <-- E QUESTO
+  ) {}
+
+  tuttiIGiocatori: any[] = [];
+
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      // Usa direttamente l'input modulo
+  // 1. Genera SEMPRE i ruoli e i ruoli indicizzati PRIMA di tutto!
   this.ruoli = this.generaModuli(this.modulo);
   this.ruoliIndicizzati = this.aggiungiIndiceRuoli(this.ruoli);
-    });
-  }
+
+  this.apiService.getAllGiocatori().subscribe(giocatori => {
+  this.tuttiIGiocatori = giocatori;
+  
+  // 2. Se sei in modalità modifica, carica i dati della formazione
+    if (this.formazioneIniziale) {
+        this.nomeFormazione = this.formazioneIniziale.nome || '';
+        this.idFormazione = this.formazioneIniziale.id;
+        this.formazione = {};
+        for (let i = 0; i < this.ruoliIndicizzati.length; i++) {
+          const id = this.formazioneIniziale.giocatori[i];
+          if (id) {
+            // Trova il giocatore completo
+            const giocatore = this.tuttiIGiocatori.find(g => g.id === id);
+            if (giocatore) {
+              this.formazione[this.ruoliIndicizzati[i]] = giocatore;
+            }
+          }
+        }
+      }
+  });
+}
 
   generaModuli(modulo: string): string[] {
     const moduli: Record<string, string[]> = {
@@ -89,9 +122,74 @@ export class FormazioneComponent implements OnInit {
       g && g.id === nuovoGiocatore.id
     );
   }
-  chiudi() {
+ chiudi() {
     this.close.emit();
   }
+
+  async salvaFormazione() {
+    const giocatori = this.ruoliIndicizzati.map(r => this.formazione[r]?.id || null);
+
+    if (giocatori.some(id => id === null)) {
+      const alert = await this.alertCtrl.create({
+        header: 'Attenzione',
+        message: 'Devi selezionare tutti i giocatori per ogni ruolo!',
+        buttons: ['OK']
+      });
+      await alert.present();
+      return;
+    }
+
+
+    if (this.idFormazione) {
+      // Aggiorna formazione esistente
+      this.apiService.updateFormazione(this.idFormazione, {
+        nome: this.nomeFormazione,
+        modulo: this.modulo,
+        giocatori
+      }).subscribe({
+        next: async (res) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Successo',
+            message: 'Formazione salvata!',
+            buttons: ['OK']
+          });
+          await alert.present();
+          this.close.emit();
+        },
+        error: async (err) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Errore',
+            message: err.error?.message || 'Errore durante il salvataggio',
+            buttons: ['OK']
+          });
+          await alert.present();
+        }
+    });
+    } else {
+      // Crea nuova formazione
+      this.apiService.saveFormazione({
+        nome: this.nomeFormazione,
+        modulo: this.modulo,
+        giocatori
+      }).subscribe({
+        next: async (res) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Successo',
+            message: 'Formazione salvata!',
+            buttons: ['OK']
+          });
+          await alert.present();
+          this.close.emit();
+        },
+        error: async (err) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Errore',
+            message: err.error?.message || 'Errore durante il salvataggio',
+            buttons: ['OK']
+          });
+          await alert.present();
+        }
+    });
+    }
+  }
 }
-
-

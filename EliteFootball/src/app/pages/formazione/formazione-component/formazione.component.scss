@@ -66,6 +66,49 @@
   gap: 0px;             //per distanziare i giocatori
 }
 
+@media (max-width: 700px) {
+  .campo-e-salva {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .box-salva {
+    width: 100%;
+    min-width: 0;
+    margin-top: 24px;
+  }
+}
+
+.campo-e-salva {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 900px;      // puoi aumentare o diminuire per regolare la larghezza massima
+  margin-left: auto;
+  margin-right: auto;
+}
+.box-salva {
+  min-width: 220px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding-left: 0;
+}
+
+.box-salva ion-item {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.box-salva ion-button {
+  margin-top: 0;
+}
+
+
 .ruolo {
   display: flex;
   flex-direction: column;
@@ -194,3 +237,5 @@
 
   .r-POR-0 { grid-column: 3; grid-row: 8; }
 }
+
+

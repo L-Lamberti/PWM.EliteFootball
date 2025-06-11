@@ -38,17 +38,18 @@ export class LoginPage {
       return;
     }
 
-    this.apiService.login(this.email, this.password).subscribe({
-      next: async (res) => {
-        // Salva il token se vuoi: localStorage.setItem('token', res.token);
-        const alert = await this.alertCtrl.create({
-          header: 'Successo',
-          message: 'Login effettuato!',
-          buttons: ['OK'],
-        });
-        await alert.present();
-        this.router.navigate(['/home']); // cambia '/home' con la tua pagina principale
-      },
+  this.apiService.login(this.email, this.password).subscribe({
+  next: async (res) => {
+    localStorage.setItem('token', res.token); // <--- SALVA IL TOKEN QUI!
+    
+    const alert = await this.alertCtrl.create({
+      header: 'Successo',
+      message: 'Login effettuato!',
+      buttons: ['OK'],
+    });
+    await alert.present();
+    this.router.navigate(['/']);
+  },
       error: async (err) => {
         const alert = await this.alertCtrl.create({
           header: 'Errore',
