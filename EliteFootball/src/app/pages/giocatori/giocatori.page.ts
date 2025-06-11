@@ -15,19 +15,19 @@ import { IonList , IonItem , IonLabel, IonButton, IonGrid, IonRow, IonCol } from
   imports: [IonCol, IonRow, IonGrid, IonButton, CommonModule, FormsModule, IonList, IonItem, IonLabel]
 })
 export class GiocatoriPage implements OnInit {
-  ruoli = [{ codice: 'AS', nome: 'Ala Sinistra' },
-    { codice: 'PC', nome: 'Punta Centrale' },
-    { codice: 'SP', nome: 'Seconda Punta' },
-    { codice: 'AD', nome: 'Ala Destra' },
-    { codice: 'ES', nome: 'Esterno Sinistro' },
-    { codice: 'COC', nome: 'Centrocampista Offensivo' },
-    { codice: 'CC', nome: 'Centrocampista Centrale' },
-    { codice: 'ED', nome: 'Esterno Destro' },
+  ruoli = [{ codice: 'POR', nome: 'Portiere' }, 
+    { codice: 'DC', nome: 'Difensore Centrale' },
+    { codice: 'TD', nome: 'Terzino Destro' }, 
     { codice: 'TS', nome: 'Terzino Sinistro' },
     { codice: 'CDC', nome: 'Centrocampista Difensivo' },
-    { codice: 'DC', nome: 'Difensore Centrale' },
-    { codice: 'TD', nome: 'Terzino Destro' },
-    { codice: 'POR', nome: 'Portiere' },  
+    { codice: 'CC', nome: 'Centrocampista Centrale' },
+    { codice: 'COC', nome: 'Centrocampista Offensivo' },
+    { codice: 'ED', nome: 'Esterno Destro' },
+    { codice: 'ES', nome: 'Esterno Sinistro' },
+    { codice: 'AD', nome: 'Ala Destra' },
+    { codice: 'AS', nome: 'Ala Sinistra' },
+    { codice: 'PC', nome: 'Punta Centrale' },
+    { codice: 'SP', nome: 'Seconda Punta' },
   ];
   ruoloSelezionato: string = '';           // codice per la query (es: 'PC')
   ruoloEsteso: string = '';     // nome da visualizzare (es: 'Punta Centrale')
