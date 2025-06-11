@@ -40,6 +40,7 @@ db.serialize(() => {
   db.run(`CREATE TABLE IF NOT EXISTS citazioni (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     testo TEXT,
+    autore TEXT,
     foto TEXT
   )`);
 

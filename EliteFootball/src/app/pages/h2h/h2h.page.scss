@@ -1,6 +1,31 @@
 .h2h-setup, .h2h-selezione, .h2h-bracket, .h2h-finale 
-{ padding: 32px; text-align: center; } 
+{ padding: 32px; text-align: center; background: transparent !important} 
 
+ion-button {
+  display: inline-block;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  min-width: 70px;
+  min-height: 52px;
+  margin: 0;
+  border-radius: 14px;
+  --background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+  --color: #222;
+  --border-style: solid;
+  --border-radius: 10px;
+  --border-color: #222;
+  letter-spacing: 0.04em;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.18);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+
+ion-button:hover {
+  --background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%);
+  --color: #000;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.22);
+}
 .sfondo{
   z-index: 0;
   position: fixed;
@@ -21,24 +46,24 @@
   pointer-events: none;
   z-index: 1;
 }
+
 .main-body {
   position: relative;
   z-index: 2;
-  background: transparent;
-  color: #fff;
+  background: transparent !important;
   padding: 24px 0 0 0;
   min-height: 100vh;
 }
+
 ion-card {
-  background: rgba(30, 30, 30, 0.92) !important;
-  border-radius: 24px;
-  box-shadow: 0 4px 32px #000a, 0 0 0 2px #ffd70055;
-  border: 2px solid #ffd70055;
+  --background: transparent !important;
+  box-shadow: none !important;
   margin: 0 auto 24px auto;
-  max-width: 700px;
+  max-width: 80%;
 }
+
 ion-card-content {
-  background: transparent !important;
+  --background: transparent !important;
   border-radius: 24px;
   padding: 32px 12px;
   display: flex;
@@ -93,30 +118,18 @@ h2, h3 {
   box-shadow: 0 1px 8px #000a;
   max-width: 100%;
   word-break: break-word;
-  border: 2px solid #fffbe6;
+  border: 1px solid #000000;
 }
-ion-button {
-  font-weight: 700;
-  font-size: 1.1em;
-  border-radius: 18px;
-  margin: 8px 8px 16px 8px;
-  letter-spacing: 0.03em;
-  padding: 12px 0;
-  background: linear-gradient(90deg, #ffd700 0%, #fffbe6 100%) !important;
-  color: #222 !important;
-  box-shadow: 0 2px 8px #ffd70055;
-  border: none;
-  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+.VS{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  min-width: 64px;
+  --background: transparent;
 }
-ion-button:hover, ion-button:focus {
-  filter: brightness(1.08);
-  transform: scale(1.07);
-  box-shadow: 0 8px 32px #ffd700cc, 0 0 24px 4px #fff8b0cc;
-  z-index: 2;
-}
-.h2h-foto-btn:hover .h2h-foto,
-.h2h-foto:focus, 
-.h2h-foto:active {
+
+.h2h-foto-btn:hover {
   box-shadow: 0 0 32px 8px #ffd700cc;
   transform: scale(1.07);
   z-index: 2;
