@@ -1,12 +1,15 @@
 
     <div class="sfondo"></div>
       <div class="main-body">
-      <h2>Citazioni</h2>
+      <h2>  Migliori Citazioni </h2>
       <ion-list *ngIf="citazioni.length > 0">
         <ion-item *ngFor="let c of citazioni" class="citazione-item">
           <ion-label>
-            <blockquote>“{{c.testo}}”</blockquote>
-            <p *ngIf="c.autore">- {{c.autore}}</p>
+            <blockquote>
+              <span class="apice">“</span>
+              {{c.testo}}
+              <span class="apice">”</span>
+            </blockquote>
           </ion-label>
         </ion-item>
       </ion-list>

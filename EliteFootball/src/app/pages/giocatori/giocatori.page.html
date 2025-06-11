@@ -6,8 +6,8 @@
          <ng-container *ngFor="let ruoli of ruoliRighe; let i = index">
         <ion-row [class.center-row]="i === 1 || i === 3">
           <ion-col size="6" size-md="4" size-lg="3" *ngFor="let ruolo of ruoli">
-            <ion-button expand="block"
-                        [color]="ruoloSelezionato === ruolo.codice ? 'primary' : 'secondary'"
+            <ion-button expand="block" class="ruolo-btn"
+                        [class.selected]="ruoloSelezionato === ruolo.codice"
                         (click)="selezionaRuolo(ruolo)">
               {{ ruolo.nome }}
             </ion-button>
@@ -18,9 +18,19 @@
       <div *ngIf="ruoloSelezionato">
       <h2>Top 10 {{ ruoloEsteso || 'Giocatori' }}</h2>
       <ion-list *ngIf="giocatori.length > 0">
-        <ion-item *ngFor="let g of giocatori" class="giocatore-item">
+        <ion-item *ngFor="let g of giocatori; let i = index"
+            class="giocatore-item"
+            [ngClass]="{
+              'oro': i === 0,
+              'argento': i === 1,
+              'bronzo': i === 2
+            }">
           <ion-label>
-            <h3>{{g.nome}} {{g.cognome}}</h3>
+            <h3>  
+              <span class="posizione"> 
+                {{i + 1}}.
+              </span>
+              {{g.nome}} {{g.cognome}}</h3>
             <h4 *ngIf="g.voto">Voto: {{g.voto}}</h4>
             <h5 *ngIf="g.descrizione">{{g.descrizione}}</h5>
           </ion-label>

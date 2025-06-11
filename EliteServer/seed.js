@@ -674,20 +674,20 @@ async function seedCitazioni() {
   await runAsync(`DELETE FROM citazioni`);
   const citazioni = [
     ['Il calcio è semplice. Ma è difficile giocare semplice. - Cruijff', 'cruijff.jpg'],
-    ['Il calcio è larte di comprimere la storia in 90 minuti. -Pasolini', 'pasolini.jpg'],
-    ['Il calcio è la cosa più importante tra le cose meno importanti.  -Sir Alex Ferguson', 'ferguson.jpg'],
-    ["A me sinceramente la parola leader non mi è mai piaciuta, più che altro mi metto a disposizione della squadra.  -Francesco Totti", 'totti.jpg'],
-    ["A mio parere la grande popolarità del calcio nel mondo è dovuta al fatto che in ogni piazza in ogni angolo del mondo c'è un bambino che gioca e si diverte con un pallone tra i piedi. Ma il calcio, oggi, è sempre più un'industria e sempre meno un gioco. -Zdenek Zeman", 'zeman.jpg' ],
-    ["Il calcio è uno specchio della società: in questo gioco si riflettono le sue virtù e i suoi difetti.  -Eduardo Galeano:", 'galeano.jpg'],
-    ["Non esiste uomo che non abbia provato piacere nel vedere una squadra batterne un'altra.  -George Orwell", 'orwell.jpg'],
-    ["Un rigore è un modo meschino di segnare.  -Pelé", 'pele.jpg'],
-    ["Non c'è un altro posto del mondo dove l'uomo è più felice che in uno stadio di calcio.  -Albert Camus", 'camus.jpg'],
-    ["Gli italiani perdono le partite di calcio come se fossero guerre e perdono le guerre come se fossero partite di calcio.  -Winston Churchill", 'churchill.jpg'],
-    ["Alcuni credono che il calcio sia una questione di vita o di morte. Non sono d'accordo. Il calcio è molto, molto di più.  -Bill Shankly", 'shankly.jpg'],
+    ['Il calcio è arte di comprimere la storia in 90 minuti. - Pasolini', 'pasolini.jpg'],
+    ['Il calcio è la cosa più importante tra le cose meno importanti.  - Sir Alex Ferguson', 'ferguson.jpg'],
+    ["A me sinceramente la parola leader non mi è mai piaciuta, più che altro mi metto a disposizione della squadra.  - Francesco Totti", 'totti.jpg'],
+    ["A mio parere la grande popolarità del calcio nel mondo è dovuta al fatto che in ogni piazza in ogni angolo del mondo c'è un bambino che gioca e si diverte con un pallone tra i piedi. Ma il calcio, oggi, è sempre più un'industria e sempre meno un gioco. - Zdenek Zeman", 'zeman.jpg' ],
+    ["Il calcio è uno specchio della società: in questo gioco si riflettono le sue virtù e i suoi difetti.  - Eduardo Galeano:", 'galeano.jpg'],
+    ["Non esiste uomo che non abbia provato piacere nel vedere una squadra batterne un'altra.  - George Orwell", 'orwell.jpg'],
+    ["Un rigore è un modo meschino di segnare.  - Pelé", 'pele.jpg'],
+    ["Non c'è un altro posto del mondo dove l'uomo è più felice che in uno stadio di calcio.  - Albert Camus", 'camus.jpg'],
+    ["Gli italiani perdono le partite di calcio come se fossero guerre e perdono le guerre come se fossero partite di calcio.  - Winston Churchill", 'churchill.jpg'],
+    ["Alcuni credono che il calcio sia una questione di vita o di morte. Non sono d'accordo. Il calcio è molto, molto di più.  - Bill Shankly", 'shankly.jpg'],
     ["I rigori li sbaglia solo chi ha il coraggio di tirarli.  -Roberto Baggio", 'baggio.jpg'],
-    ['Io sono contro ogni forma di razzismo, ma mia figlia in sposa a un giocatore del Milan non la darei mai.  -Peppino Prisco', 'prisco.jpg'],
-    ['Cristiano Ronaldo: “La mia maestra mi diceva sempre di lasciar perdere il pallone, perché il calcio non mi avrebbe mai dato da mangiare. Cristiano Ronaldo', 'ronaldo.jpg'],
-    [ 'Gli altri si allenano per vincere gli scudetti, io gioco per essere felice. -Antonio Cassano', 'cassano.jpg'],
+    ['Io sono contro ogni forma di razzismo, ma mia figlia in sposa a un giocatore del Milan non la darei mai.  - Peppino Prisco', 'prisco.jpg'],
+    ['Cristiano Ronaldo: “La mia maestra mi diceva sempre di lasciar perdere il pallone, perché il calcio non mi avrebbe mai dato da mangiare. - Cristiano Ronaldo', 'ronaldo.jpg'],
+    [ 'Gli altri si allenano per vincere gli scudetti, io gioco per essere felice. - Antonio Cassano', 'cassano.jpg'],
   ];
 
   for (const c of citazioni) {

@@ -2,10 +2,19 @@
 <div class="main-body">
   <h2> Top 10 Allenatori</h2>
   <ion-list *ngIf="allenatori.length > 0">
-    <ion-item *ngFor="let a of allenatori"  class="allenatore-item">
+    <ion-item *ngFor="let a of allenatori; let i = index"
+              class="allenatore-item"
+              [ngClass]="{
+                'oro': i === 0,
+                'argento': i === 1,
+                'bronzo': i === 2
+              }">
       <ion-label>
-        <h3>{{a.nome}} {{a.cognome}}</h3>
-        <p *ngIf="a.eta" class="eta">età: {{a.eta}}</p>
+        <h3>
+          <span class="posizione">{{i + 1}}.</span>
+          {{a.nome}} {{a.cognome}}
+        </h3>
+        <p *ngIf="a.eta" class="eta"> Età: {{a.eta}}</p>
         <p *ngIf="a.descrizione" class="descrizione">{{a.descrizione}}</p>
       </ion-label>
       <img *ngIf="a.foto" [src]="'assets/allenatori/' + a.foto" [alt]="a.nome + ' ' + a.cognome" class="allenatore-foto" />
@@ -15,5 +24,4 @@
     Nessun allenatore trovato.
   </div>
 </div>
-
   

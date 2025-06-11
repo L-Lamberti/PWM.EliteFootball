@@ -21,7 +21,7 @@ app.use('/api/citazioni', citazioniRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('JoaoPippelix è in forma!');
+  res.send('Successo');
 });
 
 app.listen(PORT, () => {

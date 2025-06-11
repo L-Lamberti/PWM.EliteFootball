@@ -5,7 +5,7 @@
   margin-left: 240px;
   margin-top: 56px;
   height: calc(100vh - 56px - 15px);
-  background: url('/assets/img/allenatore2.webp') center center/cover no-repeat;
+  background: url('/assets/img/allenatore4.jpg') center center/cover no-repeat;
   pointer-events: none;
 }
 
@@ -27,60 +27,127 @@ ion-list {
 h2 {
   font-family: 'Barlow Semi Condensed', serif;
   color: #f3ef03;
-  font-weight: 200;
+  font-weight: 700;
   font-size: 2.8em;
   letter-spacing: 0.02em;
-  text-align: center;         // centrato
-  margin: 4px auto 4px auto;
+  text-align: center;
+  margin: 24px auto 24px auto;
   text-shadow:
-    1px 2px 0 #e43f15,
-    1px 0px 0 #e43f15,
-    0px 2px 0 #e43f15,
+    0 2px 8px #e43f15,
+    0 0px 8px #f3ef03,
+    0 2px 0 #e43f15,
     2px 2px 0 #e43f15;
 }
-
 ion-item.allenatore-item {
-  --background: rgba(3, 1, 24, 0.61) !important;
+  --background: rgba(20, 20, 40, 0.93) !important;
+  border: 3px solid #f3ef03;
+  border-radius: 18px;
+  box-shadow:
+    0 4px 24px #e78300cc,
+    0 0 16px 2px #f3ef03cc,
+    0 0 0 2px #fff2 inset;
+  margin-bottom: 22px;
+  padding: 22px 28px;
+  font-style: italic;
+  color: #fff;
+  backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 3px solid #e78300;           // bordo arancione spesso
-  border-radius: 18px;                 // angoli arrotondati
-  box-shadow: 0 4px 16px #0003;        // ombra leggera
-  margin-bottom: 18px;                 // spazio tra gli item
+  transition: transform 0.15s, box-shadow 0.15s;
 }
-  ion-item.allenatore-item h3 {
+ion-item.allenatore-item:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 8px 32px #e43f15cc,
+    0 0 24px 4px #f3ef03cc,
+    0 0 0 2px #fff2 inset;
+}
+ ion-item.allenatore-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2.2em;
   font-weight: 700;
-  text-align: center;
   width: 100%;
-  color: #e78300;
+  color: #f3ef03;
   margin-bottom: 8px;
+  text-shadow: 0 0 8px #e78300, 0 0 2px #fff;
+}
+.posizione {
+  line-height: 1;
+}
+
+ion-item.allenatore-item.oro {
+  border-color: #ffd700 !important;
+  box-shadow:
+    0 4px 24px #ffd700cc,
+    0 0 16px 2px #ffd700cc,
+    0 0 0 2px #ffd700cc;
+  background: linear-gradient(90deg, #ffd700cc 0%, #ffe066 100%) !important;
+}
+
+ion-item.allenatore-item.argento {
+  border-color: #c0c0c0 !important;
+  box-shadow:
+    0 4px 24px #c0c0c0cc,
+    0 0 16px 2px #c0c0c0,
+    0 0 0 2px #c0c0c0;
+  background: linear-gradient(90deg, #c0c0c0 0%, #c0c0c0 100%) !important;
+}
+
+ion-item.allenatore-item.bronzo {
+  border-color: #cd7f32 !important;
+  box-shadow:
+    0 4px 24px #cd7f32cc,
+    0 0 16px 2px #cd7f32cc,
+    0 0 0 2px #cd7f32cc;
+  background: linear-gradient(90deg, #cd7f32cc 0%, #cd7f32 100%) !important;
 }
 
 ion-item.allenatore-item p {
   margin: 0;
   font-size: 1.1em;
+  color: #fff;
+  text-shadow: 0 0 4px #000a;
 }
-
 ion-item.allenatore-item p.eta {
-  color: #2401e9;
+  color: #aeeaff;
   font-weight: 600;
 }
-
 ion-item.allenatore-item p.descrizione {
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: #df9c0d;
   line-height: 1.3;
   font-style: italic;
+  text-shadow: 0 0 6px #000a;
 }
 
-
-  .allenatore-foto {
-  width: 380px;
-  height: 380px;
+.allenatore-foto {
+width: 300px; height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 40px;
   margin-left: 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px #ffd700cc, 0 0 8px #fff8b0cc;
+  border: 3px solid #ffd700;
+  background: #222;
+}
+.sfondo::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(20,20,40,0.7) 0%, rgba(20,20,40,0.2) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .allenatore-foto {
+    width: 90px;
+    height: 90px;
+    margin-left: 8px;
+  }
+  h2 {
+    font-size: 2em;
+  }
 }
