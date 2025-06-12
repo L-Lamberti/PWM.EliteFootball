@@ -40,14 +40,15 @@ export class ApiService {
   return this.http.post(`${this.apiUrl}/api/auth/login`, { email, password });
   }
 
-  saveFormazione(formazione: { nome: string, modulo: string, giocatori: any[] }) {
+ saveFormazione(formazione: { nome: string, modulo: string, giocatori: any[], allenatoreId?: number }) {
   const token = localStorage.getItem('token');
   return this.http.post(
     `${this.apiUrl}/api/formazioni`,
     formazione,
     { headers: { Authorization: `Bearer ${token}` } }
   );
-  }
+}
+
   getFormazioni() {
     const token = localStorage.getItem('token');
     return this.http.get(
@@ -55,14 +56,14 @@ export class ApiService {
       { headers: { Authorization: `Bearer ${token}` } }
     );
   }
-  updateFormazione(id: number, formazione: any) {
-    const token = localStorage.getItem('token');
-    return this.http.put(
-      `${this.apiUrl}/api/formazioni/${id}`,
-      formazione,
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
-  }
+ updateFormazione(id: number, formazione: { nome: string, modulo: string, giocatori: any[], allenatoreId?: number }) {
+  const token = localStorage.getItem('token');
+  return this.http.put(
+    `${this.apiUrl}/api/formazioni/${id}`,
+    formazione,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+}
   deleteFormazione(id: number) {
     const token = localStorage.getItem('token');
     return this.http.delete(

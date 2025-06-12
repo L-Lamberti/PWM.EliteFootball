@@ -17,12 +17,28 @@ export class FormazionePage implements OnInit {
   moduloSelezionato: string | null = null;
   formazioniSalvate: any[] = [];
   formazioneDaModificare: any = null;
+  tuttiIGiocatori: any[] = [];
+  tuttiGliAllenatori: any[] = [];
 
   constructor(private apiService: ApiService, private alertCtrl: AlertController) {}
 
   ngOnInit() {
+    this.apiService.getAllGiocatori().subscribe(giocatori => {
+      this.tuttiIGiocatori = giocatori;
+       this.apiService.getTopAllenatori().subscribe(allenatori => {
+      this.tuttiGliAllenatori = allenatori;
     this.caricaFormazioni();
+  });
+});
   }
+   getCognomeById(id: number) {
+    const g = this.tuttiIGiocatori.find(x => x.id === id);
+    return g ? g.cognome : '';
+  }
+   getAllenatoreById(id: number) {
+    const a = this.tuttiGliAllenatori.find(x => x.id === id);
+    return a ? `${a.nome} ${a.cognome}` : '';
+   }
 
   caricaFormazioni() {
     this.apiService.getFormazioni().subscribe(res => {

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleziona Allenatore</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="annulla()">Chiudi</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let a of allenatori" (click)="seleziona(a)"  lines="none">
+       <div class="selezione-card">
+      <img *ngIf="a.foto" [src]="'assets/allenatori/' + a.foto" [alt]="a.nome + ' ' + a.cognome" class="selezione-foto" />
+     <ion-label>
+    <h2>{{ a.nome }} {{ a.cognome }}</h2>
+    <p class="selezione-descrizione" *ngIf="a.descrizione">{{ a.descrizione }}</p>
+    <span class="selezione-voto">Voto: {{ a.voto }}</span>
+  </ion-label>
+  </div>
+</ion-item>
+  </ion-list>
+</ion-content>

@@ -73,6 +73,12 @@ h2 {
   text-align: center;         // centrato
   margin: 4px auto 4px auto;
    text-shadow: 0 2px 8px #000, 0 0px 8px #ffd700, 0 2px 0 #000;
+    --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 ion-item.giocatore-item.oro {
   border-color: #ffd700 !important;
@@ -90,6 +96,12 @@ ion-item.giocatore-item.argento {
     0 0 16px 2px #e0e0e0cc,
     0 0 0 2px #fff8 inset;
   background: linear-gradient(90deg, #c0c0c0 0%, #c0c0c0 100%) !important;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 ion-item.giocatore-item.bronzo {
@@ -99,6 +111,12 @@ ion-item.giocatore-item.bronzo {
     0 0 16px 2px #cd7f32cc,
     0 0 0 2px #cd7f32cc;
   background: linear-gradient(90deg, #cd7f32 0%, #cd7f32 100%) !important;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 ion-item.giocatore-item {
   --background: rgba(30, 30, 30, 0.92) !important;
@@ -110,6 +128,12 @@ ion-item.giocatore-item {
   display: flex;
   align-items: center;
   transition: transform 0.15s, box-shadow 0.15s;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 ion-item.giocatore-item:hover {
   transform: scale(1.02);

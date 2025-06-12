@@ -5,7 +5,7 @@
   margin-left: 240px;
   margin-top: 56px;
   height: calc(100vh - 56px - 15px);
-  background-image: url('/assets/img/stadio2.jpg');
+  background-image: url('/assets/img/citazioni.jpg');
   background-size: cover;
   background-position: center;
   pointer-events: none;
@@ -20,71 +20,80 @@
   box-sizing: border-box;
 }
 
-
 h2 {
   font-family: 'Barlow Semi Condensed', serif;
-  color: #f3ef03;
+  color: #fceb05;
   font-weight: 200;
   font-size: 2.8em;
   letter-spacing: 0.02em;
   text-align: center;         // centrato
   margin: 4px auto 4px auto;
   text-shadow:
-    1px 2px 0 #e43f15,
-    1px 0px 0 #e43f15,
-    0px 2px 0 #e43f15,
-    2px 2px 0 #e43f15;
+    2px 3px 0 #9c361d,
+    2px 0px 0 #9c361d,
+    0px 2px 0 #9c361d,
+    2px 2px 0 #9c361d;
 }
+
 ion-list {
   --background: transparent !important;
   background: transparent !important;
   box-shadow: none !important;
 }
+
 .citazione-item {
-  --background: rgba(20, 20, 20, 0.96) !important;
-  border: 2px solid #f3ef03;
-  border-radius: 18px;
-  box-shadow:
-    0 4px 24px #e43f1580,
-    0 0 16px 2px #f3ef03cc,
-    0 0 0 2px #fff2 inset;
-  margin-bottom: 28px;
-  padding: 26px 32px;
-  font-style: italic;
-  color: #fff;
-  backdrop-filter: blur(4px);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.citazione-item:hover {
-  transform: scale(1.02);
-  box-shadow:
-    0 8px 32px #e43f15cc,
-    0 0 24px 4px #f3ef03cc,
-    0 0 0 2px #fff2 inset;
-}
-.citazione-item blockquote {
-  font-size: 1.7em;
-  color: #fffbe7;
-  margin: 0 0 10px 0;
-  font-family: 'Barlow Semi Condensed', serif;
-  text-align: left;
-  line-height: 1.35;
-  text-shadow: 0 0 12px #f3ef03, 0 2px 12px #e43f15;
-  position: relative;
-}
-.citazione-item .apice {
-  font-size: 1.3em;
-  color: #f3ef03;
-  text-shadow: 0 0 12px #e43f15;
-  vertical-align: top;
+  margin: 32px 0 32px 0;
+  background:#0502014f; 
+  box-shadow:#9c361d 20px 0 10px 3px !important; 
+  border: none !important;
+  --background: transparent !important;
+  padding: 0;
 }
 
-@media (max-width: 600px) {
-  .citazione-item {
-    padding: 16px 8px;
-    font-size: 1em;
-  }
-  h2 {
-    font-size: 2em;
-  }
+.citazione-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.citazione-testo-firma {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content:space-between
+}
+
+.citazione-testo {
+  padding-top: 50px;
+  justify-content: center;
+  font-size: 1.63em;
+  color: #c5a60a;
+  font-style: italic;
+  line-height: 1.4;
+ 
+}
+
+.citazione-autore {
+  justify-content: flex-end;
+  font-size: 1.5em;
+  color: #f3bb03;
+  font-family: 'Pacifico', cursive, sans-serif;
+  text-shadow: 0 1px 6px #000a;
+  opacity: 0.95;
+  align-self: flex-end;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.citazione-foto {
+  width: 210px;
+  height: 270px;
+  object-fit: cover;
+  border: none;
+  border-radius: 7%;
+  box-shadow: 0 2px 12px #0006;
+  background: #fffbe7;
+  display: block;
+  margin-left: 18px;
 }

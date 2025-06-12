@@ -1,21 +1,26 @@
 
-    <div class="sfondo"></div>
-      <div class="main-body">
-      <h2>  Migliori Citazioni </h2>
-      <ion-list *ngIf="citazioni.length > 0">
-        <ion-item *ngFor="let c of citazioni" class="citazione-item">
-          <ion-label>
-            <blockquote>
-              <span class="apice">“</span>
-              {{c.testo}}
-              <span class="apice">”</span>
-            </blockquote>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-      <div *ngIf="citazioni.length === 0">
-        Nessuna citazione trovata.
+<div class="sfondo"></div>
+  <div class="main-body">
+  <h2> Le Migliori Citazioni Sul Calcio</h2>
+  <ion-list *ngIf="citazioni.length > 0">
+    <ion-item *ngFor="let c of citazioni" class="citazione-item">
+      <div class="citazione-flex">
+        <div class="citazione-testo-firma">
+          <div class="citazione-testo">
+            {{c.testo}}
+          </div>
+          <div class="citazione-autore">
+            {{c.autore}}
+          </div>
+        </div>
+        <img *ngIf="c.foto"
+            [src]="'assets/citazioni/' + c.foto"
+            [alt]="c.autore"
+            class="citazione-foto" />
       </div>
-      </div>
-    
-      <!-- The layout component can be used to wrap the content if needed -->
+    </ion-item>
+  </ion-list>
+  <div *ngIf="citazioni.length === 0">
+    Nessuna citazione trovata.
+  </div>
+</div>

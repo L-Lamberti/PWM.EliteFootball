@@ -15,14 +15,21 @@
                 <ion-label>
                     <h2>{{ f.nome || 'Formazione senza nome' }}</h2>
                     <p>Modulo: {{ f.modulo }}</p>
-                    <p>Giocatori: {{ f.giocatori.join(', ') }}</p>
+                    <p>  Giocatori: 
+                      <ng-container *ngFor="let id of f.giocatori; let last = last">
+                         {{ getCognomeById(id) }}<span *ngIf="!last">, </span>
+                      </ng-container>
+                    </p>
+                    <p *ngIf="f.allenatoreId">
+                       Allenatore: {{ getAllenatoreById(f.allenatoreId) }}
+                     </p>
                 </ion-label>
                 <ion-button color="warning" fill="clear" slot="end" (click)="openFormazione(f.modulo, f)">
-                  <ion-icon name="create"></ion-icon>
+                  
                   Visualizza | Modifica
                 </ion-button>
                 <ion-button color="danger" fill="clear" slot="end" (click)="eliminaFormazione(f.id)">
-                  <ion-icon name="trash"></ion-icon>
+                  
                   Elimina
                 </ion-button>
             </ion-item>
