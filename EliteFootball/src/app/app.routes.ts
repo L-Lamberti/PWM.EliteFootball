@@ -27,10 +27,6 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/citazioni/citazioni.page').then( m => m.CitazioniPage)
       },
       {
-        path: 'giocatori/:id',
-        loadComponent: () => import('./pages/giocatori-dettaglio/giocatori-dettaglio.page').then( m => m.GiocatoriDettaglioPage)
-      },
-      {
          path: 'login', 
          loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage) },
       {
