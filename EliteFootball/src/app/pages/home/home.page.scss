@@ -1,4 +1,4 @@
-.sfondo{
+.sfondo {
   z-index: 0;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -13,16 +13,110 @@
 .main-body {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
-  width: 100%;
+  padding: 3rem 2rem;
   box-sizing: border-box;
-  color: #111111;
+  color: #111;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
 }
+.intro-box {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.7));
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 900px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+h1, .intro {
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+}
+
 h1 {
-  color: #af0000;
-  margin-bottom: 16px;
+  color: #ffe066;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
-p {
-  font-size: 1.2em;
-  margin-bottom: 32px;
+
+
+.intro {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffe066;
+  margin-bottom: 3rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  gap: 24px;
+  flex-wrap: wrap; // <-- per il mobile
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+}
+
+.feature img {
+  width: 180px;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.feature div {
+  flex: 1;
+  min-width: 240px;
+}
+
+.feature h2 {
+  color: #af0000;
+  font-size: 1.6em;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+@media screen and (min-width: 768px) {
+  .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .feature p {
+    flex: 2;
+  }
+
+  .feature img {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }
