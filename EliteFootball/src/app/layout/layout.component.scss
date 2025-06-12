@@ -28,20 +28,30 @@
 }
 
 .header-btn {
-  color: #048500;
+  color: #0B1D51;
+  background: #FFD700;
+  border: none;
+  border-radius: 13px;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  background: #b9b9b913;
-  border-radius: 13px;
   margin-left: 10px;
+  letter-spacing: 0.04em;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
 }
-.header-btn:hover, .header-btn:focus {
-  background: linear-gradient(90deg, #f9f871 0%, #e43f15 100%);
-  color: #1a2238 !important;
-  transform: scale(1.04);
-  box-shadow: 0 2px 12px #e43f1533;
-  border-radius: 13px;
+
+.header-btn:hover,
+.header-btn:focus {
+  background: #000; /* nero */
+  color: #FFD700 !important; /* oro */
+  box-shadow: 0 2px 16px #FFD700cc; /* shadow oro visibile */
+  transform: scale(1.05);
+}
+
+.header-btn:focus:not(:focus-visible) {
+  outline: none !important;
+  background: #FFD700;
+  color: #0B1D51 !important;
+  box-shadow: none;
 }
 
 /* LAYOUT */
@@ -99,12 +109,14 @@
 .sidebar-fixed ion-item:last-child {
   border-bottom: none;
 }
+
 .sidebar-fixed ion-item:hover,
 .sidebar-fixed ion-item:focus {
-  background: linear-gradient(90deg, #f9f871 0%, #e43f15 100%);
-  color: #1a2238 !important;
+  background: linear-gradient(90deg, #22336d , #0B1D51 100%);
+  color: #FFD700 !important;
+  --color: #FFD700 !important;
   transform: scale(1.04);
-  box-shadow: 0 2px 12px #e43f1533;
+  box-shadow: 0 2px 12px #FFD70033;
   cursor: pointer;
 }
 
@@ -141,6 +153,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .footer-content {
   width: 100%;
   height: 100%;
@@ -153,6 +166,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 18px;
+}
+
+.footer-link {
+  color: #f5f5f5; /* Bianco/grigio chiaro come il titolo */
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 18px;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: #FFD700; /* Giallo oro all'hover */
 }
 
 /* Scrollbar sidebar */
@@ -164,3 +191,7 @@
   background: var(--prestige-gold);
   border-radius: 4px;
 }
+
+
+
+

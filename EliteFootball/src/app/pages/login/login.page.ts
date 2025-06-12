@@ -40,7 +40,11 @@ export class LoginPage {
 
   this.apiService.login(this.email, this.password).subscribe({
   next: async (res) => {
-    localStorage.setItem('token', res.token); // <--- SALVA IL TOKEN QUI!
+    localStorage.setItem('token', res.token);
+    // Notifica tutte le tab E QUESTA con evento custom
+    window.dispatchEvent(new StorageEvent('storage', { key: 'token', newValue: res.token }));
+    window.dispatchEvent(new Event('authChange')); // <-- AGGIUNGI QUESTO!  
+    
     
     const alert = await this.alertCtrl.create({
       header: 'Successo',

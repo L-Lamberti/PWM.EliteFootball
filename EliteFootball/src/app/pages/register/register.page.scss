@@ -3,6 +3,16 @@ ion-toolbar {
   --color: var(--prestige-gold);
 }
 
+ion-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  //letter-spacing: 0.01em;
+  color: var(--prestige-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  //margin-top: 2px;
+
+}
+
 ion-content {
   height: 100%;
   min-height: 100vh;
@@ -19,7 +29,7 @@ ion-item {
   border-radius: 8px;
 }
 
-ion-label{
+ion-label {
   --color: var(--prestige-navy);
 }
 
@@ -30,16 +40,24 @@ ion-item .label-floating.sc-ion-label-ios-h {
 }
 
 ion-input {
-  
   --color: var(--prestige-navy);
   --placeholder-color: #c13535;
 }
 
-ion-button {
-  --background: var(--prestige-gold);
-  --color: var(--prestige-navy);
+ion-button[type="submit"] {
+  --background: #FFD700;
+  --color: #0B1D51;
   margin-top: 24px;
   font-weight: bold;
+  border-radius: 13px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
+}
+ion-button[type="submit"]:hover,
+ion-button[type="submit"]:focus {
+  --background: #000;
+  --color: #FFD700;
+  box-shadow: 0 2px 16px #FFD700cc;
+  transform: scale(1.05);
 }
 
 form {
@@ -47,4 +65,3 @@ form {
   max-width: 400px;
   margin: auto;
 }
-
