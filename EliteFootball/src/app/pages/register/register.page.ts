@@ -10,7 +10,6 @@ import { IonTitle, IonToolbar,IonHeader, IonButton, IonLabel, IonContent, IonIte
   templateUrl: 'register.page.html',
   styleUrls: ['register.page.scss'],
   standalone: true,
-  //imports: [FormsModule, IonTitle, IonItem, IonToolbar, IonHeader, IonButton, IonLabel, IonContent],
     imports: [FormsModule, IonItem, IonLabel, IonButton, IonContent, IonTitle, IonHeader, IonToolbar, IonInput],
   
 })
