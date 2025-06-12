@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { FormazioneComponent } from './formazione-component/formazione.component';
 import { ApiService } from 'src/app/services/api.service';
+import {IonButton,IonList,IonLabel,IonItem} from '@ionic/angular/standalone';
+
 
 @Component({
   standalone: true,
   selector: 'app-formazioni',
   templateUrl: 'formazione.page.html',
   styleUrls: ['formazione.page.scss'],
-  imports: [IonicModule, CommonModule, FormazioneComponent]
+  imports: [CommonModule, FormazioneComponent,IonButton,IonList,IonLabel,IonItem]
 })
 
 export class FormazionePage implements OnInit {

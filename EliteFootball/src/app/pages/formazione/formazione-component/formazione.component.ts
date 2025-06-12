@@ -1,5 +1,5 @@
 import { Component, OnInit , Input, Output, EventEmitter  } from '@angular/core';
-import { ModalController, IonicModule, AlertController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { CommonModule} from '@angular/common';
 import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocatore/selezione-giocatore.component';
 import { ActivatedRoute } from '@angular/router';
@@ -7,14 +7,16 @@ import { LayoutComponent } from "../../../layout/layout.component";
 import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
 import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
 import { SelezioneAllenatoreComponent } from 'src/app/components/selezione-allenatore/selezione-allenatore/selezione-allenatore.component';
+import {IonButton,IonLabel,IonItem,IonIcon} from '@ionic/angular/standalone';
 import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-formazione',
   templateUrl: './formazione.component.html',
   styleUrls: ['./formazione.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, LayoutComponent, FormsModule],
+  imports: [CommonModule, LayoutComponent, FormsModule,IonButton,IonLabel,IonItem,IonIcon],
 })
 
 export class FormazioneComponent implements OnInit {

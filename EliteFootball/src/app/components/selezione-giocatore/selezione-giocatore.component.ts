@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api.service';
+import {IonButton,IonHeader,IonItem,IonTitle,IonButtons,IonContent,IonToolbar,IonList,IonLabel} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-selezione-giocatore',
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [IonHeader, CommonModule,IonButton,IonItem,IonTitle,IonButtons,IonContent,IonToolbar,IonList,IonLabel],
   templateUrl: './selezione-giocatore.component.html',
   styleUrls: ['./selezione-giocatore.component.scss'],
 })
