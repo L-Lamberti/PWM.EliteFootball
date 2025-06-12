@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+import { IonInput, IonItem, IonLabel, IonButton, IonContent, IonTitle, IonHeader, IonToolbar} from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
-import { IonTitle, IonToolbar,IonHeader, IonButton, IonLabel, IonContent, IonItem } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: 'login.page.html',
   styleUrls: ['login.page.scss'],
   standalone: true,
-  imports: [ FormsModule, IonTitle, IonItem, IonToolbar, IonHeader, IonButton, IonLabel,IonContent],
+  imports: [FormsModule, IonInput, IonItem, IonLabel, IonButton, IonContent, IonTitle, IonHeader, IonToolbar],
 })
+
 export class LoginPage {
   email = '';
   password = '';

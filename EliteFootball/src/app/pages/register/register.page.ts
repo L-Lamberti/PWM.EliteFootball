@@ -3,14 +3,16 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { IonTitle, IonToolbar,IonHeader, IonButton, IonLabel, IonContent, IonItem } from '@ionic/angular/standalone';
+import { IonTitle, IonToolbar,IonHeader, IonButton, IonLabel, IonContent, IonItem, IonInput } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.page.html',
   styleUrls: ['register.page.scss'],
   standalone: true,
-  imports: [FormsModule, IonTitle, IonItem, IonToolbar, IonHeader, IonButton, IonLabel, IonContent],
+  //imports: [FormsModule, IonTitle, IonItem, IonToolbar, IonHeader, IonButton, IonLabel, IonContent],
+    imports: [FormsModule, IonItem, IonLabel, IonButton, IonContent, IonTitle, IonHeader, IonToolbar, IonInput],
+  
 })
 export class RegisterPage {
   
