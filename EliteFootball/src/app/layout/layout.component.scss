@@ -170,6 +170,8 @@
 }
 
 .footer-link {
+  position: absolute;
+  right: 20px;
   color: #f5f5f5; /* Bianco/grigio chiaro come il titolo */
   cursor: pointer;
   text-decoration: underline;
