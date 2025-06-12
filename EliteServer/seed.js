@@ -589,6 +589,7 @@ async function seedGiocatoriRuoli() {
   // PUNTE CENTRALI (PC)
 
   { cognome: 'Haaland', ruoli: ['PC'] },
+  { cognome: 'Ronaldo', ruoli: ['PC'] },
   { cognome: 'Mbappé', ruoli: ['PC','AS'] },
   { cognome: 'Kane', ruoli: ['PC'] },
   { cognome: 'Osimhen', ruoli: ['PC'] },
