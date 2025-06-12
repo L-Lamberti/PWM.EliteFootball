@@ -130,3 +130,12 @@ ion-label p {
   margin: 0 0 2px 0;
   text-shadow: 1px 1px 6px #000;
 }
+.err
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem; // circa 28-30px
+  color: #ffe066;       // colore scuro per buona leggibilità
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); // ombra leggera per contrasto
+  margin-bottom: 16px;
+}
