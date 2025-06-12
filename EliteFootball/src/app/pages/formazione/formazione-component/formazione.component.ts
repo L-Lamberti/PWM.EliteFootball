@@ -7,7 +7,7 @@ import { LayoutComponent } from "../../../layout/layout.component";
 import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
 import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
 import { SelezioneAllenatoreComponent } from 'src/app/components/selezione-allenatore/selezione-allenatore/selezione-allenatore.component';
-import {html2canvas }from 'html2canvas';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-formazione',
