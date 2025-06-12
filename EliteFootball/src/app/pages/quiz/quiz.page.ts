@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonList } from '@ionic/angular/standalone';
+import { IonButton, IonItem, IonList } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-quiz',
@@ -10,32 +11,90 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLis
   standalone: true,
   imports: [IonList, IonButton, IonItem, CommonModule, FormsModule]
 })
-export class QuizPage {
- domande = [
-    {
-      testo: 'Chi ha vinto più Palloni d\'Oro?',
-      risposte: ['Cristiano Ronaldo', 'Lionel Messi', 'Michel Platini', 'Johan Cruijff'],
-      corretta: 1
-      },
-    // ...altre domande...
-  ];
+export class QuizPage implements OnInit {
+  domande: any[] = [];
   indice = 0;
   rispostaSelezionata: number | null = null;
+  mostraRisposta = false;
   punteggio = 0;
   completato = false;
 
-  selezionaRisposta(i: number) {
-    this.rispostaSelezionata = i;
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {
+    this.api.getQuiz().subscribe({
+      next: data => {
+        this.domande = data;
+      },
+      error: err => {
+        console.error('❌ Errore durante il caricamento del quiz:', err);
+      }
+    });
   }
 
-  avanti() {
+ selezionaRisposta(i: number) {
+  if (!this.mostraRisposta) {
+    this.rispostaSelezionata = i;
+
+    if (i === this.domande[this.indice].corretta) {
+      this.punteggio++;
+    }
+
+    this.mostraRisposta = true;
+  }
+}
+
+
+  confermaRisposta() {
     if (this.rispostaSelezionata === this.domande[this.indice].corretta) {
       this.punteggio++;
     }
+    this.mostraRisposta = true;
+  }
+
+  avanti() {
     this.indice++;
     this.rispostaSelezionata = null;
+    this.mostraRisposta = false;
+
     if (this.indice >= this.domande.length) {
       this.completato = true;
     }
   }
+
+  getFeedback(punteggio: number) {
+  const feedback = [
+    { descrizione: '🙈 Hai bisogno di ripassare! Allenati di più.', img: 'assets/img/zero.webp' },
+    { descrizione: '⚽ Non è andata bene. Ma c’è margine di miglioramento!', img: 'assets/img/uno.jpg' },
+    { descrizione: '🔄 Qualche conoscenza ce l’hai, ma serve costanza.', img: 'assets/img/due.jpg' },
+    { descrizione: '💪 Te la cavi! Ma si può fare di meglio.', img: 'assets/img/tre.jpg' },
+    { descrizione: '🔥 Ottimo lavoro! Quasi perfetto.', img: 'assets/img/quattro.jpg' },
+    { descrizione: '🏆 Sei un vero Mister! Conosci tutto!', img: 'assets/img/cinque.jpg' }
+  ];
+  return feedback[punteggio] || feedback[0];
+}
+shuffleArray(array: any[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+restartQuiz() {
+  this.indice = 0;
+  this.punteggio = 0;
+  this.completato = false;
+  this.rispostaSelezionata = null;
+
+  this.api.getQuiz().subscribe({
+    next: data => {
+      this.domande = data; // assegna le nuove domande ricevute
+    },
+    error: err => {
+      console.error('❌ Errore durante il ricaricamento del quiz:', err);
+    }
+  });
+}
+
+
 }

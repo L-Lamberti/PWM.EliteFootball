@@ -70,16 +70,11 @@ export class ApiService {
       `${this.apiUrl}/api/formazioni/${id}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
-  } 
+  }
+  getQuiz(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/api/quiz`);
+} 
 
-  getEventiLive() {
-  return this.http.get('https://api-football-v1.p.rapidapi.com/v3/fixtures?league=135&season=2024', {
-    headers: {
-      'X-RapidAPI-Key': 'LA_TUA_API_KEY',
-      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-    }
-  });
-}
 }
 
 

@@ -1,4 +1,3 @@
-
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('elitefootball.db');
 
@@ -62,8 +61,15 @@ db.run(`CREATE TABLE IF NOT EXISTS formazioni (
     data_creazione DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(user_id) REFERENCES utenti(id)
   )`);
+  db.run(`CREATE TABLE IF NOT EXISTS quiz (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  domanda TEXT NOT NULL,
+  risposta_corretta TEXT NOT NULL,
+  risposta_errata1 TEXT NOT NULL,
+  risposta_errata2 TEXT NOT NULL,
+  risposta_errata3 TEXT NOT NULL
+)`)
 
 });
 
 module.exports = db;
-

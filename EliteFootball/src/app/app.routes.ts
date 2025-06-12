@@ -41,16 +41,8 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/h2h/h2h.page').then( m => m.H2HPage)
       },
       {
-        path: 'eventi',
-        loadComponent: () => import('./pages/eventi/eventi.page').then( m => m.EventiPage)
-      },
-      {
         path: 'quiz',
         loadComponent: () => import('./pages/quiz/quiz.page').then( m => m.QuizPage)
-      },
-      {
-        path: 'sondaggi',
-        loadComponent: () => import('./pages/sondaggi/sondaggi.page').then( m => m.SondaggiPage)
       },
       {
         path: 'reclami',

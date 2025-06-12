@@ -113,14 +113,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
   vaiAlTorneo() {
     this.router.navigate(['/torneo']);
   }
-  vaiAEventi() {
-    this.router.navigate(['/eventi']);
-  }
   vaiAQuiz() {
     this.router.navigate(['/quiz']);
-  }
-  vaiASondaggi() {
-    this.router.navigate(['/sondaggi']);
   }
   vaiAReclami() {
     this.router.navigate(['/reclami']);
