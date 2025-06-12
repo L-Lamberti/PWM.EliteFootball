@@ -26,18 +26,26 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrl}/api/citazioni`);
   }
   getGiocatoreById(id: number) {
-  return this.http.get<any>(`${this.apiUrl}/api/giocatori/${id}`);
+    return this.http.get<any>(`${this.apiUrl}/api/giocatori/${id}`);
   }
   getAllGiocatori() {
-  return this.http.get<any[]>(`${this.apiUrl}/api/giocatori`);
+    return this.http.get<any[]>(`${this.apiUrl}/api/giocatori`);
   }
 
   register(email: string, password: string) {
-  return this.http.post(`${this.apiUrl}/api/auth/register`, { email, password });
+    return this.http.post(`${this.apiUrl}/api/auth/register`, { email, password });
   }
 
   login(email: string, password: string): Observable<any> {
-  return this.http.post(`${this.apiUrl}/api/auth/login`, { email, password });
+    return this.http.post(`${this.apiUrl}/api/auth/login`, { email, password });
+  }
+
+  sendFeedback(data: { nome: string, email: string, messaggio: string }) {
+    return this.http.post(`${this.apiUrl}/api/feedback`, data);
+  } 
+
+  getAllFeedback() {
+    return this.http.get<any[]>(`${this.apiUrl}/api/feedback`);
   }
 
  saveFormazione(formazione: { nome: string, modulo: string, giocatori: any[], allenatoreId?: number }) {

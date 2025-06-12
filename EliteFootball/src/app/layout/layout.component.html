@@ -1,6 +1,15 @@
 <ion-app>
   <ion-header [translucent]="true" class="main-header">
     <ion-toolbar color="light">
+      <ion-buttons slot="start">
+        <ion-button
+          class="header-btn admin-btn"
+          *ngIf="isAdmin"
+          disabled
+        >
+          Admin
+        </ion-button>
+      </ion-buttons>
         <a (click)="vaiAllaHome()" style="display:inline-block; cursor:pointer;">
         <img src="assets/icon/logo.png" alt="Logo Elite Football" class="logo" />
         </a>

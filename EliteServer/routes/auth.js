@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
 
     const hashed = await bcrypt.hash(password, 10);
 
-    db.run('INSERT INTO utenti (email, password) VALUES (?, ?)', [email, hashed], function(err2) {
+    db.run('INSERT INTO utenti (email, password, role) VALUES (?, ?, ?)', [email, hashed, 'user'], function(err2) {
       if (err2) return res.status(500).json({ message: 'Errore durante la registrazione' });
 
       res.status(201).json({ message: 'Registrazione completata' });
@@ -65,8 +65,8 @@ router.post('/login', async (req, res) => {
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) return res.status(401).json({ message: 'Credenziali errate' });
 
-    const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    const token = jwt.sign({ userId: user.id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
+    res.json({ token, role: user.role });
   });
 });
 

@@ -39,30 +39,34 @@ export class LoginPage {
       return;
     }
 
-  this.apiService.login(this.email, this.password).subscribe({
-  next: async (res) => {
-    localStorage.setItem('token', res.token);
-    // Notifica tutte le tab E QUESTA con evento custom
-    window.dispatchEvent(new StorageEvent('storage', { key: 'token', newValue: res.token }));
-    window.dispatchEvent(new Event('authChange')); // <-- AGGIUNGI QUESTO!  
-    
-    
-    const alert = await this.alertCtrl.create({
-      header: 'Successo',
-      message: 'Login effettuato!',
-      buttons: ['OK'],
-    });
-    await alert.present();
-    this.router.navigate(['/']);
-  },
-      error: async (err) => {
-        const alert = await this.alertCtrl.create({
-          header: 'Errore',
-          message: err.error?.message || 'Login fallito',
-          buttons: ['OK'],
-        });
-        await alert.present();
+    this.apiService.login(this.email, this.password).subscribe({
+      next: async (res) => {
+      localStorage.setItem('token', res.token);
+      if (res.role) {
+        localStorage.setItem('role', res.role); // <--- SALVA IL RUOLO!
+      } else {
+        localStorage.removeItem('role'); // In caso non venga passato
       }
+      // Notifica tutte le tab E QUESTA con evento custom
+      window.dispatchEvent(new StorageEvent('storage', { key: 'token', newValue: res.token }));
+      window.dispatchEvent(new Event('authChange')); 
+      
+      const alert = await this.alertCtrl.create({
+        header: 'Successo',
+        message: 'Login effettuato!',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      this.router.navigate(['/']);
+      },
+        error: async (err) => {
+          const alert = await this.alertCtrl.create({
+            header: 'Errore',
+            message: err.error?.message || 'Login fallito',
+            buttons: ['OK'],
+          });
+          await alert.present();
+        }
     });
   }
   vaiAllaRegistrazione() {

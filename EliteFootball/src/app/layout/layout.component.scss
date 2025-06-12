@@ -54,6 +54,21 @@
   box-shadow: none;
 }
 
+.admin-btn[disabled] {
+  pointer-events: none;    /* Non cliccabile */
+  opacity: 1;              /* Mantieni opacità piena */
+  cursor: default;
+  filter: brightness(1.03);
+}
+
+.admin-btn[disabled]:hover,
+.admin-btn[disabled]:focus {
+  background: #0B1D51 !important;  /* Blu navy */
+  color: #FFD700 !important;        /* Oro */
+  box-shadow: 0 2px 16px #FFD700cc;
+  transform: scale(1.05);
+}
+
 /* LAYOUT */
 .page-layout {
   display: flex;
@@ -119,6 +134,11 @@
   box-shadow: 0 2px 12px #FFD70033;
   cursor: pointer;
 }
+
+.admin-btn {
+  margin-right: 8px;
+}
+
 
 /* MAIN CONTENT */
 

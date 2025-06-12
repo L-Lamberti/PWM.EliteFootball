@@ -6,7 +6,8 @@ db.serialize(() => {
   db.run(`CREATE TABLE IF NOT EXISTS utenti (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     email TEXT UNIQUE,
-    password TEXT
+    password TEXT,
+    role TEXT DEFAULT 'user'
   )`);
 
   db.run(`CREATE TABLE IF NOT EXISTS giocatori (
@@ -69,6 +70,14 @@ db.run(`CREATE TABLE IF NOT EXISTS formazioni (
   risposta_errata2 TEXT NOT NULL,
   risposta_errata3 TEXT NOT NULL
 )`)
+
+  db.run(`CREATE TABLE IF NOT EXISTS feedback (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT,
+  email TEXT,
+  messaggio TEXT NOT NULL,
+  data_invio DATETIME DEFAULT CURRENT_TIMESTAMP
+  )`);
 
 });
 

@@ -31,7 +31,8 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/giocatori-dettaglio/giocatori-dettaglio.page').then( m => m.GiocatoriDettaglioPage)
       },
       {
-         path: 'login', loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage) },
+         path: 'login', 
+         loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage) },
       {
         path: 'register',
         loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
@@ -48,16 +49,18 @@ export const routes: Routes = [
         path: 'reclami',
         loadComponent: () => import('./pages/reclami/reclami.page').then( m => m.ReclamiPage)
       },
+      { path: 'feedback-admin', 
+        loadComponent: () => import('./pages/feedback-admin/feedback-admin.page').then(m => m.FeedbackAdminPage) 
+      },
     ]
-  },
-  {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
   },
   {
     path: 'home',
     loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
   },
+
+  
+
     ]
 
   

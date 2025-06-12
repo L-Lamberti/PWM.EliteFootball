@@ -8,14 +8,16 @@ const citazioniRoutes = require('./routes/citazioni');
 const PORT = 3000;
 const formazioniRouter = require('./routes/formazioni');
 const quizRoutes = require('./routes/quiz');
+const feedbackRouter = require('./routes/feedback'); 
 
+          
 app.use(cors({
   origin: 'http://localhost:8100', // <-- Cambia con la porta del tuo frontend se serve
   credentials: true
 }));
 
 app.use(express.json());
-
+app.use('/api/feedback', feedbackRouter);
 app.use('/api/formazioni', formazioniRouter);
 app.use('/api/auth', authRoutes);
 app.use('/api/giocatori', giocatoriRoutes);

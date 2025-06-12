@@ -1,4 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
+const bcrypt = require('bcrypt');
 const db = new sqlite3.Database('elitefootball.db');
 
 function runAsync(sql, params = []) {
@@ -731,6 +732,17 @@ for (const d of domande) {
 console.log('✅ Domande Quiz inseriti.');
 }
 
+
+async function seedAdmin() {
+  await runAsync('DELETE FROM utenti WHERE email = ?', ['admin@elitefootball.it']);
+  const hashed = await bcrypt.hash('admin123', 10); // oppure la password che vuoi
+  await runAsync(
+    'INSERT INTO utenti (email, password, role) VALUES (?, ?, ?)',
+    ['admin@elitefootball.it', hashed, 'admin']
+  );
+}
+
+
 async function runSeed() {
   try {
     await seedRuoli();
@@ -739,6 +751,7 @@ async function runSeed() {
     await seedQuiz ();
     await seedCitazioni();
     await seedGiocatoriRuoli();
+    await seedAdmin();
     console.log('✅ Seeding completato con successo.');
     process.exit(0);
   } catch (error) {

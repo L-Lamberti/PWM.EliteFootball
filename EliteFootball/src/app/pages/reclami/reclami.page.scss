@@ -3,6 +3,12 @@ ion-toolbar {
   --color: var(--prestige-gold);
 }
 
+h1.titolo-blu {
+  margin-bottom: 24px;
+  color: #0B1D51; /* Blu navy */
+  font-weight: bold;
+}
+
 ion-content {
   height: 100%;
   min-height: 100vh;
@@ -57,10 +63,6 @@ form {
   padding-top: 0; // rimosso spazio sopra
 }
 
-h1,h2 {
-  margin-bottom: 24px;
-  color: #af0000;
-}
 ion-item {
   margin-bottom: 18px; // aumenta lo spazio tra ogni campo
 }
@@ -69,4 +71,26 @@ ion-item {
   margin-top: 20px;
   color: #048500;
   font-weight: bold;
+}
+
+.container p {
+  color: #0B1D51; /* Blu navy */
+  font-weight: 500;
+}
+
+ion-button[type="submit"] {
+  --background: var(--prestige-gold);
+  --color: var(--prestige-navy);
+  margin-top: 24px;
+  font-weight: bold;
+  border-radius: 13px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
+}
+
+ion-button[type="submit"]:hover,
+ion-button[type="submit"]:focus {
+  --background: #000;
+  --color: var(--prestige-gold);
+  box-shadow: 0 2px 16px #FFD700cc;
+  transform: scale(1.05);
 }

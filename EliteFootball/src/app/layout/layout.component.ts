@@ -12,6 +12,8 @@ import { RouterOutlet } from '@angular/router';
   imports: [IonicModule, CommonModule, RouterOutlet]
 })
 export class LayoutComponent implements OnInit, OnDestroy {
+
+  isAdmin = false;
   isLoggedIn = false;
   private alertShown = false; // Previene doppio alert cross-tab
 
@@ -36,7 +38,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   checkLogin() {
-    this.isLoggedIn = !!localStorage.getItem('token');
+  this.isLoggedIn = !!localStorage.getItem('token');
+  this.isAdmin = localStorage.getItem('role') === 'admin';
   }
 
   onLoginLogoutClick() {
@@ -50,6 +53,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   // Logout nella tab corrente
   async logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('role'); // Rimuovi anche il ruolo
     this.checkLogin();
     // Simula un evento storage per aggiornare anche questa tab (e altre)
     window.dispatchEvent(new StorageEvent('storage', { key: 'token', newValue: null }));
@@ -118,6 +122,14 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.router.navigate(['/quiz']);
   }
   vaiAReclami() {
-    this.router.navigate(['/reclami']);
+    const role = localStorage.getItem('role'); // oppure recupera il ruolo come preferisci
+    if (role === 'admin') {
+      this.router.navigate(['/feedback-admin']);
+    } else {
+      this.router.navigate(['/reclami']);
+    }
+  }
+  vaiAPaginaAdmin() {
+  this.router.navigate(['/admin']);
   }
 }
