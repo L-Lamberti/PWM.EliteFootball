@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { IonList, IonItem } from '@ionic/angular/standalone';
 
 
@@ -10,7 +9,7 @@ import { IonList, IonItem } from '@ionic/angular/standalone';
   templateUrl: './citazioni.page.html',
   styleUrls: ['./citazioni.page.scss'],
   standalone: true,
-   imports: [ CommonModule, FormsModule, IonList, IonItem]
+   imports: [ CommonModule, IonList, IonItem]
 })
 export class CitazioniPage implements OnInit {
   citazioni: any[] = [];
