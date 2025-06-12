@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feedback degli Utenti</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="admin-feedback-container">
+    <h1 class="titolo-blu">👑 Feedback ricevuti</h1>
+    <p class="sottotitolo-blue">Qui trovi tutti i messaggi inviati dagli utenti tramite il modulo Reclami & Feedback.</p>
+
+    <div *ngIf="loading" class="loading-block">
+      <ion-spinner name="crescent" color="warning"></ion-spinner>
+      <span>Caricamento feedback...</span>
+    </div>
+    <div *ngIf="errorMsg" class="error-msg">{{errorMsg}}</div>
+    <ion-list *ngIf="!loading && feedbackList.length > 0">
+      <ion-item *ngFor="let fb of feedbackList">
+        <ion-label>
+          <div class="feedback-top">
+            <span class="feedback-name">{{ fb.nome || 'Anonimo' }}</span>
+            <span class="feedback-email" *ngIf="fb.email">{{ fb.email }}</span>
+            <span class="feedback-date">{{ fb.data_invio | date:'short' }}</span>
+          </div>
+          <div class="feedback-message">
+            {{ fb.messaggio }}
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="!loading && feedbackList.length === 0" class="no-feedback">
+      Nessun feedback ricevuto.
+    </div>
+  </div>
+</ion-content>

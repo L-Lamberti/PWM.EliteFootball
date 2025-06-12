@@ -79,6 +79,14 @@ db.run(`CREATE TABLE IF NOT EXISTS formazioni (
   data_invio DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
 
+  db.run(`CREATE TABLE IF NOT EXISTS feedback (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT,
+  email TEXT,
+  messaggio TEXT NOT NULL,
+  data_invio DATETIME DEFAULT CURRENT_TIMESTAMP
+  )`);
+
 });
 
 module.exports = db;
