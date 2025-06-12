@@ -693,8 +693,42 @@ async function seedCitazioni() {
   for (const c of citazioni) {
     await runAsync(`INSERT INTO citazioni (testo, autore, foto) VALUES (?, ?, ?)`, c);
   }
-
   console.log('✅ Citazioni inserite.');
+}
+
+async function seedQuiz() {
+  await runAsync(`DELETE FROM citazioni`);
+   const domande = [
+    ["Chi ha vinto il Pallone d'Oro nel 2023?", "Lionel Messi", "Cristiano Ronaldo", "Erling Haaland", "Kylian Mbappé"],
+    ["Quale squadra ha vinto la Champions League 2024?", "Real Madrid", "Manchester City", "Arsenal", "Inter"],
+    ["Quanti minuti dura una partita di calcio regolamentare?", "90", "80", "100", "75"],
+    ["Chi è il miglior marcatore della storia dei Mondiali?", "Miroslav Klose", "Pelé", "Ronaldo", "Messi"],
+    ["Cosa indica un cartellino rosso?", "Espulsione immediata", "Richiamo verbale", "Ammonizione", "Cambio obbligato"],
+    ["Chi ha segnato il 'gol del secolo' nel 1986?", "Diego Maradona", "Pelé", "Zidane", "Ronaldinho"],
+    ["Quale club ha vinto più Champions League?", "Real Madrid", "Barcellona", "Liverpool", "Milan"],
+    ["In quale paese si è svolto il Mondiale del 2022?", "Qatar", "Russia", "USA", "Brasile"],
+    ["Chi è l’attaccante norvegese del Manchester City famoso per i tanti gol?", "Erling Haaland", "Martin Ødegaard", "Joshua King", "Alexander Sørloth"],
+    ["Cosa succede se un portiere tocca il pallone con le mani fuori area?", "Fallo e punizione", "Rigore", "Ripresa dal fondo", "Gol automatico"],
+    ["Chi ha vinto l'Europeo del 2021?", "Italia", "Inghilterra", "Francia", "Spagna"],
+    ["Qual è la distanza regolamentare di una porta da calcio?", "7,32 metri", "7 metri", "8 metri", "6,5 metri"],
+    ["Chi ha il soprannome 'La Pulce'?", "Lionel Messi", "Sergio Agüero", "Diego Maradona", "Carlos Tévez"],
+    ["Quanti giocatori ha in campo una squadra di calcio?", "11", "10", "12", "9"],
+    ["Cosa si assegna in caso di fallo in area?", "Rigore", "Punizione indiretta", "Ammonizione", "Rimessa dal fondo"],
+    ["Chi è noto per il famoso 'colpo dello scorpione'?", "René Higuita", "Zlatan Ibrahimovic", "Ronaldinho", "Cristiano Ronaldo"],
+    ["Chi ha segnato più gol nella Serie A?", "Silvio Piola", "Francesco Totti", "Roberto Baggio", "Ciro Immobile"],
+    ["Chi è il portiere titolare della Nazionale italiana nel 2025?", "Gianluigi Donnarumma", "Alex Meret", "Marco Carnesecchi", "Salvatore Sirigu"],
+    ["Chi ha allenato il Barcellona nel triplete 2015?", "Luis Enrique", "Pep Guardiola", "Tito Vilanova", "Ronald Koeman"],
+    ["Chi ha vinto il Mondiale del 2006?", "Italia", "Francia", "Germania", "Argentina"]
+];
+
+for (const d of domande) {
+    await runAsync(
+      `INSERT INTO quiz (domanda, risposta_corretta, risposta_errata1, risposta_errata2, risposta_errata3)
+       VALUES (?, ?, ?, ?, ?)`,
+      d
+    );
+}
+console.log('✅ Domande Quiz inseriti.');
 }
 
 async function runSeed() {
@@ -702,6 +736,7 @@ async function runSeed() {
     await seedRuoli();
     await seedGiocatori();
     await seedAllenatori();
+    await seedQuiz ();
     await seedCitazioni();
     await seedGiocatoriRuoli();
     console.log('✅ Seeding completato con successo.');
@@ -711,5 +746,8 @@ async function runSeed() {
     process.exit(1);
   }
 }
+
+
+
 
 runSeed();

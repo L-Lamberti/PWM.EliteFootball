@@ -1,19 +1,44 @@
 <div class="sfondo"></div>
-  <div class="main-body">
-    <h2>❓ Quiz Calcio</h2>
-    <div *ngIf="!completato">
-      <h3>{{domande[indice].testo}}</h3>
-      <ion-list>
-        <ion-item *ngFor="let r of domande[indice].risposte; let i = index"
-                  [color]="rispostaSelezionata === i ? 'primary' : ''"
-                  (click)="selezionaRisposta(i)">
-          {{r}}
-        </ion-item>
-      </ion-list>
-      <ion-button [disabled]="rispostaSelezionata === null" (click)="avanti()">Avanti</ion-button>
-    </div>
-    <div *ngIf="completato">
-      <h3>Quiz completato!</h3>
-      <p>Punteggio: {{punteggio}} / {{domande.length}}</p>
+
+<div class="main-body">
+  <h2>❓ Quiz Calcio</h2>
+
+  <div *ngIf="!completato">
+    <h3>Domanda {{indice + 1}} / {{domande.length}}</h3>
+    <h3>Punteggio: {{punteggio}}</h3>
+    <h3>{{ domande[indice]?.testo }}</h3>
+
+    <ion-list>
+      <ion-item
+        *ngFor="let r of domande[indice]?.risposte; let i = index"
+        (click)="selezionaRisposta(i)"
+        [class.correct]="mostraRisposta && i === domande[indice]?.corretta"
+        [class.incorrect]="mostraRisposta && i === rispostaSelezionata && rispostaSelezionata !== domande[indice]?.corretta"
+        [class.selezionata]="!mostraRisposta && i === rispostaSelezionata"
+        [disabled]="mostraRisposta">
+        {{ r }}
+      </ion-item>
+    </ion-list>
+
+    <div class="button-group" *ngIf="mostraRisposta">
+      <ion-button (click)="avanti()">Avanti</ion-button>
     </div>
   </div>
+
+  <div *ngIf="completato" class="finale">
+  <h3>🎉 Quiz completato!</h3>
+ <h3>Punteggio: {{punteggio}} / {{domande.length}}</h3>
+
+  <div class="feedback">
+    <p class="descrizione">{{ getFeedback(punteggio).descrizione }}</p>
+    <img [src]="getFeedback(punteggio).img" alt="Feedback calcistico" class="img-feedback" />
+  </div>
+
+  <div class="button-group">
+    <ion-button expand="block" (click)="restartQuiz()">🔄 Ricomincia</ion-button>
+  </div>
+</div>
+
+</div>
+
+
