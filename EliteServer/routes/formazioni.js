@@ -20,14 +20,14 @@ function authenticateToken(req, res, next) {
 
 // Crea una nuova formazione
 router.post('/', authenticateToken, (req, res) => {
-  const { nome, modulo, giocatori } = req.body;
+  const { nome, modulo, giocatori, allenatoreId } = req.body;
   const userId = req.user.userId;
   if (!modulo || !giocatori) {
     return res.status(400).json({ message: 'Dati mancanti' });
   }
   db.run(
-    `INSERT INTO formazioni (user_id, nome, modulo, giocatori) VALUES (?, ?, ?, ?)`,
-    [userId, nome || null, modulo, JSON.stringify(giocatori)],
+    `INSERT INTO formazioni (user_id, nome, modulo, giocatori, allenatoreId) VALUES (?, ?, ?, ?, ?)`,
+    [userId, nome || null, modulo, JSON.stringify(giocatori), allenatoreId || null],
     function(err) {
       if (err) return res.status(500).json({ message: 'Errore database' });
       res.status(201).json({ id: this.lastID });
@@ -54,11 +54,11 @@ router.get('/', authenticateToken, (req, res) => {
 router.put('/:id', authenticateToken, (req, res) => {
   const userId = req.user.userId;
   const formazioneId = req.params.id;
-  const { nome, modulo, giocatori } = req.body;
+  const { nome, modulo, giocatori, allenatoreId } = req.body;
 
   db.run(
-    `UPDATE formazioni SET nome = ?, modulo = ?, giocatori = ? WHERE id = ? AND user_id = ?`,
-    [nome, modulo, JSON.stringify(giocatori), formazioneId, userId],
+    `UPDATE formazioni SET nome = ?, modulo = ?, giocatori = ?, allenatoreId = ? WHERE id = ? AND user_id = ?`,
+    [nome, modulo, JSON.stringify(giocatori), allenatoreId || null, formazioneId, userId],
     function(err) {
       if (err) return res.status(500).json({ message: 'Errore database' });
       if (this.changes === 0) return res.status(404).json({ message: 'Formazione non trovata' });

@@ -55,6 +55,12 @@ ion-item.allenatore-item {
   align-items: center;
   justify-content: space-between;
   transition: transform 0.15s, box-shadow 0.15s;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 ion-item.allenatore-item:hover {
   transform: scale(1.02);
@@ -85,6 +91,12 @@ ion-item.allenatore-item.oro {
     0 0 16px 2px #ffd700cc,
     0 0 0 2px #ffd700cc;
   background: linear-gradient(90deg, #ffd700cc 0%, #ffe066 100%) !important;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 ion-item.allenatore-item.argento {
@@ -94,6 +106,12 @@ ion-item.allenatore-item.argento {
     0 0 16px 2px #c0c0c0,
     0 0 0 2px #c0c0c0;
   background: linear-gradient(90deg, #c0c0c0 0%, #c0c0c0 100%) !important;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 ion-item.allenatore-item.bronzo {
@@ -103,6 +121,12 @@ ion-item.allenatore-item.bronzo {
     0 0 16px 2px #cd7f32cc,
     0 0 0 2px #cd7f32cc;
   background: linear-gradient(90deg, #cd7f32cc 0%, #cd7f32 100%) !important;
+   --border-width: 0;
+  --inner-border-width: 0;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 ion-item.allenatore-item p {

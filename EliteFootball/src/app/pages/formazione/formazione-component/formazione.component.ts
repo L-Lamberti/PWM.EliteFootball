@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from "../../../layout/layout.component";
 import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
 import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
-
+import { SelezioneAllenatoreComponent } from 'src/app/components/selezione-allenatore/selezione-allenatore/selezione-allenatore.component';
 
 @Component({
   selector: 'app-formazione',
@@ -25,6 +25,7 @@ export class FormazioneComponent implements OnInit {
   ruoliIndicizzati: string[] = [];
   nomeFormazione: string = '';
   idFormazione: number | null = null;
+  allenatore: any = null;
 
 constructor(
     private modalCtrl: ModalController,
@@ -34,7 +35,7 @@ constructor(
   ) {}
 
   tuttiIGiocatori: any[] = [];
-
+  tuttiGliAllenatori: any[] = [];
 
   ngOnInit() {
   // 1. Genera SEMPRE i ruoli e i ruoli indicizzati PRIMA di tutto!
@@ -43,6 +44,8 @@ constructor(
 
   this.apiService.getAllGiocatori().subscribe(giocatori => {
   this.tuttiIGiocatori = giocatori;
+   this.apiService.getTopAllenatori().subscribe(allenatori => {
+      this.tuttiGliAllenatori = allenatori;
   
   // 2. Se sei in modalità modifica, carica i dati della formazione
     if (this.formazioneIniziale) {
@@ -59,7 +62,11 @@ constructor(
             }
           }
         }
+        if (this.formazioneIniziale.allenatoreId) {
+    this.allenatore = this.tuttiGliAllenatori.find(a => a.id === this.formazioneIniziale.allenatoreId) || null;
       }
+      }
+      });
   });
 }
 
@@ -126,70 +133,89 @@ constructor(
     this.close.emit();
   }
 
-  async salvaFormazione() {
-    const giocatori = this.ruoliIndicizzati.map(r => this.formazione[r]?.id || null);
+async salvaFormazione() {
+  const giocatori = this.ruoliIndicizzati.map(r => this.formazione[r]?.id || null);
 
-    if (giocatori.some(id => id === null)) {
-      const alert = await this.alertCtrl.create({
-        header: 'Attenzione',
-        message: 'Devi selezionare tutti i giocatori per ogni ruolo!',
-        buttons: ['OK']
-      });
-      await alert.present();
-      return;
-    }
-
-
-    if (this.idFormazione) {
-      // Aggiorna formazione esistente
-      this.apiService.updateFormazione(this.idFormazione, {
-        nome: this.nomeFormazione,
-        modulo: this.modulo,
-        giocatori
-      }).subscribe({
-        next: async (res) => {
-          const alert = await this.alertCtrl.create({
-            header: 'Successo',
-            message: 'Formazione salvata!',
-            buttons: ['OK']
-          });
-          await alert.present();
-          this.close.emit();
-        },
-        error: async (err) => {
-          const alert = await this.alertCtrl.create({
-            header: 'Errore',
-            message: err.error?.message || 'Errore durante il salvataggio',
-            buttons: ['OK']
-          });
-          await alert.present();
-        }
+  if (giocatori.some(id => id === null)) {
+    const alert = await this.alertCtrl.create({
+      header: 'Attenzione',
+      message: 'Devi selezionare tutti i giocatori per ogni ruolo!',
+      buttons: ['OK']
     });
-    } else {
-      // Crea nuova formazione
-      this.apiService.saveFormazione({
-        nome: this.nomeFormazione,
-        modulo: this.modulo,
-        giocatori
-      }).subscribe({
-        next: async (res) => {
-          const alert = await this.alertCtrl.create({
-            header: 'Successo',
-            message: 'Formazione salvata!',
-            buttons: ['OK']
-          });
-          await alert.present();
-          this.close.emit();
-        },
-        error: async (err) => {
-          const alert = await this.alertCtrl.create({
-            header: 'Errore',
-            message: err.error?.message || 'Errore durante il salvataggio',
-            buttons: ['OK']
-          });
-          await alert.present();
-        }
-    });
-    }
+    await alert.present();
+    return;
   }
+
+  if (!this.allenatore) {
+    const alert = await this.alertCtrl.create({
+      header: 'Attenzione',
+      message: 'Devi selezionare un allenatore!',
+      buttons: ['OK']
+    });
+    await alert.present();
+    return;
+  }
+
+  const formazionePayload = {
+    nome: this.nomeFormazione,
+    modulo: this.modulo,
+    giocatori,
+    allenatoreId: this.allenatore?.id
+  };
+
+  if (this.idFormazione) {
+    // Aggiorna formazione esistente
+    this.apiService.updateFormazione(this.idFormazione, formazionePayload).subscribe({
+      next: async (res) => {
+        const alert = await this.alertCtrl.create({
+          header: 'Successo',
+          message: 'Formazione salvata!',
+          buttons: ['OK']
+        });
+        await alert.present();
+        this.close.emit();
+      },
+      error: async (err) => {
+        const alert = await this.alertCtrl.create({
+          header: 'Errore',
+          message: err.error?.message || 'Errore durante il salvataggio',
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    });
+  } else {
+    // Crea nuova formazione
+    this.apiService.saveFormazione(formazionePayload).subscribe({
+      next: async (res) => {
+        const alert = await this.alertCtrl.create({
+          header: 'Successo',
+          message: 'Formazione salvata!',
+          buttons: ['OK']
+        });
+        await alert.present();
+        this.close.emit();
+      },
+      error: async (err) => {
+        const alert = await this.alertCtrl.create({
+          header: 'Errore',
+          message: err.error?.message || 'Errore durante il salvataggio',
+          buttons: ['OK']
+        });
+        await alert.present();
+      }
+    });
+  }
+}
+
+async apriSelezioneAllenatore() {
+  const modal = await this.modalCtrl.create({
+    component: SelezioneAllenatoreComponent,
+  });
+  await modal.present();
+  const { data } = await modal.onWillDismiss();
+  if (data) {
+    this.allenatore = data;
+  }
+}
 }

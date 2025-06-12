@@ -1,111 +1,152 @@
-
 .titolo-formazione {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* titolo a sinistra, bottone a destra */
-  margin: 0;
+  justify-content: space-between;
+  margin: 0 0 18px 0;
   padding: 0 12px;
-  margin-top: 0;
-  margin-bottom: 18px;
 }
 .titolo-formazione h2 {
-  position: absolute;
-  left: 0;
-  right: 0;
-  font-size: 2em;
-  font-weight: bold;
-  color: #32850bcc;
+  flex: 1;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #ffe066;
   letter-spacing: 0.02em;
   text-align: center;
+  text-shadow: 2px 2px 8px #000, 0 1px 0 #ffe066;
+  margin: 0;
 }
 .bottone-indietro {
-  min-width: 100px;
-  height: 20px;
-  font-size: 0.95em;
-  z-index: 1001;
-  background: #236e05 !important;
-  color: #db6505 !important;
-  border-radius: 24px;
-  min-width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 0,70em;
-  font-weight: 600;
-  border: none;
-  transition: background 0.2s, color 0.2s;
-  margin-left: auto;
-  margin-top: 10px;
+  min-width: 120px;
+  height: 36px;
+  font-size: 1em;
+  background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%) !important;
+  color: #222 !important;
+  border-radius: 18px;
+  font-weight: 700;
+  border: 2px solid #222;
+  margin-left: 18px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
 }
 
 .bottone-indietro:hover,
 .bottone-indietro:focus {
-  background: #f4db7d !important;
-  color: #1a2238 !important;
+  background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%) !important;
+  color: #000 !important;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.22);
 }
 
 .campo {
   display: grid;
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 0 auto;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(5, 1fr);
   background-image: url('/assets/img/campo.jpg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 100px;                    // La griglia dei giocatori ricopre meno campo per evitare l attacante sta in porta
+  padding-top: 100px;
   border-radius: 30px;
   width: 100%;
-  max-width: 600px;              // opzionale: limita la larghezza massima
-  aspect-ratio: 3161/5435;       // <-- Mantieni proporzioni campo (moderno, supportato dai browser recenti)
-  gap: 0px;             //per distanziare i giocatori
+  max-width: 600px;
+  aspect-ratio: 3161/5435;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
+  border: 2px solid #ffe066;            //per distanziare i giocatori
 }
 
-@media (max-width: 700px) {
-  .campo-e-salva {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .box-salva {
-    width: 100%;
-    min-width: 0;
-    margin-top: 24px;
-  }
-}
 
 .campo-e-salva {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 32px;
+  gap: 40px;
   margin-top: 24px;
   margin-bottom: 40px;
   width: 100%;
-  max-width: 900px;      // puoi aumentare o diminuire per regolare la larghezza massima
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
 }
-.box-salva {
-  min-width: 220px;
-  margin-top: 0;
+
+.campo-con-allenatore {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+}
+.campo-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.selezione-allenatore-top {
   display: flex;
   flex-direction: column;
-  gap: 0px;
-  padding-left: 0;
+  align-items: flex-end;
+  min-width: 220px;
+  gap: 4px;
+  margin-left: 24px;
+  margin-top: 0;
+  position: static; // <--- niente position absolute!
+}
+.label-allenatore {
+  color: #ffe066;
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 1em;
+}
+
+.box-salva {
+  min-width: 240px;
+  background: rgba(30,30,30,0.92);
+  border-radius: 18px;
+  border: 2px solid #ffe066;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
 }
 
 .box-salva ion-item {
+  --background: transparent;
+  --border-width: 0;
+  --inner-border-width: 0;
+  border: none !important;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-
-.box-salva ion-button {
-  margin-top: 0;
+.box-salva ion-label {
+  color: #ffe066;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 6px #000;
+}
+.box-salva ion-input {
+  color: #fff;
+  font-size: 1.1em;
+}
+ ion-button {
+  --background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+  --color: #222;
+  --border-style: solid;
+  --border-radius: 10px;
+  --border-color: #222;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+.box-salva ion-button:hover, .box-salva ion-button:focus {
+  --background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%);
+  --color: #000;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.22);
 }
 
 
@@ -130,24 +171,27 @@
   height: 110px;
   object-fit: cover;
   border-radius: 50%; // il cerchio solo sulla foto!
-  border: 2px solid #5ac51cde;
+  border: 2px solid #ffe066;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.973), 0 1.5px 0 #ce8704cc;
   background: #cac5c1;
 }
 
 .ruolo-nome {
-  margin-top: 4px;
-  font-size: 1em;
+  margin-top: 8px;
+  font-size: 1.08em;
   font-weight: bold;
-  color: #e9d200;
+  color: #ffe066;
   text-align: center;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background: #200f01;
+  background: #222;
   border-radius: 50px;
+  padding: 2px 10px;
+  box-shadow: 0 1px 4px #000;
 }
+
 
 .ruolo:hover {
   transform: scale(1.1);
@@ -159,6 +203,78 @@
   color: white;
   border: 2px solid white;
 }
+.allenatore-selezionato {
+  color: #ffe066;
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 2px;
+  text-shadow: 1px 1px 6px #000;
+}
+.allenatore-card-selezionato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(30,30,30,0.92);
+  border: 2px solid #ffe066;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
+  color: #ffe066;
+  padding: 16px 12px 10px 12px;
+  margin-top: 10px;
+  width: 100%;              // <-- larghezza massima della colonna
+  max-width: 220px;         // <-- opzionale, puoi rimuovere o aumentare
+  align-self: flex-end;     // <-- allinea a destra come il bottone
+  box-sizing: border-box;
+}
+.selezione-allenatore-top ion-button,
+.allenatore-card-selezionato {
+  width: 220px;
+  max-width: 100%;
+}
+
+.allenatore-foto {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2.5px solid #ffe066;
+  background: #cac5c1;
+  box-shadow: 0 2px 8px #000;
+}
+
+.allenatore-nome {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  color: #ffe066;
+  text-align: center;
+  text-shadow: 1px 1px 6px #000;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+  .campo-e-salva {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .campo-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    position: static;
+  }
+  .selezione-allenatore-top {
+    position: static;
+    margin: 16px 0 0 0;
+    align-items: flex-start;
+  }
+}
+
+
 
 
 .modulo-352 {
