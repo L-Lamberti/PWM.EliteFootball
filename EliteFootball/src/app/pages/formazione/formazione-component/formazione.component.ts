@@ -7,7 +7,6 @@ import { LayoutComponent } from "../../../layout/layout.component";
 import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
 import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
 import { SelezioneAllenatoreComponent } from 'src/app/components/selezione-allenatore/selezione-allenatore/selezione-allenatore.component';
-import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-formazione',
@@ -207,16 +206,6 @@ async salvaFormazione() {
       }
     });
   }
-}
-
-async scaricaFormazione() {
-  const campo = document.querySelector('.campo');
-  if (!campo) return;
-  const canvas = await html2canvas(campo as HTMLElement, {backgroundColor: null});
-  const link = document.createElement('a');
-  link.download = 'formazione.jpg';
-  link.href = canvas.toDataURL('image/jpeg', 0.95);
-  link.click();
 }
 
 async apriSelezioneAllenatore() {
