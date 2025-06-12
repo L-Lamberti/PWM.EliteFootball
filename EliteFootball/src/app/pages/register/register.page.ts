@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, IonicModule } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { IonTitle, IonToolbar,IonHeader, IonButton, IonLabel, IonContent, IonItem } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.page.html',
   styleUrls: ['register.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule],
+  imports: [FormsModule, IonTitle, IonItem, IonToolbar, IonHeader, IonButton, IonLabel, IonContent],
 })
 export class RegisterPage {
   
@@ -32,8 +33,6 @@ export class RegisterPage {
   }
 
   async onRegister() {
-
-
     if (!this.isEmailValid(this.email)) {
       const alert = await this.alertCtrl.create({
         header: 'Errore',
@@ -64,7 +63,6 @@ export class RegisterPage {
       return;
     }
 
-
     this.apiService.register(this.email, this.password).subscribe({
       next: async (res) => {
         const alert = await this.alertCtrl.create({
@@ -86,13 +84,3 @@ export class RegisterPage {
     });
   }
 }
-    // Qui colleghi il backend, oppure simuli la registrazione
-    // Esempio: mostra alert di successo e vai al login
-    /*const alert = await this.alertCtrl.create({
-      header: 'Successo',
-      message: 'Registrazione completata!',
-      buttons: ['OK'],
-    });
-    await alert.present();
-    this.router.navigate(['/login']);
-  }*/

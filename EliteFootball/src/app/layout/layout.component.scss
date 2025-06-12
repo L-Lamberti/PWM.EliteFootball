@@ -50,7 +50,7 @@
 .header-btn:focus:not(:focus-visible) {
   outline: none !important;
   background: #FFD700;
-  color: #0B1D51 !important;
+  color: #000103 !important;
   box-shadow: none;
 }
 
@@ -82,7 +82,6 @@
   top: 0;
   left: 0;
   bottom: 0;
-  border-right: 1.5px solid rgba(249, 248, 113, 0.18);
   backdrop-filter: blur(2px);
   box-shadow: 2px 0 12px #0001;
   
@@ -111,8 +110,9 @@
 }
 
 .sidebar-fixed ion-item:hover,
-.sidebar-fixed ion-item:focus {
-  background: linear-gradient(90deg, #22336d , #0B1D51 100%);
+.sidebar-fixed ion-item:focus,
+.sidebar-fixed ion-item.sidebar-active {
+  background: linear-gradient(90deg, #000 60%, #FFD700 100%);
   color: #FFD700 !important;
   --color: #FFD700 !important;
   transform: scale(1.04);

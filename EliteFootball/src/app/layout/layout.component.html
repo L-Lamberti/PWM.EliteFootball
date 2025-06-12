@@ -18,12 +18,12 @@
   <div class="page-layout">
     <div class="sidebar-fixed">
       <ion-list>
-        <ion-item button (click)="vaiAllaFormazione()">🏟️ Formazioni</ion-item>
-        <ion-item button (click)="vaiATopGiocatori()">⚽ Top Giocatori </ion-item>
-        <ion-item button (click)="vaiAAllenatori()">🧠 Top Allenatori</ion-item>
-        <ion-item button (click)="vaiACitazioni()">🗣️ Citazioni</ion-item>
-        <ion-item button (click)="vaiAlTorneo()">🏆 H2H </ion-item>
-        <ion-item button (click)="vaiAQuiz()">❓ Quiz</ion-item>
+        <ion-item button (click)="vaiAllaFormazione(); selectedSidebar='formazione'" [class.sidebar-active]="selectedSidebar === 'formazione'">🏟️ Formazioni</ion-item>
+        <ion-item button (click)="vaiATopGiocatori(); selectedSidebar='topgiocatori'" [class.sidebar-active]="selectedSidebar === 'topgiocatori'">⚽ Top Giocatori </ion-item>
+        <ion-item button (click)="vaiAAllenatori(); selectedSidebar='allenatori'" [class.sidebar-active]="selectedSidebar === 'allenatori'">🧠 Top Allenatori</ion-item>
+        <ion-item button (click)="vaiACitazioni(); selectedSidebar='citazioni'" [class.sidebar-active]="selectedSidebar === 'citazioni'">🗣️ Citazioni</ion-item>
+        <ion-item button (click)="vaiAlTorneo(); selectedSidebar='torneo'" [class.sidebar-active]="selectedSidebar === 'torneo'">🏆 H2H </ion-item>
+        <ion-item button (click)="vaiAQuiz(); selectedSidebar='quiz'" [class.sidebar-active]="selectedSidebar === 'quiz'">❓ Quiz</ion-item>
       </ion-list>
     </div>
     <ion-content class="main-content-fixed">

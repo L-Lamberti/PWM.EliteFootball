@@ -18,6 +18,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
    // Salva i listener per poterli rimuovere
   private storageListener = (event: StorageEvent) => this.handleStorageChange(event);
   private authChangeListener = () => this.checkLogin();
+  selectedSidebar: string = '';
 
 
   constructor(private router: Router, private alertCtrl: AlertController) {}
