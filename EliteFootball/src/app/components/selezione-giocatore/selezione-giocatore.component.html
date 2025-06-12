@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> {{ ruolo }}</ion-title>
+    <ion-title> {{ ruoloNomi[ruolo] || ruolo }} </ion-title>
     <ion-buttons slot ="end">
       <ion-button (click)="annulla()">Chiudi</ion-button>
     </ion-buttons>
@@ -11,12 +11,12 @@
   <ion-list>
     <ion-item *ngFor="let g of giocatoriDisponibili" (click)="seleziona(g)" lines="nones">
       <div class="selezione-card">
-      <img *ngIf="g.foto" [src]="'assets/giocatori/' + g.foto" [alt]="g.nome + ' ' + g.cognome" class="selezione-foto" />
-      <ion-label>
-        <h2>{{ g.nome }} {{ g.cognome }}</h2>
-        <p class="selezione-descrizione">{{ g.descrizione }}</p>
-        <span class="selezione-voto">Voto: {{ g.voto }}</span>
-      </ion-label>
+        <img *ngIf="g.foto" [src]="'assets/giocatori/' + g.foto" [alt]="g.nome + ' ' + g.cognome" class="selezione-foto" />
+        <ion-label>
+          <h2>{{ g.nome }} {{ g.cognome }}</h2>
+          <p class="selezione-descrizione">{{ g.descrizione }}</p>
+          <span class="selezione-voto">Voto: {{ g.voto }}</span>
+        </ion-label>
       </div>
     </ion-item>
   </ion-list>

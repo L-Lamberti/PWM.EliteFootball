@@ -12,9 +12,25 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SelezioneGiocatoreComponent implements OnInit {
   @Input() ruolo!: string;
-   @Input() giocatoriSelezionati: number[] = [];
+  @Input() giocatoriSelezionati: number[] = [];
   giocatori: any[] = [];
   listaGiocatori: any[] = []; // popolata da un servizio o mock
+
+  ruoloNomi: { [key: string]: string } = {
+    POR: 'Portiere',
+    DC: 'Difensore Centrale',
+    TD: 'Terzino Destro',
+    TS: 'Terzino Sinistro',
+    CDC: 'Centrocampista Difensivo',
+    CC: 'Centrocampista Centrale',
+    COC: 'Centrocampista Offensivo',
+    ED: 'Esterno Destro',
+    ES: 'Esterno Sinistro',
+    AD: 'Ala Destra',
+    AS: 'Ala Sinistra',
+    SP: 'Seconda Punta',
+    PC: 'Punta Centrale',
+  };
 
   constructor(private api: ApiService, private modalCtrl: ModalController) {}
 

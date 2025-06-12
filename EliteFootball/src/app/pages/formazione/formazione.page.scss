@@ -35,7 +35,7 @@ h2, h3 {
   text-align: center;
   margin: 4px auto 18px auto;
   text-shadow:
-    2px 2px 8px #000, /* ombra nera per staccare dal fondo */
+    2px 2px 8px #000,
     0 1px 0 #ffe066;
 }
 h2 {
@@ -43,18 +43,17 @@ h2 {
   font-size: 2.8em;
 }
 h3 {
-  color: #ffe066; // giallo chiaro, ben visibile sullo sfondo scuro
+  color: #ffe066; 
   font-size: 1.5em;
   text-shadow:
-    2px 2px 8px #000,   // ombra nera per staccare dal fondo
-    0 1px 0 #222;       // ulteriore contrasto
+    2px 2px 8px #000,
+    0 1px 0 #222;
   font-weight: 700;
   font-family: 'Barlow Semi Condensed', serif;
   letter-spacing: 0.02em;
   text-align: center;
   margin: 4px auto 18px auto;
 }
-
 
 /* BUTTONS */
 .button-group {
@@ -95,7 +94,7 @@ ion-list {
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
   border: 2px solid #ffe066;
-  padding: 18px 0 8px 0;
+  padding: 0 0 0 0;
   margin-bottom: 32px;
 }
 
@@ -112,6 +111,7 @@ ion-item {
   border-left: none !important;
   border-right: none !important
 }
+
 ion-item:last-child {
   border-bottom: none !important;
 }
@@ -130,18 +130,3 @@ ion-label p {
   margin: 0 0 2px 0;
   text-shadow: 1px 1px 6px #000;
 }
-
-
-
-@media (max-width: 700px) {
-  ion-list {
-    padding: 8px 0 4px 0;
-  }
-  ion-item {
-    padding: 8px 0;
-  }
-}
-
-
-
-

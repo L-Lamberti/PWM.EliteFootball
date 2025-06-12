@@ -5,6 +5,7 @@
   margin: 0 0 18px 0;
   padding: 0 12px;
 }
+
 .titolo-formazione h2 {
   flex: 1;
   font-size: 2.2em;
@@ -15,6 +16,7 @@
   text-shadow: 2px 2px 8px #000, 0 1px 0 #ffe066;
   margin: 0;
 }
+
 .bottone-indietro {
   min-width: 120px;
   height: 36px;
@@ -29,8 +31,7 @@
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
 }
 
-.bottone-indietro:hover,
-.bottone-indietro:focus {
+.bottone-indietro:hover {
   background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%) !important;
   color: #000 !important;
   transform: translateY(-2px) scale(1.04);
@@ -53,11 +54,10 @@
   max-width: 600px;
   aspect-ratio: 3161/5435;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
-  border: 2px solid #ffe066;            //per distanziare i giocatori
+  border: 2px solid #ffe066;
 }
 
-
-.campo-e-salva {
+.campo--all-save {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -68,69 +68,39 @@
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: row;
 }
 
-.campo-con-allenatore {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 32px;
-}
-.campo-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-.selezione-allenatore-top {
+.allenatore-salvataggio{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   min-width: 220px;
-  gap: 4px;
-  margin-left: 24px;
-  margin-top: 0;
-  position: static; // <--- niente position absolute!
-}
-.label-allenatore {
-  color: #ffe066;
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 1em;
+  margin-left:35px;
+  margin-top: 40px;
+  position: static; 
 }
 
 .box-salva {
-  min-width: 240px;
+  width: 100%;
   background: rgba(30,30,30,0.92);
   border-radius: 18px;
   border: 2px solid #ffe066;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
-  padding: 24px 18px 18px 18px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  align-items: stretch;
+  align-items: center;
 }
 
-.box-salva ion-item {
-  --background: transparent;
-  --border-width: 0;
-  --inner-border-width: 0;
-  border: none !important;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
 .box-salva ion-label {
   color: #ffe066;
   font-weight: 700;
   font-size: 1.1em;
   text-shadow: 1px 1px 6px #000;
 }
-.box-salva ion-input {
-  color: #fff;
-  font-size: 1.1em;
-}
- ion-button {
+
+ion-button {
   --background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
   --color: #222;
   --border-style: solid;
@@ -142,13 +112,12 @@
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
 }
-.box-salva ion-button:hover, .box-salva ion-button:focus {
+.box-salva ion-button:hover {
   --background: linear-gradient(90deg, #ffd700 60%, #ffe066 100%);
   --color: #000;
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.22);
 }
-
 
 .ruolo {
   display: flex;
@@ -159,8 +128,7 @@
   text-align: center;
   width: 115px;
   height: 150px;
-  
-  background: none; // niente cerchio qui!
+  background: none; 
   border-radius: 0;
   overflow: visible;
   padding-bottom: 0;
@@ -170,14 +138,14 @@
   width: 110px;
   height: 110px;
   object-fit: cover;
-  border-radius: 50%; // il cerchio solo sulla foto!
+  border-radius: 50%; 
   border: 2px solid #ffe066;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.973), 0 1.5px 0 #ce8704cc;
   background: #cac5c1;
 }
 
 .ruolo-nome {
-  margin-top: 8px;
+  margin-top: 5px;
   font-size: 1.08em;
   font-weight: bold;
   color: #ffe066;
@@ -188,28 +156,15 @@
   text-overflow: ellipsis;
   background: #222;
   border-radius: 50px;
-  padding: 2px 10px;
   box-shadow: 0 1px 4px #000;
 }
-
 
 .ruolo:hover {
   transform: scale(1.1);
   background-color: #ffeb3b00; // colore giallo evidenziato
   z-index: 2;
 }
-.ruolo.selezionato {
-  background-color: #2196f3;
-  color: white;
-  border: 2px solid white;
-}
-.allenatore-selezionato {
-  color: #ffe066;
-  font-size: 1em;
-  font-weight: 600;
-  margin-top: 2px;
-  text-shadow: 1px 1px 6px #000;
-}
+
 .allenatore-card-selezionato {
   display: flex;
   flex-direction: column;
@@ -221,15 +176,8 @@
   color: #ffe066;
   padding: 16px 12px 10px 12px;
   margin-top: 10px;
-  width: 100%;              // <-- larghezza massima della colonna
-  max-width: 220px;         // <-- opzionale, puoi rimuovere o aumentare
-  align-self: flex-end;     // <-- allinea a destra come il bottone
+  width: 100%;        
   box-sizing: border-box;
-}
-.selezione-allenatore-top ion-button,
-.allenatore-card-selezionato {
-  width: 220px;
-  max-width: 100%;
 }
 
 .allenatore-foto {
@@ -252,31 +200,6 @@
   text-shadow: 1px 1px 6px #000;
 }
 
-
-
-
-
-@media (max-width: 900px) {
-  .campo-e-salva {
-    flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
-  }
-  .campo-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-    position: static;
-  }
-  .selezione-allenatore-top {
-    position: static;
-    margin: 16px 0 0 0;
-    align-items: flex-start;
-  }
-}
-
-
-
-
 .modulo-352 {
   .r-PC-0  { grid-column: 2; grid-row: 1; }
   .r-SP-0  { grid-column: 4; grid-row: 1; }
@@ -294,10 +217,6 @@
   .r-POR-0 { grid-column: 3; grid-row: 8; }
 }
 
-
-
-
-
 .modulo-442 {
   .r-PC-0  { grid-column: 2; grid-row: 1; }
   .r-SP-0  { grid-column: 4; grid-row: 1; }
@@ -314,7 +233,6 @@
 
   .r-POR-0 { grid-column: 3; grid-row: 8; }
 }
-
 
 .modulo-3412 {
   .r-PC-0   { grid-column: 2; grid-row: 1; }
@@ -334,9 +252,6 @@
   .r-POR-0  { grid-column: 3; grid-row: 8; }
 }
 
-
-
-
 .modulo-433 {
   .r-AS-0  { grid-column: 1; grid-row: 2; }
   .r-PC-0  { grid-column: 3; grid-row: 1; }
@@ -353,5 +268,3 @@
 
   .r-POR-0 { grid-column: 3; grid-row: 8; }
 }
-
-
