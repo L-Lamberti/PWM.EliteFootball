@@ -12,7 +12,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.48); // overlay per contrasto
+  background: rgba(0,0,0,0.48);
   z-index: 1;
   pointer-events: none;
 }
@@ -134,8 +134,8 @@ ion-label p {
 {
   text-align: center;
   font-weight: bold;
-  font-size: 1.8rem; // circa 28-30px
-  color: #ffe066;       // colore scuro per buona leggibilità
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); // ombra leggera per contrasto
+  font-size: 1.8rem;
+  color: #ffe066;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   margin-bottom: 16px;
 }

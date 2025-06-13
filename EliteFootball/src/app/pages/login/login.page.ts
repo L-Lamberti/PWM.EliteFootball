@@ -44,9 +44,9 @@ export class LoginPage {
       next: async (res) => {
       localStorage.setItem('token', res.token);
       if (res.role) {
-        localStorage.setItem('role', res.role); // <--- SALVA IL RUOLO!
+        localStorage.setItem('role', res.role);
       } else {
-        localStorage.removeItem('role'); // In caso non venga passato
+        localStorage.removeItem('role');
       }
       // Notifica tutte le tab E QUESTA con evento custom
       window.dispatchEvent(new StorageEvent('storage', { key: 'token', newValue: res.token }));

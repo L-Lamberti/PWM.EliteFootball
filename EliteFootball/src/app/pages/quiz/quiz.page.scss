@@ -50,7 +50,6 @@ h3 {
   text-shadow:
     2px 2px 8px #000,
     0 1px 0 #222;
-  font-weight: 700;
   margin: 8px auto;
 }
 
@@ -106,7 +105,6 @@ ion-item.incorrect {
   text-shadow: 1px 1px 2px #000;
 }
 
-
 ion-item:hover {
   background: rgba(255, 224, 102, 0.15);
   transform: scale(1.02);
@@ -161,31 +159,16 @@ ion-button:hover, ion-button:focus {
 }
 
 .img-feedback {
-  max-width: 280px; /* da 240 a 280 */
+  max-width: 280px;
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
-  margin: 0 auto 24px auto; /* aggiunto bottom margin */
+  margin: 0 auto 24px auto;
   display: block;
 }
 
 .button-group {
-  margin-top: 24px; /* aumenta distanza dal contenuto sopra */
+  margin-top: 24px;
   display: flex;
   justify-content: center;
 }
-
-@media (max-width: 700px) {
-  .main-body {
-    padding: 16px;
-  }
-  ion-item {
-    padding: 10px;
-    font-size: 1em;
-  }
-  ion-button {
-    font-size: 1.1em;
-    min-width: 140px;
-  }
-}
-

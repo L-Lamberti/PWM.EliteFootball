@@ -6,7 +6,7 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-        {
+      {
         path: '',
         loadComponent: () => import('./pages/home/home.page').then(m => m.HomePage)
       },
@@ -49,10 +49,4 @@ export const routes: Routes = [
       },
     ]
   },
-  
-
-  
-
-    ]
-
-  
+]

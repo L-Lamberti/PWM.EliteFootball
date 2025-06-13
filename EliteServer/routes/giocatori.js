@@ -1,4 +1,3 @@
-
 const express = require('express');
 const db = require('../db');
 const router = express.Router();
@@ -21,8 +20,6 @@ router.get('/top/:ruolo', (req, res) => {
       console.error('Errore:', err.message);
       return res.status(500).json({ error: 'Errore nel database' });
     }
-
-    // Per ogni giocatore, prendi i suoi ruoli
     const promises = giocatori.map(g => {
       return new Promise((resolve, reject) => {
         const ruoliQuery = `
@@ -48,7 +45,6 @@ router.get('/top/:ruolo', (req, res) => {
   });
 });
 
-  
 router.get('/:id/ruoli', (req, res) => {
   const id = req.params.id;
   const query = `
@@ -68,13 +64,11 @@ router.get('/:id/ruoli', (req, res) => {
 
 router.get('/', (req, res) => {
   const query = `SELECT * FROM giocatori ORDER BY voto DESC`;
-  db.all(query, [], (err, giocatori) => { // <-- usa [] invece di [ruoloCodice]
+  db.all(query, [], (err, giocatori) => { 
     if (err) {
       console.error('Errore:', err.message);
       return res.status(500).json({ error: 'Errore nel database' });
     }
-
-    // Per ogni giocatore, prendi i suoi ruoli
     const promises = giocatori.map(g => {
       return new Promise((resolve, reject) => {
         const ruoliQuery = `
@@ -91,7 +85,6 @@ router.get('/', (req, res) => {
       });
     });
 
-
     Promise.all(promises)
       .then(giocatoriConRuoli => res.json(giocatoriConRuoli))
       .catch(e => {
@@ -101,4 +94,3 @@ router.get('/', (req, res) => {
   });
 });
 module.exports = router;
-

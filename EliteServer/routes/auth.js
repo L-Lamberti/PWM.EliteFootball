@@ -6,7 +6,6 @@ const router = express.Router();
 const JWT_SECRET = 'elitefussball';
 
 // REGISTRAZIONE
-
 function isPasswordValid(password) {
   // Min 8 caratteri, almeno una maiuscola, un numero e un carattere speciale
   return /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/.test(password);

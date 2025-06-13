@@ -6,7 +6,6 @@
 
 <ion-content class="ion-padding">
   <div class="container">
-    <!-- Tieni SOLO questo titolo principale -->
     <h1 class="titolo-blu">📝Reclami&Feedback</h1>
     <p>Hai un reclamo, un feedback o un consiglio da condividere? Compila il modulo qui sotto e ti risponderemo al più presto.</p>
     <div class="main-body">
@@ -27,7 +26,6 @@
         Il messaggio è obbligatorio (min 10 caratteri).
         </div>
         <ion-button expand="block" type="submit" [disabled]="reclamoForm.invalid">Invia</ion-button>
-        <!--<pre>{{ reclamoForm.status }} | {{ reclamoForm.value | json }}</pre>Valutare se l'invio funziona o no-->
       </form>
       <div *ngIf="inviato" class="success-msg">
         Grazie per il tuo feedback! Il tuo messaggio è stato inviato.

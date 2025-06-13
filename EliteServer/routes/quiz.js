@@ -16,7 +16,6 @@ router.get('', (req, res) => {
         q.risposta_errata3,
       ];
 
-      // Mischia le risposte
       const shuffle = risposte
         .map(r => ({ text: r, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort);

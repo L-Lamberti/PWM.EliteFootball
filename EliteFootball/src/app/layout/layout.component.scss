@@ -47,13 +47,6 @@
   transform: scale(1.05);
 }
 
-.header-btn:focus:not(:focus-visible) {
-  outline: none !important;
-  background: #FFD700;
-  color: #000103 !important;
-  box-shadow: none;
-}
-
 .admin-btn[disabled] {
   pointer-events: none;    /* Non cliccabile */
   opacity: 1;              /* Mantieni opacità piena */
@@ -135,11 +128,6 @@
   cursor: pointer;
 }
 
-.admin-btn {
-  margin-right: 8px;
-}
-
-
 /* MAIN CONTENT */
 
 .main-content-fixed {
@@ -203,17 +191,3 @@
 .footer-link:focus {
   color: #FFD700; /* Giallo oro all'hover */
 }
-
-/* Scrollbar sidebar */
-.sidebar-fixed ::-webkit-scrollbar {
-  width: 8px;
-  background: var(--prestige-navy);
-}
-.sidebar-fixed ::-webkit-scrollbar-thumb {
-  background: var(--prestige-gold);
-  border-radius: 4px;
-}
-
-
-
-

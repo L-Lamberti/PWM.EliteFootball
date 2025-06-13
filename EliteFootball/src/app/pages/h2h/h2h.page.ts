@@ -55,7 +55,7 @@ export class H2HPage implements OnInit {
   this.vincitoriTurno = [];
   this.vincitoreFinale = null;
   this.currentSfidaIndex = 0;
-  this.avviah2h(); // <--- Avvia subito il torneo!
+  this.avviah2h();
 }
 
   avviah2h() {
@@ -67,7 +67,7 @@ export class H2HPage implements OnInit {
   this.turno = 1;
   this.vincitoriTurno = [];
   this.vincitoreFinale = null;
-  this.currentSfidaIndex = 0; // Mostra la prima sfida
+  this.currentSfidaIndex = 0;
 }
  
 scegliVincitore(sfida: Giocatore[], vincitore: Giocatore) {
@@ -79,7 +79,6 @@ scegliVincitore(sfida: Giocatore[], vincitore: Giocatore) {
       this.turno = 0;
       this.bracket = [];
     } else {
-      // Prepara il prossimo turno
       const nextBracket: Giocatore[][] = [];
       const shuffled = [...this.vincitoriTurno];
       for (let i = 0; i < shuffled.length; i += 2) {

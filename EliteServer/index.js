@@ -12,7 +12,7 @@ const feedbackRouter = require('./routes/feedback');
 
           
 app.use(cors({
-  origin: 'http://localhost:8100', // <-- Cambia con la porta del tuo frontend se serve
+  origin: 'http://localhost:8100',
   credentials: true
 }));
 

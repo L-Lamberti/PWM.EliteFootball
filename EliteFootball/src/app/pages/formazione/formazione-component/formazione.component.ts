@@ -4,8 +4,8 @@ import { CommonModule} from '@angular/common';
 import { SelezioneGiocatoreComponent } from 'src/app/components/selezione-giocatore/selezione-giocatore.component';
 import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from "../../../layout/layout.component";
-import { ApiService } from 'src/app/services/api.service'; // <-- IMPORTA ApiService!
-import { FormsModule } from '@angular/forms'; // <-- IMPORTA FormsModule per ngModel
+import { ApiService } from 'src/app/services/api.service';
+import { FormsModule } from '@angular/forms';
 import { SelezioneAllenatoreComponent } from 'src/app/components/selezione-allenatore/selezione-allenatore/selezione-allenatore.component';
 import {IonButton,IonLabel,IonItem,IonIcon, IonInput} from '@ionic/angular/standalone';
 import html2canvas from 'html2canvas';

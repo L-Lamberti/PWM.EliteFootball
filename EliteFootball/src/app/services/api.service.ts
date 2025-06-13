@@ -82,7 +82,4 @@ export class ApiService {
   getQuiz(): Observable<any[]> {
   return this.http.get<any[]>(`${this.apiUrl}/api/quiz`);
 } 
-
 }
-
-

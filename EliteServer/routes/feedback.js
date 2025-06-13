@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db'); // il tuo db.js
+const db = require('../db');
 
 // Salva feedback
 router.post('/', (req, res) => {
@@ -17,8 +17,6 @@ router.post('/', (req, res) => {
 
 // Ottieni tutti i feedback (solo admin!)
 router.get('/', (req, res) => {
-  // Qui dovresti verificare che l'utente sia admin!
-  // Esempio semplice: verifica req.user && req.user.role === 'admin'
   db.all('SELECT * FROM feedback ORDER BY data_invio DESC', (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(rows);
