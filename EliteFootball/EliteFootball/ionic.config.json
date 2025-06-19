@@ -1,7 +1,0 @@
-{
-  "name": "EliteFootball",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}
