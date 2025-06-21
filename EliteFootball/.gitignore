@@ -12,16 +12,9 @@ $RECYCLE.BIN/
 *.log
 log.txt
 
-
 /.sourcemaps
 /.versions
 /coverage
-
-# Ionic
-/.ionic
-/www
-/platforms
-/plugins
 
 # Compiled output
 /dist
@@ -51,19 +44,6 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
-
-# Miscellaneous
-/.angular
-/.angular/cache
-.sass-cache/
-/.nx
-/.nx/cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
 
 # System files
 .DS_Store
