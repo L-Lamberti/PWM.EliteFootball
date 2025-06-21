@@ -1,24 +1,3 @@
-# 👉 Dipendenze Node.js
-node_modules/
-
-# 👉 Output di build (Ionic)
-www/
-dist/
-build/
-
-# 👉 Ionic Capacitor
-android/
-ios/
-capacitor.config.json
-capacitor.config.ts
-
-# 👉 Ionic Cordova
-platforms/
-plugins/
-plugins/android.json
-plugins/ios.json
-cordova/platforms
-cordova/plugins
 
 # 👉 File di configurazione e ambiente
 .env
